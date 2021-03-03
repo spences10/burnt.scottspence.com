@@ -1,5 +1,9 @@
 {
   "editor.codeActionsOnSave": {
     "source.organizeImports": false
-  }
+  },
+  "cSpell.words": [
+    "cloudinary",
+    "rehype"
+  ]
 }
