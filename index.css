@@ -1,5 +1,113 @@
 @tailwind base;
 
-@tailwind components;
+html {
+  box-sizing: border-box;
+}
+* {
+  box-sizing: inherit;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+}
+h1 {
+  font-size: 2.25rem;
+}
+h1,
+h2 {
+  padding: 0;
+  margin: 0 0 1.45rem;
+  color: inherit;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  line-height: 1.1;
+}
+h2 {
+  font-size: 1.62671rem;
+}
+h3 {
+  font-size: 1.38316rem;
+}
+h3,
+h4 {
+  padding: 0;
+  margin: 0 0 1.45rem;
+  color: inherit;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  line-height: 1.1;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.85028rem;
+}
+h5,
+h6 {
+  padding: 0;
+  margin: 0 0 1.45rem;
+  color: inherit;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  line-height: 1.1;
+}
+h6 {
+  font-size: 0.78405rem;
+}
+img {
+  max-width: 100%;
+}
+li {
+  margin-bottom: 0.725rem;
+}
+p {
+  padding: 0;
+  margin: 0 0 1.45rem;
+}
 
+/* custom styles */
+
+ul {
+  @apply list-disc;
+  @apply pl-4;
+}
+
+ol {
+  @apply list-decimal;
+  @apply pl-4;
+  margin: 0 0 1.45rem;
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  transition: opacity 300ms;
+  opacity: 0.5;
+}
+
+.toast-highlight {
+  background-color: #011627;
+  overflow: auto;
+}
+
+.toast-highlight pre[class*='language-'] {
+  background-color: transparent;
+  float: left;
+}
+
+.highlight-line {
+  background-color: rgb(53, 59, 69);
+  display: block;
+  margin-right: -1.4em;
+  margin-left: -1.4em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.5em solid #81cfe0;
+}
+
+@tailwind components;
 @tailwind utilities;
