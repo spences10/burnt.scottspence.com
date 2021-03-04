@@ -5,12 +5,24 @@ import { MDXProvider } from "@mdx-js/preact";
 const components = {
   codeblock: (props) => (
     <div
-      class="bg-gray-900 overflow-auto"
+      class="bg-gray-100 overflow-auto"
+      dangerouslySetInnerHTML={{ __html: props.children }}
+    />
+  ),
+  code: (props) => (
+    <div
+      class="bg-gray-100 overflow-auto"
       dangerouslySetInnerHTML={{ __html: props.children }}
     />
   ),
   YouTube: (props) => <div></div>,
   Vimeo: (props) => <div></div>,
+  Tweet: (props) => <div></div>,
+  MarkdownParser: (props) => <div></div>,
+  DateDistance: (props) => <div></div>,
+  Small: (props) => <div></div>,
+  Sarcasm: (props) => <div></div>,
+  Spotify: (props) => <div></div>,
 };
 
 export default function PageWrapper(props) {
@@ -20,7 +32,12 @@ export default function PageWrapper(props) {
         <Helmet>
           <link rel="stylesheet" href="/styles.css" />
         </Helmet>
-        {props.children}
+        <article class="prose max-w-none">
+          {props.title ? (
+            <h2 class="font-extrabold text-3xl mt-6">{props.title}</h2>
+          ) : null}
+          {props.children}
+        </article>
       </div>
     </MDXProvider>
   );
