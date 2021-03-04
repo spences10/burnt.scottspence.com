@@ -4,7 +4,7 @@ import frontmatter from "gray-matter";
 import mdx from "@mdx-js/mdx";
 import cloudinaryPlugin from "rehype-local-image-to-cloudinary";
 import { fetchMdxFromDisk } from "@toastdotdev/mdx";
-// import rehypePrismMdx from "../legacy-commonjs/prism-rehype-plugin/index.js";
+import rehypePrismMdx from "../legacy-commonjs/prism-rehype-plugin/index.js";
 import rehypeSlug from "rehype-slug";
 import rehypeLink from "rehype-autolink-headings";
 
@@ -28,7 +28,7 @@ export const sourceData = async ({ setDataForSlug }) => {
       try {
         compiledMdx = await mdx(content, {
           rehypePlugins: [
-            // rehypePrismMdx,
+            rehypePrismMdx,
             [
               cloudinaryPlugin,
               {
