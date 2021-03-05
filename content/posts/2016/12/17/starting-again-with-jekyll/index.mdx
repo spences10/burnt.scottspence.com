@@ -124,7 +124,9 @@ my own vanilla build, I was getting that first paragraph to show on
 the main blog page I found it eventually, not on the `post.html` or
 the `default.html` no it was on the `index.html` here:
 
-` {``{ post.content | split:"<!--more-->" | first }``} `
+```
+{``{ post.content | split:"<!--more-->" | first }``}
+```
 
 Then add the `<!--more-->` tag after the first paragraph on your post,
 then I added a class to float the image on the top of the post and
