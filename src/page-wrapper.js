@@ -1,29 +1,30 @@
-import { h } from "preact";
-import { Helmet } from "react-helmet";
-import { MDXProvider } from "@mdx-js/preact";
+import { h } from 'preact'
+import { Helmet } from 'react-helmet'
+import { MDXProvider } from '@mdx-js/preact'
+import Butt from './components/buttbutt.js'
 
 const components = {
-  codeblock: (props) => (
+  codeblock: props => (
     <div
       class="bg-gray-100 overflow-auto"
       dangerouslySetInnerHTML={{ __html: props.children }}
     />
   ),
-  code: (props) => (
+  code: props => (
     <div
       class="bg-gray-100 overflow-auto"
       dangerouslySetInnerHTML={{ __html: props.children }}
     />
   ),
-  YouTube: (props) => <div></div>,
-  Vimeo: (props) => <div></div>,
-  Tweet: (props) => <div></div>,
-  MarkdownParser: (props) => <div></div>,
-  DateDistance: (props) => <div></div>,
-  Small: (props) => <div></div>,
-  Sarcasm: (props) => <div></div>,
-  Spotify: (props) => <div></div>,
-};
+  YouTube: props => <div></div>,
+  Vimeo: props => <div></div>,
+  Tweet: props => <div></div>,
+  MarkdownParser: props => <div></div>,
+  DateDistance: props => <div></div>,
+  Small: props => <div></div>,
+  Sarcasm: props => <div></div>,
+  Spotify: props => <div></div>,
+}
 
 export default function PageWrapper(props) {
   return (
@@ -34,11 +35,14 @@ export default function PageWrapper(props) {
         </Helmet>
         <article class="prose max-w-none">
           {props.title ? (
-            <h2 class="font-extrabold text-3xl mt-6">{props.title}</h2>
+            <h2 class="font-extrabold text-3xl mt-6">
+              {props.title}
+            </h2>
           ) : null}
           {props.children}
+          {props.title ? <Butt height="80" width="100" /> : null}
         </article>
       </div>
     </MDXProvider>
-  );
+  )
 }
