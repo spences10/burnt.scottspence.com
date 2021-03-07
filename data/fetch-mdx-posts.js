@@ -6,6 +6,7 @@ import cloudinaryPlugin from 'rehype-local-image-to-cloudinary'
 import { fetchMdxFromDisk } from '@toastdotdev/mdx'
 import rehypePrismMdx from '../legacy-commonjs/prism-rehype-plugin/index.js'
 import rehypeSlug from 'rehype-slug'
+import externalLinks from 'remark-external-links'
 import rehypeLink from 'rehype-autolink-headings'
 
 const IMAGE_PATH = filename => {
@@ -48,6 +49,9 @@ export const sourceData = async ({ setDataForSlug }) => {
                 },
               },
             ],
+          ],
+          remarkPlugins: [
+            [externalLinks, { target: '_blank', rel: 'noopener' }],
           ],
         })
       } catch (e) {

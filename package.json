@@ -31,6 +31,7 @@
     "prismjs": "^1.23.0",
     "rehype-local-image-to-cloudinary": "^1.0.4",
     "rehype-slug": "^4.0.1",
+    "remark-external-links": "^8.0.0",
     "tailwindcss": "^1.9.6",
     "toast": "^0.3.30",
     "unist-util-visit": "^2.0.3"
