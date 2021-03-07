@@ -1,7 +1,4 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": false
-  },
   "cSpell.words": [
     "Biscardi",
     "Vercel",
@@ -10,6 +7,7 @@
     "noopener",
     "prismjs",
     "rehype",
+    "spences",
     "unist"
   ]
 }

@@ -1,7 +1,9 @@
+/** @jsx h */
+import { MDXProvider } from '@mdx-js/preact'
 import { h } from 'preact'
 import { Helmet } from 'react-helmet'
-import { MDXProvider } from '@mdx-js/preact'
 import Butt from './components/buttbutt.js'
+import SEO from './components/seo.js'
 
 const components = {
   codeblock: props => (
@@ -38,6 +40,13 @@ export default function PageWrapper(props) {
             <h2 class="font-extrabold text-3xl mt-6">
               {props.title}
             </h2>
+          ) : null}
+          {props.title ? (
+            <SEO
+              title={props.title}
+              description={props.description}
+              ogImage={props.slug}
+            />
           ) : null}
           {props.children}
           {props.title ? <Butt height="80" width="100" /> : null}

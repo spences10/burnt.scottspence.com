@@ -1,3 +1,4 @@
+/** @jsx h */
 import { h } from 'preact'
 
 export default function MugFace({ height = 300, width = 300 }) {
