@@ -19,11 +19,11 @@ const components = {
   YouTube: props => <div></div>,
   Vimeo: props => <div></div>,
   Tweet: props => <div></div>,
+  Spotify: props => <div></div>,
   MarkdownParser: props => <div></div>,
   DateDistance: props => <div></div>,
   Small: props => <div></div>,
   Sarcasm: props => <div></div>,
-  Spotify: props => <div></div>,
 }
 
 export default function PageWrapper(props) {
