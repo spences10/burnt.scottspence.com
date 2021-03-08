@@ -3,6 +3,8 @@ import { MDXProvider } from '@mdx-js/preact'
 import { h } from 'preact'
 import { Helmet } from 'react-helmet'
 import Butt from './components/buttbutt.js'
+import Footer from './components/footer.js'
+import Header from './components/header.js'
 import SEO from './components/seo.js'
 
 const components = {
@@ -31,10 +33,20 @@ const components = {
 export default function PageWrapper(props) {
   return (
     <MDXProvider components={components}>
-      <div class="m-auto max-w-2xl">
+      <main class="m-auto max-w-2xl">
         <Helmet>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+          />
+          <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="/favicon.ico"
+          />
           <link rel="stylesheet" href="/styles.css" />
         </Helmet>
+        <Header />
         <article class="prose max-w-none">
           {props.title ? (
             <h2 class="font-extrabold text-3xl mt-6">
@@ -50,8 +62,9 @@ export default function PageWrapper(props) {
           ) : null}
           {props.children}
           {props.title ? <Butt height="80" width="100" /> : null}
+          <Footer />
         </article>
-      </div>
+      </main>
     </MDXProvider>
   )
 }
