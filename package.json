@@ -54,8 +54,7 @@
     "knownEntrypoints": [
       "preact/hooks",
       "preact",
-      "@mdx-js/preact",
-      "mdx-utils"
+      "@mdx-js/preact"
     ]
   }
 }
