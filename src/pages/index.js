@@ -1,12 +1,14 @@
+/** @jsx h */
 import { h } from 'preact'
 import MugFace from '../components/mugface.js'
+import SEO from '../components/seo.js'
 
-export default function IndexPage(props) {
+export default function IndexPage() {
   return (
     <div>
-      <h1>wheeee</h1>
+      <SEO title="Home" />
       <MugFace />
-      <a href="/garden">Garden</a>
+      <h1>Hello World</h1>
     </div>
   )
 }
