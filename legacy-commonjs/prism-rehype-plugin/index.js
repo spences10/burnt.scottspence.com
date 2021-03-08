@@ -71,6 +71,7 @@ const Code = ({
     return h(
       LiveProvider,
       {
+        ...LiveProvider.defaultProps,
         code: codeString,
         noInline: true,
         theme: theme,
