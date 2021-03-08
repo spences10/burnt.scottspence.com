@@ -8,6 +8,12 @@ const theme = require('prism-react-renderer/themes/nightOwl')
 const visit = require('unist-util-visit')
 const Prism = require('prismjs')
 const { h } = preact
+const {
+  LiveEditor,
+  LiveError,
+  LivePreview,
+  LiveProvider,
+} = require('react-live')
 
 module.exports = options => ast => {
   visit(ast, 'element', node => {
@@ -60,6 +66,26 @@ const Code = ({
   ...props
 }) => {
   const shouldHighlightLine = calculateLinesToHighlight(highlight)
+
+  if (metastring === `react-live`) {
+    return h(
+      LiveProvider,
+      {
+        code: codeString,
+        noInline: true,
+        theme: theme,
+      },
+      h(LiveEditor, {
+        ...LiveEditor.defaultProps,
+        'data-name': 'live-editor',
+      }),
+      h(LiveError, null),
+      h(LivePreview, {
+        ...LivePreview.defaultProps,
+        'data-name': 'live-preview',
+      })
+    )
+  }
 
   return h(
     Highlight.default,

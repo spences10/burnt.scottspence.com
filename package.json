@@ -29,6 +29,7 @@
     "preact-render-to-string": "^5.1.12",
     "prism-react-renderer": "^1.2.0",
     "prismjs": "^1.23.0",
+    "react-live": "^2.2.3",
     "rehype-local-image-to-cloudinary": "^1.0.4",
     "rehype-slug": "^4.0.1",
     "remark-external-links": "^8.0.0",
@@ -53,7 +54,8 @@
     "knownEntrypoints": [
       "preact/hooks",
       "preact",
-      "@mdx-js/preact"
+      "@mdx-js/preact",
+      "mdx-utils"
     ]
   }
 }
