@@ -32,7 +32,6 @@ export const sourceData = async ({ setDataForSlug }) => {
         compiledMdx = await mdx(content, {
           rehypePlugins: [
             rehypePrismMdx,
-            console.log(process.env),
             [
               cloudinaryPlugin,
               {
