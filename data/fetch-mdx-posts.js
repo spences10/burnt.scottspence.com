@@ -19,9 +19,6 @@ export const sourceData = async ({ setDataForSlug }) => {
     directory: './content/posts/',
   })
 
-  const activeEnv =
-    process.env.ACTIVE_ENV || process.env.NODE_ENV || 'development'
-
   return await Promise.all(
     mdxObjects.map(async ({ file, filename }) => {
       const split = filename.split(`/`)
@@ -35,15 +32,14 @@ export const sourceData = async ({ setDataForSlug }) => {
         compiledMdx = await mdx(content, {
           rehypePlugins: [
             rehypePrismMdx,
-            activeEnv !== `development`
-              ? [
-                  cloudinaryPlugin,
-                  {
-                    baseDir: IMAGE_PATH(filename),
-                    uploadFolder: 'scottspence.com',
-                  },
-                ]
-              : null,
+            console.log(process.env),
+            [
+              cloudinaryPlugin,
+              {
+                baseDir: IMAGE_PATH(filename),
+                uploadFolder: 'scottspence.com',
+              },
+            ],
             rehypeSlug,
             [
               rehypeLink,
