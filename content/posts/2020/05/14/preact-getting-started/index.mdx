@@ -1,7 +1,7 @@
 ---
 date: 2020-12-31
 title: Getting started with Preact and the Preact CLI
-tags: ["learning", "guide"]
+tags: ['learning', 'guide']
 private: true
 ---
 
@@ -21,8 +21,8 @@ organise the imports on save.
 },
 ```
 
-That stripped out the `h` I was concerned that it would break but
-then found out it worked fine without it.
+That stripped out the `h` I was concerned that it would break but then
+found out it worked fine without it.
 
 > `preact-cli` automatically imports `h` for you in any files that
 > have JSX, so you can safely remove those imports.
@@ -35,8 +35,8 @@ link `<link rel="stylesheet" href="./assets/fonts/fonts.css" />`
 
 ```css
 @font-face {
-  font-family: "My Local Font";
-  src: url("./MyLocalFont.ttf") format("truetype");
+  font-family: 'My Local Font';
+  src: url('./MyLocalFont.ttf') format('truetype');
 }
 ```
 
@@ -51,7 +51,10 @@ Tricks post] on it.
   <head>
     <meta charset="utf-8" />
     <title><% preact.title %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="stylesheet" href="./assets/fonts/fonts.css" />
@@ -71,7 +74,10 @@ This can also do this with Google fonts, something like this:
   <head>
     <meta charset="utf-8" />
     <title><% preact.title %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link
@@ -86,4 +92,5 @@ This can also do this with Google fonts, something like this:
 </html>
 ```
 
-[css tricks post]: https://css-tricks.com/snippets/css/using-font-face/
+[css tricks post]:
+  https://css-tricks.com/snippets/css/using-font-face/

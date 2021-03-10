@@ -1,7 +1,7 @@
 ---
 date: 2020-05-04
 title: Why Make a React SEO Component
-tags: ["learning", "react", "seo"]
+tags: ['learning', 'react', 'seo']
 private: false
 ---
 
@@ -104,7 +104,7 @@ LekoArts did a great job of putting all this together:
 ```jsx
 <>
   <Helmet title={seo.title} titleTemplate={`%s | ${titleTemplate}`}>
-    <html lang={siteLanguage ? siteLanguage : "en"} />
+    <html lang={siteLanguage ? siteLanguage : 'en'} />
     <link rel="canonical" href={pathname} />
     <meta name="description" content={seo.description} />
 
@@ -118,15 +118,17 @@ LekoArts did a great job of putting all this together:
         {JSON.stringify(schemaArticle)}
       </script>
     )}
-    <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+    <script type="application/ld+json">
+      {JSON.stringify(breadcrumb)}
+    </script>
   </Helmet>
   <Facebook
     desc={seo.description}
     image={image}
     title={seo.title}
-    type={article ? "article" : "website"}
+    type={article ? 'article' : 'website'}
     url={pathname}
-    locale={siteLocale ? siteLocale : "en_gb"}
+    locale={siteLocale ? siteLocale : 'en_gb'}
   />
   <Twitter
     title={seo.title}
@@ -171,21 +173,32 @@ The defaults are empty strings or a default `J Doe` so not great but
 there is a lot to go in there and hopefully a lot more to learn from
 it by me.
 
-[react seo component]: https://www.npmjs.com/package/react-seo-component
-[build a coding blog from scratch with gatsby and mdx]: https://scottspence.com/2019/10/31/build-an-mdx-blog
+[react seo component]:
+  https://www.npmjs.com/package/react-seo-component
+[build a coding blog from scratch with gatsby and mdx]:
+  https://scottspence.com/2019/10/31/build-an-mdx-blog
 [github pr on seo]: https://github.com/gatsbyjs/gatsby/pull/10780
 [issue]: https://github.com/gatsbyjs/gatsby/issues/14125
-[great notes from andrew welch]: https://github.com/gatsbyjs/gatsby/pull/10780#issuecomment-451048608
+[great notes from andrew welch]:
+  https://github.com/gatsbyjs/gatsby/pull/10780#issuecomment-451048608
 [lekoarts]: https://github.com/LekoArts
-[his own implementation]: https://github.com/LekoArts/gatsby-starter-prismic/blob/master/src/components/SEO/SEO.jsx
+[his own implementation]:
+  https://github.com/LekoArts/gatsby-starter-prismic/blob/master/src/components/SEO/SEO.jsx
 [jason lengstorf]: https://twitter.com/jlengstorf
-[marisa's site]: https://github.com/marisamorby/marisamorby.com/blob/master/packages/gatsby-theme-blog-sanity/src/components/seo.js
+[marisa's site]:
+  https://github.com/marisamorby/marisamorby.com/blob/master/packages/gatsby-theme-blog-sanity/src/components/seo.js
 [well documented]: https://www.gatsbyjs.org/docs/add-seo-component/
-[gatsby starter prismic]: https://github.com/LeKoArts/gatsby-starter-prismic/blob/master/src/components/SEO/SEO.jsx
+[gatsby starter prismic]:
+  https://github.com/LeKoArts/gatsby-starter-prismic/blob/master/src/components/SEO/SEO.jsx
 [open graph protocol]: https://ogp.me/
-[structured data]: https://developers.google.com/search/docs/guides/intro-structured-data
-[used rollup]: https://github.com/spences10/react-seo-component/blob/32acf12d53/rollup.config.js
+[structured data]:
+  https://developers.google.com/search/docs/guides/intro-structured-data
+[used rollup]:
+  https://github.com/spences10/react-seo-component/blob/32acf12d53/rollup.config.js
 [typescript package development]: https://github.com/jaredpalmer/tsdx
-[open graph images with gatsby and now]: https://scottspence.com/2020/04/30/serverless-og-images/
-[this post]: https://medium.com/recraftrelic/building-a-react-component-as-a-npm-module-18308d4ccde9
-[example code]: https://github.com/recraftrelic/dummy-react-npm-module/blob/master/package.json
+[open graph images with gatsby and now]:
+  https://scottspence.com/2020/04/30/serverless-og-images/
+[this post]:
+  https://medium.com/recraftrelic/building-a-react-component-as-a-npm-module-18308d4ccde9
+[example code]:
+  https://github.com/recraftrelic/dummy-react-npm-module/blob/master/package.json

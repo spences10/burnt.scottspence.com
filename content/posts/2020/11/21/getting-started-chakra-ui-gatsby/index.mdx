@@ -1,7 +1,7 @@
 ---
 date: 2020-11-21
 title: Chakra UI and Gatsby - Getting Started
-tags: ["gatsby", "getting started", "guide"]
+tags: ['gatsby', 'getting started', 'guide']
 private: false
 ---
 
@@ -131,17 +131,17 @@ In the root wrapper file I'll add the Chakra provider and the `Layout`
 component.
 
 ```tsx
-import { ChakraProvider } from "@chakra-ui/react";
-import React from "react";
-import Layout from "./components/layout";
+import { ChakraProvider } from '@chakra-ui/react'
+import React from 'react'
+import Layout from './components/layout'
 
 export const wrapPageElement = ({ element }) => {
   return (
     <ChakraProvider resetCSS>
       <Layout>{element}</Layout>
     </ChakraProvider>
-  );
-};
+  )
+}
 ```
 
 So now there's no need to import the layout component into each page
@@ -153,9 +153,9 @@ Finally I'll need to import the root wrapper into both the
 `gatsby-ssr.js` and the `gatsby-browser.js` files.
 
 ```js
-import { wrapPageElement as wrap } from "./src/woot-wapper";
+import { wrapPageElement as wrap } from './src/woot-wapper'
 
-export const wrapPageElement = wrap;
+export const wrapPageElement = wrap
 ```
 
 ## Theme Toggle
@@ -172,13 +172,17 @@ touch src/components/toggle-theme.tsx
 And add in some code to toggle the theme:
 
 ```tsx
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
-import React from "react";
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+import {
+  IconButton,
+  useColorMode,
+  useColorModeValue,
+} from '@chakra-ui/react'
+import React from 'react'
 
 export default function ThemeToggle() {
-  const { toggleColorMode: toggleMode } = useColorMode();
-  const ToggleIcon = useColorModeValue(SunIcon, MoonIcon);
+  const { toggleColorMode: toggleMode } = useColorMode()
+  const ToggleIcon = useColorModeValue(SunIcon, MoonIcon)
 
   return (
     <IconButton
@@ -187,7 +191,7 @@ export default function ThemeToggle() {
       aria-label="Toggle Theme"
       onClick={toggleMode}
     />
-  );
+  )
 }
 ```
 
@@ -209,10 +213,10 @@ styles.
 I've left out the default export and prop types for brevity.
 
 ```js
-import { Box, Heading, Link } from "@chakra-ui/react";
-import { Link as GatsbyLink } from "gatsby";
-import React from "react";
-import ThemeToggle from "./theme-toggle";
+import { Box, Heading, Link } from '@chakra-ui/react'
+import { Link as GatsbyLink } from 'gatsby'
+import React from 'react'
+import ThemeToggle from './theme-toggle'
 
 const Header = ({ siteTitle }) => (
   <Box as="header" background="rebeccapurple" marginBottom="1.45rem">
@@ -222,7 +226,7 @@ const Header = ({ siteTitle }) => (
           as={GatsbyLink}
           to="/"
           color="white"
-          _hover={{ textDecor: "none" }}
+          _hover={{ textDecor: 'none' }}
         >
           {siteTitle}
         </Link>
@@ -232,7 +236,7 @@ const Header = ({ siteTitle }) => (
       <ThemeToggle />
     </Box>
   </Box>
-);
+)
 ```
 
 Notice that the `<header>` tag and the `<div>` tags are now both
@@ -280,7 +284,7 @@ return (
       </Box>
     </Box>
   </>
-);
+)
 ```
 
 You may notice the addition of the [`fontSize`] prop added to the
@@ -299,9 +303,9 @@ components and added the `fontSize` prop along with with some margin
 top and bottom on the text component with the `my` prop.
 
 ```jsx
-import { Heading, Text } from "@chakra-ui/react";
-import React from "react";
-import SEO from "../components/seo";
+import { Heading, Text } from '@chakra-ui/react'
+import React from 'react'
+import SEO from '../components/seo'
 
 const NotFoundPage = () => (
   <>
@@ -311,9 +315,9 @@ const NotFoundPage = () => (
       You just hit a route that doesn&#39;t exist... the sadness.
     </Text>
   </>
-);
+)
 
-export default NotFoundPage;
+export default NotFoundPage
 ```
 
 ## Style the Index page
@@ -355,7 +359,7 @@ const IndexPage = () => (
       Go to "Using TypeScript"
     </Link>
   </>
-);
+)
 ```
 
 Additional props for the link components includes the text, underline
@@ -384,7 +388,7 @@ const SecondPage = () => (
       Go back to the homepage
     </Link>
   </>
-);
+)
 ```
 
 ## Style the Using TypeScript page
@@ -397,12 +401,16 @@ I've removed the text from this example to reduce the overall size of
 the code block.
 
 ```tsx
-const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
+const UsingTypescript: React.FC<PageProps<DataProps>> = ({
+  data,
+  path,
+}) => (
   <>
     <SEO title="Using TypeScript" />
     <Heading>Gatsby supports TypeScript by default!</Heading>
     <Text fontSize="xl" my={6}>
-      This means that you can create and write <em>.ts/.tsx</em> files ...
+      This means that you can create and write <em>.ts/.tsx</em> files
+      ...
     </Text>
     <Link
       isExternal
@@ -422,7 +430,7 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
       Go back to the homepage
     </Link>
   </>
-);
+)
 ```
 
 ## Here's a video detailing the process
@@ -464,24 +472,38 @@ These are literally all linking to the Chakra UI documentation:
 - [Chakra UI theming theme]
 - [Chakra UI theming colors]
 
-[gatsby starter default]: https://github.com/gatsbyjs/gatsby-starter-default
-[gatsby documentation]: https://www.gatsbyjs.com/plugins/gatsby-plugin-chakra-ui/
-[chakra ui getting started]: https://chakra-ui.com/docs/getting-started
+[gatsby starter default]:
+  https://github.com/gatsbyjs/gatsby-starter-default
+[gatsby documentation]:
+  https://www.gatsbyjs.com/plugins/gatsby-plugin-chakra-ui/
+[chakra ui getting started]:
+  https://chakra-ui.com/docs/getting-started
 [codesandbox.io]: http://codesandbox.io/
-[high up in the react component tree]: https://scottspence.com/2020/02/06/globally-style-gatsby-styled-components/#place-globalstyle-at-the-top-of-the-react-tree-
-[chakra ui documentation]: https://github.com/chakra-ui/chakra-ui/blob/develop/website/pages/guides/integrations/with-gatsby.mdx#gatsby-plugin
-[`wrappageelement`]: https://www.gatsbyjs.com/docs/browser-apis/#wrapPageElement
+[high up in the react component tree]:
+  https://scottspence.com/2020/02/06/globally-style-gatsby-styled-components/#place-globalstyle-at-the-top-of-the-react-tree-
+[chakra ui documentation]:
+  https://github.com/chakra-ui/chakra-ui/blob/develop/website/pages/guides/integrations/with-gatsby.mdx#gatsby-plugin
+[`wrappageelement`]:
+  https://www.gatsbyjs.com/docs/browser-apis/#wrapPageElement
 [out of the box]: https://www.gatsbyjs.com/docs/typescript/
 [`as`]: https://chakra-ui.com/docs/features/style-props#the-as-prop
-[`fontsize`]: https://chakra-ui.com/docs/typography/text#changing-the-font-size
+[`fontsize`]:
+  https://chakra-ui.com/docs/typography/text#changing-the-font-size
 [twitter]: https://twitter.com/spences10
 [ask me anything]: https://github.com/spences10/ama
-[chakra ui typography heading]: https://chakra-ui.com/docs/typography/heading
-[chakra ui components/link]: https://chakra-ui.com/docs/components/link
-[chakra ui typography/text]: https://chakra-ui.com/docs/typography/text
-[chakra ui the `as` prop]: https://chakra-ui.com/docs/features/style-props#the-as-prop
-[chakra ui style-props]: https://chakra-ui.com/docs/features/style-props
+[chakra ui typography heading]:
+  https://chakra-ui.com/docs/typography/heading
+[chakra ui components/link]:
+  https://chakra-ui.com/docs/components/link
+[chakra ui typography/text]:
+  https://chakra-ui.com/docs/typography/text
+[chakra ui the `as` prop]:
+  https://chakra-ui.com/docs/features/style-props#the-as-prop
+[chakra ui style-props]:
+  https://chakra-ui.com/docs/features/style-props
 [chakra ui theming theme]: https://chakra-ui.com/docs/theming/theme
-[chakra ui theming colors]: https://chakra-ui.com/docs/theming/theme#colors
+[chakra ui theming colors]:
+  https://chakra-ui.com/docs/theming/theme#colors
 [tl;dr]: #heres-a-video-detailing-the-process
-[i made a starter]: https://github.com/spences10/gatsby-starter-chakra-ui
+[i made a starter]:
+  https://github.com/spences10/gatsby-starter-chakra-ui

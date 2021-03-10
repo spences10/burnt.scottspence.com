@@ -1,7 +1,7 @@
 ---
 date: 2021-01-20
 title: QA Wolf v2 Getting Started
-tags: ["ci-cd", "testing", "e2e"]
+tags: ['ci-cd', 'testing', 'e2e']
 private: true
 ---
 
@@ -21,11 +21,11 @@ If you want to use the other browsers that are part of QA Wolf you can
 specify them in the `launch` function:
 
 ```js
-const { context } = await launch({ browser: "firefox" });
+const { context } = await launch({ browser: 'firefox' })
 // launch({browser: 'chromium'})
 // launch({ browser: 'firefox' })
 // launch({ browser: 'webkit' })
-const page = await context.newPage();
+const page = await context.newPage()
 ```
 
 ## CI-CD configuration

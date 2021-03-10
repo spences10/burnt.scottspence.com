@@ -1,7 +1,7 @@
 ---
 date: 2020-04-30
 title: Open Graph Images with Gatsby and Now
-tags: ["guide", "markdown"]
+tags: ['guide', 'markdown']
 private: false
 ---
 
@@ -143,24 +143,28 @@ const params = {
   website: `scottspence.com`,
   title: `Serverless OG Image Example Card`,
   image: `https://scottspence.me/favicon.png`,
-};
+}
 
-const objectToQueryParams = (obj) => {
-  const params = Object.entries(obj).map(([key, value]) => `${key}=${value}`);
-  return "?" + params.join("&");
-};
+const objectToQueryParams = obj => {
+  const params = Object.entries(obj).map(
+    ([key, value]) => `${key}=${value}`
+  )
+  return '?' + params.join('&')
+}
 
 const Image = () => {
   return (
     <img
       alt={params.title}
-      style={{ width: "100%" }}
-      src={`https://image-og.now.sh/og.jpg${objectToQueryParams(params)}`}
+      style={{ width: '100%' }}
+      src={`https://image-og.now.sh/og.jpg${objectToQueryParams(
+        params
+      )}`}
     />
-  );
-};
+  )
+}
 
-render(Image);
+render(Image)
 ```
 
 Pretty neat, right? So how to get that into a project. In the case of
@@ -174,12 +178,12 @@ frontmatter for the title, the rest is either hard coded or pulled
 from the site metadata.
 
 ```js
-const ogImageUrl = buildURL("https://image-og.now.sh/og.jpg", {
+const ogImageUrl = buildURL('https://image-og.now.sh/og.jpg', {
   author: authorName,
-  website: "scottspence.com",
+  website: 'scottspence.com',
   title: title.length > 55 ? `${title.substring(0, 55)}...` : title,
-  image: "https://scottspence.me/favicon.png",
-});
+  image: 'https://scottspence.me/favicon.png',
+})
 ```
 
 This is what `buildURL` looks like:
@@ -187,11 +191,11 @@ This is what `buildURL` looks like:
 ```js
 const buildURL = (url, obj) => {
   const query = Object.entries(obj)
-    .map((pair) => pair.map(encodeURIComponent).join("="))
-    .join("&");
+    .map(pair => pair.map(encodeURIComponent).join('='))
+    .join('&')
 
-  return `${url}?${query}`;
-};
+  return `${url}?${query}`
+}
 ```
 
 The resulting URL from `ogImageUrl` is used in React Helmet with the
@@ -247,9 +251,11 @@ implementing it [into this site].
 
 [blog post]: https://www.leighhalliday.com/serverless-og-image
 [here]: https://github.com/leighhalliday/og-image
-[og image function]: https://github.com/abnormalstudio/leighhalliday/blob/master/src/templates/article.tsx#L73
+[og image function]:
+  https://github.com/abnormalstudio/leighhalliday/blob/master/src/templates/article.tsx#L73
 [generate og image]: https://github.com/spences10/generate-og-image
-[into this site]: https://github.com/spences10/thelocalhost/blob/master/src/templates/post-template.js#L157
+[into this site]:
+  https://github.com/spences10/thelocalhost/blob/master/src/templates/post-template.js#L157
 [interactive example]: #interactive-example
 [no tsc config error]: ./no-tsc-config.png
 [page source image url]: ./page-source-image-url.png

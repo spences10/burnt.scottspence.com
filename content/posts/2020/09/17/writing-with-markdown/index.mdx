@@ -1,7 +1,7 @@
 ---
 date: 2020-09-17
 title: Markdown Showdown - All I Know About Markdown
-tags: ["markdown", "getting started", "guide"]
+tags: ['markdown', 'getting started', 'guide']
 private: false
 ---
 
@@ -139,7 +139,9 @@ the word/paragraph.
 There are two ways to do headings in Markdown, the first way which you
 may see but is way less popular is with `===` and `---`:
 
-<MarkdownParser markdownContent={`Heading 1\n===\n\nHeading 2\n---`} />
+<MarkdownParser
+  markdownContent={`Heading 1\n===\n\nHeading 2\n---`}
+/>
 
 This approach will only give you the option of a h1 and a h2 however,
 so the next approach (and what you will see a lot more than the
@@ -198,8 +200,8 @@ Markdown is to make the text easier to read.
 The approach I like to take is using keys or references:
 
 <small>
-  Right now the component I have for the Markdown rendering doesn't support it
-  so I'll be adding these in with no rendered example.
+  Right now the component I have for the Markdown rendering doesn't
+  support it so I'll be adding these in with no rendered example.
 </small>
 
 ```markdown
@@ -214,7 +216,7 @@ content.
 
 Check out my [digital garden][1] for more content.
 
-[1]: https://scottspence.com/garden "add a title here"
+[1]: https://scottspence.com/garden 'add a title here'
 ```
 
 ```markdown
@@ -222,7 +224,7 @@ Check out my [digital garden][1] for more content.
 
 Check out my [digital garden] for more content.
 
-[digital garden]: https://scottspence.com/garden "title here"
+[digital garden]: https://scottspence.com/garden 'title here'
 ```
 
 The several examples there are all valid ways to add links, also
@@ -274,7 +276,7 @@ using keys and references here:
 ```markdown
 <!-- This isn't great to read -->
 
-![alt name for image](https://picsum.photos/200/100 "tool tip to show on hover of image")
+![alt name for image](https://picsum.photos/200/100 'tool tip to show on hover of image')
 ```
 
 ```markdown
@@ -282,7 +284,7 @@ using keys and references here:
 
 ![alt name for image][1]
 
-[1]: https://picsum.photos/200/100 "tool tip"
+[1]: https://picsum.photos/200/100 'tool tip'
 ```
 
 ```markdown
@@ -290,7 +292,7 @@ using keys and references here:
 
 ![alt name for image]
 
-[alt name for image]: https://picsum.photos/200/100 "tool tip"
+[alt name for image]: https://picsum.photos/200/100 'tool tip'
 ```
 
 <YouTube youTubeId="7GVSEuif8_o" />
@@ -348,7 +350,7 @@ bullet paragraph and the additional content to go in there:
    1. Indented item that needs additional information
 
       More content here, which will be indented with the bullet.
-      ![alt name for image](https://picsum.photos/200/100 "tool tip to show on hover of image")
+      ![alt name for image](https://picsum.photos/200/100 'tool tip to show on hover of image')
 
 1. Rest of the ordered list items
 ```
@@ -370,7 +372,7 @@ The checkbox needs to start with the hyphen, space then the square
 brackets indicating if it is checked or not:
 
 <MarkdownParser
-  style={{ listStyleType: "none" }}
+  style={{ listStyleType: 'none' }}
   markdownContent={`- [ ] Check, check one\n- [x] Check two`}
 />
 
@@ -545,10 +547,15 @@ columns aren't formatted to fit it could get a bit tricky to read:
 
 [digital garden]: https://scottspence.com/garden
 [gfm]: https://github.github.com/gfm/
-[markdown table generator]: https://www.tablesgenerator.com/markdown_tables
-[the initial markdown announcement]: https://daringfireball.net/projects/markdown/
-[markdown cheatsheet]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[markdown table generator]:
+  https://www.tablesgenerator.com/markdown_tables
+[the initial markdown announcement]:
+  https://daringfireball.net/projects/markdown/
+[markdown cheatsheet]:
+  https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 [markdown forge]: https://www.markdownforge.com/about
 [justin juno]: https://twitter.com/justinjunodev
-[linguist]: https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
-[december 2004 on daring fireball]: https://daringfireball.net/projects/markdown/
+[linguist]:
+  https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
+[december 2004 on daring fireball]:
+  https://daringfireball.net/projects/markdown/

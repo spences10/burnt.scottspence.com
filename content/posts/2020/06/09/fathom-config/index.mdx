@@ -1,7 +1,7 @@
 ---
 date: 2020-06-09
 title: Fathom Analytics Gatsby Configuration
-tags: ["analytics", "learning", "guide", "hooks", "react", "gatsby"]
+tags: ['analytics', 'learning', 'guide', 'hooks', 'react', 'gatsby']
 private: false
 ---
 
@@ -56,7 +56,7 @@ export const wrapPageElement = ({ element }) => (
       <Layout>{element}</Layout>
     </MDXProvider>
   </>
-);
+)
 ```
 
 ## Track Events
@@ -65,25 +65,25 @@ Because the new tracking code is a _tiny bit_ less verbose I've had to
 slightly modify the React Context Provider to accommodate.
 
 ```jsx
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext } from 'react'
 
-const AnalyticsContext = createContext({});
+const AnalyticsContext = createContext({})
 
 export const AnalyticsProvider = ({ children }) => {
-  const logClicks = (goalId) => {
-    window.fathom.trackGoal(goalId, 0);
-  };
+  const logClicks = goalId => {
+    window.fathom.trackGoal(goalId, 0)
+  }
 
   return (
     <AnalyticsContext.Provider value={logClicks}>
       {children}
     </AnalyticsContext.Provider>
-  );
-};
+  )
+}
 
 export const useAnalytics = () => {
-  return useContext(AnalyticsContext);
-};
+  return useContext(AnalyticsContext)
+}
 ```
 
 To consume the event tracking lower in the tree either use it with a
@@ -116,26 +116,26 @@ A click event passing in the `goalId` there's also the option to pass
 a variable.
 
 ```jsx
-export const A = (props) => {
-  const fa = useAnalytics();
-  const containsGoalId = props.href?.includes(`goalId`);
-  const [goalId, setGoalId] = useState(``);
-  const [newHref, setNewHref] = useState(``);
+export const A = props => {
+  const fa = useAnalytics()
+  const containsGoalId = props.href?.includes(`goalId`)
+  const [goalId, setGoalId] = useState(``)
+  const [newHref, setNewHref] = useState(``)
 
   useEffect(() => {
     if (containsGoalId) {
-      const url = new URL(props.href);
-      setGoalId(url.searchParams.get(`goalId`));
-      url.searchParams.delete(`goalId`);
-      setNewHref(url.href);
+      const url = new URL(props.href)
+      setGoalId(url.searchParams.get(`goalId`))
+      url.searchParams.delete(`goalId`)
+      setNewHref(url.href)
     }
-  }, [containsGoalId, props.href]);
+  }, [containsGoalId, props.href])
 
   const onClick = () => {
     if (goalId) {
-      fa(goalId, 0);
+      fa(goalId, 0)
     }
-  };
+  }
   return (
     <StyledA
       {...props}
@@ -144,16 +144,21 @@ export const A = (props) => {
     >
       {props.children}
     </StyledA>
-  );
-};
+  )
+}
 ```
 
 I've written before on how to [Add Analytics Tracking Links to your
 Markdown] this still stands apart from there's no need to include
 quotes (`""`) around the `goalId`.
 
-[how to track custom events with fathom]: http://localhost:4512/2020/01/02/track-custom-events-with-fathom-analytics
-[changed their tracking/embed code]: https://usefathom.com/support/tracking
-[use the code with gatsby]: https://usefathom.com/integrations/gatsbyjs
-[`gatsby-plugin-fathom`]: https://www.gatsbyjs.org/packages/gatsby-plugin-fathom/
-[add analytics tracking links to your markdown]: https://scottspence.com/2020/04/18/add-tracking-links-to-your-markdown/
+[how to track custom events with fathom]:
+  http://localhost:4512/2020/01/02/track-custom-events-with-fathom-analytics
+[changed their tracking/embed code]:
+  https://usefathom.com/support/tracking
+[use the code with gatsby]:
+  https://usefathom.com/integrations/gatsbyjs
+[`gatsby-plugin-fathom`]:
+  https://www.gatsbyjs.org/packages/gatsby-plugin-fathom/
+[add analytics tracking links to your markdown]:
+  https://scottspence.com/2020/04/18/add-tracking-links-to-your-markdown/

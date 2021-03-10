@@ -1,7 +1,7 @@
 ---
 date: 2018-04-03
 title: styled-components 💅 getting started
-tags: ["guide", "styled-components", "css-in-js"]
+tags: ['guide', 'styled-components', 'css-in-js']
 private: false
 ---
 
@@ -65,9 +65,9 @@ We can start with the `App.js` file and it's accompanying `App.css`
 file. Let's take a look at the `App.js` first:
 
 ```js
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.css'
 class App extends Component {
   render() {
     return (
@@ -77,13 +77,14 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          To get started, edit <code>src/App.js</code> and save to
+          reload.
         </p>
       </div>
-    );
+    )
   }
 }
-export default App;
+export default App
 ```
 
 In styled-components we'd create components for each of these elements
@@ -94,7 +95,7 @@ get an idea of where we're going with this.
 First, import `styled` into the `App.js` module:
 
 ```js
-import styled from "styled-components";
+import styled from 'styled-components'
 ```
 
 Now let's look at `<div className="App">`, it's the top level div for
@@ -107,7 +108,7 @@ to this, so:
 ```js
 const AppWrapper = styled.div`
   text-align: center;
-`;
+`
 ```
 
 So here we have defined the `AppWrapper` const as a `styled.div`
@@ -119,10 +120,10 @@ Now that we have our `AppWrapper` we can replace the top level div on
 the `App.js` component.
 
 ```js
-import React, { Component } from "react";
-import styled from "styled-components";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import logo from './logo.svg'
+import './App.css'
 class App extends Component {
   render() {
     return (
@@ -132,13 +133,14 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          To get started, edit <code>src/App.js</code> and save to
+          reload.
         </p>
       </AppWrapper>
-    );
+    )
   }
 }
-export default App;
+export default App
 ```
 
 ### styled-components all the things
@@ -154,23 +156,23 @@ const rotate360 = keyframes`
   to {
     transform: rotate(360deg);
   }
-`;
+`
 const AppLogo = styled.img`
   animation: ${rotate360} infinite 120s linear;
   height: 80px;
-`;
+`
 const AppHeader = styled.div`
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
-`;
+`
 const AppTitle = styled.h1`
   font-size: 1.3em;
-`;
+`
 const AppIntro = styled.p`
   font-size: large;
-`;
+`
 ```
 
 So first off we've created a variable for the React svg [animation],
@@ -178,7 +180,7 @@ you'll need to import the `keyframes` helper from styled-components
 like so:
 
 ```js
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components'
 ```
 
 this can now be used throughout the `App.js` component and we can add
@@ -193,7 +195,7 @@ const AppLogo = styled.img`
   &:hover {
     animation: ${rotate360} infinite 1.5s linear;
   }
-`;
+`
 ```
 
 Ok, our app shouldn't look any different as we haven't added in our
@@ -205,19 +207,19 @@ Let's also change the intro text. You can add a wrapper for the
 ```js
 const CodeWrapper = styled.code`
   font-size: 1.3rem;
-`;
+`
 ```
 
 But if you prefer you can nest selectors within the component, like:
 
 ```js
 const AppIntro = styled.p`
-  color: ${(props) => props.theme.dark};
+  color: ${props => props.theme.dark};
   font-size: large;
   code {
     font-size: 1.3rem;
   }
-`;
+`
 ```
 
 Let's have a look at the `render()` method now…
@@ -254,13 +256,13 @@ Let's take a look at how the `App.js` file should look before we move
 on:
 
 ```js
-import React, { Component } from "react";
-import styled, { keyframes } from "styled-components";
-import logo from "./logo.svg";
+import React, { Component } from 'react'
+import styled, { keyframes } from 'styled-components'
+import logo from './logo.svg'
 
 const AppWrapper = styled.div`
   text-align: center;
-`;
+`
 
 const rotate360 = keyframes`
   from {
@@ -269,7 +271,7 @@ const rotate360 = keyframes`
   to {
     transform: rotate(360deg);
   }
-`;
+`
 
 const AppLogo = styled.img`
   animation: ${rotate360} infinite 120s linear;
@@ -277,29 +279,29 @@ const AppLogo = styled.img`
   &:hover {
     animation: ${rotate360} infinite 1.5s linear;
   }
-`;
+`
 
 const AppHeader = styled.div`
   background-color: #222;
   height: 12rem;
   padding: 1rem;
   color: white;
-`;
+`
 
 const AppTitle = styled.h1`
   font-weight: 900;
-`;
+`
 
 const AppIntro = styled.p`
   font-size: large;
   code {
     font-size: 1.3rem;
   }
-`;
+`
 
 const EmojiWrapper = styled.span.attrs({
-  role: "img",
-})``;
+  role: 'img',
+})``
 
 class App extends Component {
   render() {
@@ -313,15 +315,15 @@ class App extends Component {
           Bootstrapped with <code>create-react-app</code>.
         </AppIntro>
         <AppIntro>
-          Components styled with <code>styled-components</code>{" "}
+          Components styled with <code>styled-components</code>{' '}
           <EmojiWrapper aria-label="nail polish" />
         </AppIntro>
       </AppWrapper>
-    );
+    )
   }
 }
 
-export default App;
+export default App
 ```
 
 ### Style the body with injectGlobal
@@ -356,7 +358,7 @@ named export from styled-components and add the `index.css` styles
 into it:
 
 ```js
-import { injectGlobal } from "styled-components";
+import { injectGlobal } from 'styled-components'
 
 injectGlobal`
   body {
@@ -364,7 +366,7 @@ injectGlobal`
     margin: 0;
     font-family: sans-serif;
   }
-`;
+`
 ```
 
 Ok, now we're adding the body style to the stylesheet directly so
@@ -397,7 +399,7 @@ injectGlobal`
     margin: 0;
     font-family: Roboto, sans-serif;
   }
-`;
+`
 ```
 
 Cool now we can add our imported font for or app header, and there's
@@ -415,7 +417,7 @@ injectGlobal`
   h1 {
     font-family: Montserrat;
   }
-`;
+`
 ```
 
 Then we can adjust the weight on the `AppTitle` component:
@@ -423,7 +425,7 @@ Then we can adjust the weight on the `AppTitle` component:
 ```js
 const AppTitle = styled.h1`
   font-weight: 900;
-`;
+`
 ```
 
 To add the additional styles for fonts like Montserrat and Roboto you
@@ -435,9 +437,9 @@ you have a lot of fonts and styles you want in your app then consider
 adding them to a folder in the project, like:
 
 ```js
-import Montserrat from "./fonts/Montserrat-Regular.ttf";
+import Montserrat from './fonts/Montserrat-Regular.ttf'
 
-injectGlobal`@font-face { font-family: Montserrat; src: url(${Montserrat}); }`;
+injectGlobal`@font-face { font-family: Montserrat; src: url(${Montserrat}); }`
 ```
 
 ### Theming
@@ -461,8 +463,8 @@ going to live:
 
 ```js
 export const theme = {
-  primary: "#6e27c5",
-};
+  primary: '#6e27c5',
+}
 ```
 
 Let's add the newly created `theme` to the `globalStyle` module we
@@ -473,10 +475,10 @@ wrap our app component in the `ThemeProvider` and import our awesome
 theme for use in the `ThemeProvider`:
 
 ```js
-import React, { Component } from "react";
-import styled, { keyframes, ThemeProvider } from "styled-components";
-import logo from "./logo.svg";
-import { theme } from "./theme/globalStyle";
+import React, { Component } from 'react'
+import styled, { keyframes, ThemeProvider } from 'styled-components'
+import logo from './logo.svg'
+import { theme } from './theme/globalStyle'
 
 // our styled-components
 
@@ -486,10 +488,10 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         {/* all children can access the theme object */}
       </ThemeProvider>
-    );
+    )
   }
 }
-export default App;
+export default App
 ```
 
 Now the `theme` properties can be used as props in our
@@ -501,9 +503,9 @@ property to our `theme` object and use that for the `color` property:
 const AppHeader = styled.div`
   height: 12rem;
   padding: 1rem;
-  color: ${(props) => props.theme.dark};
-  background-color: ${(props) => props.theme.primary};
-`;
+  color: ${props => props.theme.dark};
+  background-color: ${props => props.theme.primary};
+`
 ```
 
 Now we can change our app theme globally
@@ -521,20 +523,20 @@ I started off by defining two themes (with imaginative names) in the
 
 ```js
 export const theme1 = {
-  primary: "#ff0198",
-  secondary: "#01c1d6",
-  danger: "#eb238e",
-  light: "#f4f4f4",
-  dark: "#222",
-};
+  primary: '#ff0198',
+  secondary: '#01c1d6',
+  danger: '#eb238e',
+  light: '#f4f4f4',
+  dark: '#222',
+}
 
 export const theme2 = {
-  primary: "#6e27c5",
-  secondary: "#ffb617",
-  danger: "#f16623",
-  light: "#f4f4f4",
-  dark: "#222",
-};
+  primary: '#6e27c5',
+  secondary: '#ffb617',
+  danger: '#f16623',
+  light: '#f4f4f4',
+  dark: '#222',
+}
 ```
 
 Now we need a way to switch between the two `theme` objects, let's use
@@ -545,39 +547,39 @@ make a `ThemeSelect.js` component, we can worry about refactoring the
 #### ThemeSelect.js
 
 ```js
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const Select = styled.select`
   margin: 2rem 0.5rem;
   padding: 0rem 0.5rem;
   font-family: Roboto;
   font-size: 1rem;
-  border: 1px solid ${(props) => props.theme.light};
+  border: 1px solid ${props => props.theme.light};
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
-  background: ${(props) => props.theme.light};
+  background: ${props => props.theme.light};
   border-radius: 2px;
-`;
+`
 
 export const SelectOpt = styled.option`
   font-family: Roboto;
   font-size: 1rem;
-`;
+`
 
 class ThemeSelect extends React.Component {
   render() {
     return (
       <div>
-        <Select onChange={(e) => this.props.handleThemeChange(e)}>
+        <Select onChange={e => this.props.handleThemeChange(e)}>
           <SelectOpt value="theme1">Theme 1</SelectOpt>
           <SelectOpt value="theme2">Theme 2</SelectOpt>
         </Select>
       </div>
-    );
+    )
   }
 }
 
-export default ThemeSelect;
+export default ThemeSelect
 ```
 
 You've probably noticed the
@@ -588,25 +590,25 @@ manage what theme is selected.
 #### App.js
 
 ```js
-import React, { Component } from "react";
-import styled, { keyframes, ThemeProvider } from "styled-components";
+import React, { Component } from 'react'
+import styled, { keyframes, ThemeProvider } from 'styled-components'
 
-import logo from "./logo.svg";
+import logo from './logo.svg'
 
-import { theme1, theme2 } from "./theme/globalStyle";
-import ThemeSelect from "./components/ThemeSelect";
+import { theme1, theme2 } from './theme/globalStyle'
+import ThemeSelect from './components/ThemeSelect'
 
 // our lovely styled-components here
 
 class App extends Component {
   state = {
     theme: theme1,
-  };
-  handleThemeChange = (e) => {
-    let theme = e.target.value;
-    theme === "theme1" ? (theme = theme1) : (theme = theme2);
-    this.setState({ theme });
-  };
+  }
+  handleThemeChange = e => {
+    let theme = e.target.value
+    theme === 'theme1' ? (theme = theme1) : (theme = theme2)
+    this.setState({ theme })
+  }
   render() {
     return (
       <ThemeProvider theme={this.state.theme}>
@@ -619,17 +621,17 @@ class App extends Component {
             Bootstrapped with <code>create-react-app</code>.
           </AppIntro>
           <AppIntro>
-            Components styled with <code>styled-components</code>{" "}
+            Components styled with <code>styled-components</code>{' '}
             <EmojiWrapper aria-label="nail polish" />
           </AppIntro>
           <ThemeSelect handleThemeChange={this.handleThemeChange} />
         </AppWrapper>
       </ThemeProvider>
-    );
+    )
   }
 }
 
-export default App;
+export default App
 ```
 
 To summarise what we have done with `App.js` here is, add some state
@@ -655,15 +657,15 @@ export const Button = styled.button`
   padding: 0.25rem 1rem;
   margin: 0 1rem;
   background: transparent;
-  color: ${(props) => props.theme.primary};
-  border: 2px solid ${(props) => props.theme.primary};
-  ${(props) =>
+  color: ${props => props.theme.primary};
+  border: 2px solid ${props => props.theme.primary};
+  ${props =>
     props.primary &&
     css`
-      background: ${(props) => props.theme.primary};
+      background: ${props => props.theme.primary};
       color: white;
     `};
-`;
+`
 ```
 
 Here I've added a `Button` component to the `globalStyle.js` for us to
@@ -691,7 +693,7 @@ const BigButt = Button.extend`
   font-size: 2rem;
   width: 40vw;
   border-radius: 30px;
-`;
+`
 ```
 
 Let's also apply the theme for an underline on `create-react-app` and
@@ -699,8 +701,8 @@ Let's also apply the theme for an underline on `create-react-app` and
 
 ```js
 const Underline = styled.span`
-  border-bottom: 4px solid ${(props) => props.theme.secondary};
-`;
+  border-bottom: 4px solid ${props => props.theme.secondary};
+`
 ```
 
 Now we can switch the theme and have it applied to our components
@@ -736,19 +738,27 @@ Find me on [Twitter] or [Ask Me Anything] on GitHub.
 [dan]: https://github.com/gaearon
 [packages out there]: https://github.com/sindresorhus/modern-normalize
 [box-sizing:]: https://paulirish.com/2012/box-sizing-border-box-ftw/
-[create react app]: https://github.com/facebook/create-react-app#create-react-app-
-[`npx`]: https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
+[create react app]:
+  https://github.com/facebook/create-react-app#create-react-app-
+[`npx`]:
+  https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
 [animation]: https://www.styled-components.com/docs/basics#animations
-[`injectglobal`]: https://www.styled-components.com/docs/api#injectglobal
+[`injectglobal`]:
+  https://www.styled-components.com/docs/api#injectglobal
 [stack overflow answer]: https://stackoverflow.com/a/42899979/1138354
 [max]: https://twitter.com/mxstbr
 [simon vrachliotis]: https://twitter.com/simonswiss
 [egghead.io]: https://egghead.io/
 [playlist]: https://egghead.io/playlists/styled-components-4169206d
-[spectrum.chat]: https://spectrum.chat/?t=54887141-57a9-4386-807c-ed950c4d5132
-[stack overflow]: https://stackoverflow.com/questions/tagged/styled-components
+[spectrum.chat]:
+  https://spectrum.chat/?t=54887141-57a9-4386-807c-ed950c4d5132
+[stack overflow]:
+  https://stackoverflow.com/questions/tagged/styled-components
 [twitter]: https://twitter.com/spences10
 [ask me anything]: https://github.com/spences10/ama
-[theme switch with styled-components]: https://thepracticaldev.s3.amazonaws.com/i/5dwv10zpqa13wb4pr47l.gif
-[impossible puzzle]: https://media.giphy.com/media/2rj8VysAig8QE/giphy.gif
-[light and dark theme]: https://thepracticaldev.s3.amazonaws.com/i/gwn8czgagns1n1545zgn.png
+[theme switch with styled-components]:
+  https://thepracticaldev.s3.amazonaws.com/i/5dwv10zpqa13wb4pr47l.gif
+[impossible puzzle]:
+  https://media.giphy.com/media/2rj8VysAig8QE/giphy.gif
+[light and dark theme]:
+  https://thepracticaldev.s3.amazonaws.com/i/gwn8czgagns1n1545zgn.png
