@@ -21,6 +21,7 @@
   "dependencies": {
     "@sector/breadbox": "^0.0.4",
     "@toastdotdev/mdx": "^0.1.5",
+    "autoprefixer": "^10.2.5",
     "gray-matter": "^4.0.2",
     "parse-numeric-range": "^1.2.0",
     "postcss": "^8.2.8",
