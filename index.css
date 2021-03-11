@@ -140,9 +140,9 @@ ol {
 }
 
 a {
-  text-decoration: underline;
-
   @apply rounded-sm;
+
+  text-decoration: underline;
 }
 
 a:hover {
