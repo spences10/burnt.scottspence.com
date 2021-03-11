@@ -139,4 +139,8 @@ a:hover {
   padding-left: 0.3em;
 }
 
+.mdx-embed {
+  margin-bottom: 1.5rem;
+}
+
 @tailwind utilities;

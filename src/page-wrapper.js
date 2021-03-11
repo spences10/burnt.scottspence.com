@@ -13,6 +13,7 @@ import Butt from './components/buttbutt.js'
 import Footer from './components/footer.js'
 import Header from './components/header.js'
 import SEO from './components/seo.js'
+import YouTube from './components/youtube.js'
 
 const components = {
   codeblock: props => {
@@ -47,7 +48,7 @@ const components = {
       dangerouslySetInnerHTML={{ __html: props.children }}
     />
   ),
-  YouTube: props => <div></div>,
+  YouTube,
   Vimeo: props => <div></div>,
   Tweet: props => <div></div>,
   Spotify: props => <div></div>,
