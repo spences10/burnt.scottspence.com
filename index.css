@@ -4,19 +4,25 @@
 /* Theme Variables */
 :root {
   --scrollbar-bg: #aa7fd4;
-  --thumb-bg: #663399;
+  --thumb-bg: #639;
 }
 
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+
   /* helps with layout shift for scrollbar */
+
   /* when filtering lists like in search */
   margin-left: calc(100vw - 100%);
 }
+
+/* stylelint-disable */
 * {
   box-sizing: inherit;
 }
+/* stylelint-enable */
+
 body {
   padding: 0;
   margin: 0;
@@ -26,6 +32,7 @@ body {
 h1 {
   font-size: 2.25rem;
 }
+
 h1,
 h2 {
   padding: 0;
@@ -35,12 +42,15 @@ h2 {
   text-rendering: optimizeLegibility;
   line-height: 1.1;
 }
+
 h2 {
   font-size: 1.62671rem;
 }
+
 h3 {
   font-size: 1.38316rem;
 }
+
 h3,
 h4 {
   padding: 0;
@@ -50,12 +60,15 @@ h4 {
   text-rendering: optimizeLegibility;
   line-height: 1.1;
 }
+
 h4 {
   font-size: 1rem;
 }
+
 h5 {
   font-size: 0.85028rem;
 }
+
 h5,
 h6 {
   padding: 0;
@@ -65,15 +78,19 @@ h6 {
   text-rendering: optimizeLegibility;
   line-height: 1.1;
 }
+
 h6 {
   font-size: 0.78405rem;
 }
+
 img {
   max-width: 100%;
 }
+
 li {
   margin-bottom: 0.725rem;
 }
+
 p {
   padding: 0;
   margin: 0 0 1.45rem;
@@ -82,11 +99,14 @@ p {
 /* custom styles */
 
 /* Scrollbar styles */
+
 /* Firefox */
+/* stylelint-disable */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--thumb-bg) var(--scrollbar-bg);
 }
+/* stylelint-enable */
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
@@ -115,11 +135,14 @@ ul {
 ol {
   @apply list-decimal;
   @apply pl-4;
+
   margin: 0 0 1.45rem;
 }
 
 a {
   text-decoration: underline;
+
+  @apply rounded-sm;
 }
 
 a:hover {

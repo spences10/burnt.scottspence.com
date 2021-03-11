@@ -7,8 +7,11 @@ module.exports = {
   },
   purge: ['./src/**/*.js'],
   theme: {},
-  variants: {},
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+  },
   plugins: [
     // require("@tailwindcss/ui")
+    require('@tailwindcss/custom-forms'),
   ],
 }

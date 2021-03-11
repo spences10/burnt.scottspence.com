@@ -16,7 +16,8 @@
     "build:css": "postcss --config legacy-commonjs index.css --output public/styles.css",
     "build:site": "toast incremental .",
     "serve": "serve public",
-    "clean": "rm -rf public .tmp"
+    "clean": "rm -rf public .tmp",
+    "fix:css": "npx stylelint \"**/*.css\" --fix"
   },
   "dependencies": {
     "@sector/breadbox": "^0.0.4",
@@ -39,7 +40,10 @@
     "unist-util-visit": "^2.0.3"
   },
   "devDependencies": {
-    "serve": "^11.3.2"
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "serve": "^11.3.2",
+    "stylelint": "^13.12.0",
+    "stylelint-config-standard": "^21.0.0"
   },
   "snowpack": {
     "exclude": [
