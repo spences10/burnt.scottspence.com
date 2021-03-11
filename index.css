@@ -22,27 +22,6 @@ body {
   margin: 0;
   font-weight: 400;
 }
-/* Scrollbar styles */
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--thumb-bg) var(--scrollbar-bg);
-}
-
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 15px;
-}
-
-*::-webkit-scrollbar-track {
-  background: var(--scrollbar-bg);
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: var(--thumb-bg);
-  border-radius: 14px;
-  border: 3px solid var(--scrollbar-bg);
-}
 
 h1 {
   font-size: 2.25rem;
@@ -102,6 +81,32 @@ p {
 
 /* custom styles */
 
+/* Scrollbar styles */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumb-bg) var(--scrollbar-bg);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--thumb-bg);
+  border-radius: 14px;
+  border: 3px solid var(--scrollbar-bg);
+}
+
+*:focus {
+  @apply outline-none shadow-outline;
+}
+
 ul {
   @apply list-disc;
   @apply pl-4;
@@ -120,16 +125,6 @@ a {
 a:hover {
   transition: opacity 300ms;
   opacity: 0.5;
-}
-
-.toast-highlight {
-  background-color: #011627;
-  overflow: auto;
-}
-
-.toast-highlight pre[class*='language-'] {
-  background-color: transparent;
-  float: left;
 }
 
 .mdx-highlight-line {
