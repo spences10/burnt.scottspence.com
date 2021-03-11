@@ -2,6 +2,7 @@
 import Fuse from 'fuse.js'
 import { Fragment, h } from 'preact'
 import { useEffect, useRef, useState } from 'preact/hooks'
+import SEO from '../components/seo.js'
 
 export default function Garden({ posts }) {
   const [query, updateQuery] = useState('')
@@ -13,7 +14,7 @@ export default function Garden({ posts }) {
     includeScore: true,
     keys: ['title', 'tags'],
     includeMatches: true,
-    threshold: 0.2,
+    threshold: 0.5,
   }
   const fuse = new Fuse(posts, options)
 
@@ -32,9 +33,13 @@ export default function Garden({ posts }) {
 
   return (
     <Fragment>
+      <SEO title="Garden" />
       <Fragment>
-        <label htmlFor="search">Search:</label>
+        <label class="block" htmlFor="search">
+          Search:
+        </label>
         <input
+          class="form-input mt-1 block w-full mb-6"
           name="search"
           id="search"
           type="text"
