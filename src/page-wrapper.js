@@ -13,6 +13,7 @@ import Butt from './components/buttbutt.js'
 import Footer from './components/footer.js'
 import Header from './components/header.js'
 import SEO from './components/seo.js'
+import { TableOfContents } from './components/table-of-contents.js'
 import YouTube from './components/youtube.js'
 
 const components = {
@@ -88,6 +89,7 @@ export default function PageWrapper(props) {
               ogImage={props.slug}
             />
           ) : null}
+          {props.title ? <TableOfContents /> : null}
           {props.children}
           {props.title ? <Butt height="80" width="100" /> : null}
           <Footer />
