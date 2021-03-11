@@ -1,10 +1,50 @@
 /** @jsx h */
+import Fuse from 'fuse.js'
 import { Fragment, h } from 'preact'
+import { useEffect, useRef, useState } from 'preact/hooks'
 
 export default function Garden({ posts }) {
+  const [query, updateQuery] = useState('')
+  const searchRef = useRef(null)
+
+  // TODO: add a tags array for buttons
+
+  const options = {
+    includeScore: true,
+    keys: ['title', 'tags'],
+    includeMatches: true,
+    threshold: 0.2,
+  }
+  const fuse = new Fuse(posts, options)
+
+  const results = fuse.search(query)
+  const searchResults = query
+    ? results.map(result => result.item)
+    : posts
+
+  function onSearch({ currentTarget = {} }) {
+    updateQuery(currentTarget.value)
+  }
+
+  useEffect(() => {
+    searchRef.current.focus()
+  }, [])
+
   return (
     <Fragment>
-      {posts.map(post => {
+      <Fragment>
+        <label htmlFor="search">Search:</label>
+        <input
+          name="search"
+          id="search"
+          type="text"
+          placeholder="Search the things!"
+          value={query}
+          onChange={onSearch}
+          ref={searchRef}
+        />
+      </Fragment>
+      {searchResults.map(post => {
         return (
           <Fragment>
             {!post.private ? (
