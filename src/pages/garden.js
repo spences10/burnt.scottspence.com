@@ -1,5 +1,5 @@
-import { h, Fragment } from 'preact'
-import { useReducer, useState } from 'preact/hooks'
+/** @jsx h */
+import { Fragment, h } from 'preact'
 
 export default function Garden({ posts }) {
   return (
