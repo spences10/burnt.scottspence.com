@@ -1,3 +1,4 @@
+/** @jsx h */
 import { h } from 'preact'
 
 export default function ButtButt({ height = 533, width = 849 }) {
