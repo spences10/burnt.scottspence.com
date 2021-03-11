@@ -2,7 +2,19 @@
 import { h } from 'preact'
 import GeneralObserver from './general-observer.js'
 
-export default function YouTube({ youTubeId, aspectRatio = '16:9' }) {
+export default function YouTube({
+  youTubeId,
+  aspectRatio = '16:9',
+  autoPlay = false,
+  skipTo = { hour: '0', minute: '0', second: '0' },
+}) {
+  const { hour, minute, second } = skipTo
+
+  const tH = hour * 60
+  const tM = minute * 60
+
+  const startTime = tH + tM + second
+
   return (
     <GeneralObserver>
       <div
@@ -15,7 +27,8 @@ export default function YouTube({ youTubeId, aspectRatio = '16:9' }) {
         <iframe
           width="560"
           height="315"
-          src={`https://www.youtube-nocookie.com/embed/${youTubeId}`}
+          title={`youTube-${youTubeId}`}
+          src={`https://www.youtube-nocookie.com/embed/${youTubeId}?&autoplay=${autoPlay}&start=${startTime}`}
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
