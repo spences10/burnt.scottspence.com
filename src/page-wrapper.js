@@ -67,19 +67,29 @@ const components = {
 export default function PageWrapper(props) {
   return (
     <MDXProvider components={components}>
+      <Helmet>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+        <link
+          rel="shortcut icon"
+          type="image/x-icon"
+          href="/favicon.ico"
+        />
+        <link rel="stylesheet" href="/styles.css" />
+        <script
+          src={`${process.env.TOAST_FATHOM_TRACKING_URL_SCOTTSPENCE_COM}/script.js`}
+          spa="auto"
+          site={process.env.TOAST_FATHOM_TRACKING_ID_SCOTTSPENCE_COM}
+          defer
+        ></script>
+        <meta
+          name="monetization"
+          content="$ilp.uphold.com/bzPBWkMBzLmN"
+        />
+      </Helmet>
       <main>
-        <Helmet>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1"
-          />
-          <link
-            rel="shortcut icon"
-            type="image/x-icon"
-            href="/favicon.ico"
-          />
-          <link rel="stylesheet" href="/styles.css" />
-        </Helmet>
         <Header />
         <article class="m-auto max-w-2xl prose">
           {props.title ? (

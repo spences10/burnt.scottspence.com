@@ -19,5 +19,6 @@ export const sourceData = async ({ setDataForSlug }) => {
     directory: './content/copy',
     slugPrefix: '/',
   })
+
   return
 }
