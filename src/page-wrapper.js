@@ -10,9 +10,12 @@ import {
 } from 'react-live'
 import codeSyntaxHighlightTheme from './code-style.js'
 import Butt from './components/buttbutt.js'
+import { DateDistance } from './components/date-distance.js'
+import { DateUpdated } from './components/date-updated.js'
 import Footer from './components/footer.js'
 import Header from './components/header.js'
 import SEO from './components/seo.js'
+import { Small } from './components/small.js'
 import { TableOfContents } from './components/table-of-contents.js'
 import YouTube from './components/youtube.js'
 
@@ -54,15 +57,17 @@ const components = {
   Tweet: props => <div></div>,
   Spotify: props => <div></div>,
   MarkdownParser: props => <div></div>,
-  DateDistance: props => <div></div>,
-  Small: props => <div></div>,
   Sarcasm: props => <div></div>,
+  hr: props => <hr class="mb-10" />,
+  DateUpdated,
+  DateDistance,
+  Small,
 }
 
 export default function PageWrapper(props) {
   return (
     <MDXProvider components={components}>
-      <main class="m-auto max-w-2xl">
+      <main>
         <Helmet>
           <meta
             name="viewport"
@@ -76,7 +81,7 @@ export default function PageWrapper(props) {
           <link rel="stylesheet" href="/styles.css" />
         </Helmet>
         <Header />
-        <article class="prose max-w-none">
+        <article class="m-auto max-w-2xl prose">
           {props.title ? (
             <h2 class="font-extrabold text-3xl mt-6">
               {props.title}
@@ -92,8 +97,8 @@ export default function PageWrapper(props) {
           {props.title ? <TableOfContents /> : null}
           {props.children}
           {props.title ? <Butt height="80" width="100" /> : null}
-          <Footer />
         </article>
+        <Footer />
       </main>
     </MDXProvider>
   )

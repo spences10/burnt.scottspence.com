@@ -19,7 +19,7 @@ export default function SEO({
         lang,
       }}
       title={title}
-      titleTemplate={`%s | Scott Spence`}
+      titleTemplate={`%s • Scott Spence`}
       meta={[
         {
           name: `description`,
