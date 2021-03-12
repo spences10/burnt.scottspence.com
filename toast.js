@@ -1,3 +1,4 @@
+import { sourceMdx } from '@toastdotdev/mdx'
 import * as PostSource from './data/fetch-mdx-posts.js'
 
 export const sourceData = async ({ setDataForSlug }) => {
@@ -12,4 +13,11 @@ export const sourceData = async ({ setDataForSlug }) => {
   })
 
   await setDataForSlug('/garden', { data: { posts: postsData } })
+
+  await sourceMdx({
+    setDataForSlug,
+    directory: './content/copy',
+    slugPrefix: '/',
+  })
+  return
 }
