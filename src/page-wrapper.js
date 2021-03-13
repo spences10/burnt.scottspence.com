@@ -11,7 +11,6 @@ import {
 import codeSyntaxHighlightTheme from './code-style.js'
 import Butt from './components/buttbutt.js'
 import { DateDistance } from './components/date-distance.js'
-import { DateUpdated } from './components/date-updated.js'
 import Footer from './components/footer.js'
 import Header from './components/header.js'
 import SEO from './components/seo.js'
@@ -59,7 +58,6 @@ const components = {
   MarkdownParser: props => <div></div>,
   Sarcasm: props => <div></div>,
   hr: props => <hr class="mb-10" />,
-  DateUpdated,
   DateDistance,
   Small,
 }
