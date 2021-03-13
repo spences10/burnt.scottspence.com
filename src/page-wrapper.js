@@ -14,6 +14,7 @@ import { DateDistance } from './components/date-distance.js'
 import { DateUpdated } from './components/date-updated.js'
 import Footer from './components/footer.js'
 import Header from './components/header.js'
+import { Sarcasm } from './components/sarcasm.js'
 import SEO from './components/seo.js'
 import { Small } from './components/small.js'
 import { TableOfContents } from './components/table-of-contents.js'
@@ -57,11 +58,11 @@ const components = {
   Tweet: props => <div></div>,
   Spotify: props => <div></div>,
   MarkdownParser: props => <div></div>,
-  Sarcasm: props => <div></div>,
   hr: props => <hr class="mb-10" />,
+  Small,
   DateUpdated,
   DateDistance,
-  Small,
+  Sarcasm,
 }
 
 export default function PageWrapper(props) {
