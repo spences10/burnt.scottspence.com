@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from 'preact'
-import GeneralObserver from './general-observer.js'
+import { GeneralObserver } from './general-observer.js'
 
 export default function YouTube({
   youTubeId,

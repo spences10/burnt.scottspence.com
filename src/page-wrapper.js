@@ -53,7 +53,6 @@ const components = {
       dangerouslySetInnerHTML={{ __html: props.children }}
     />
   ),
-  YouTube,
   Vimeo: props => <div></div>,
   Tweet: props => <div></div>,
   Spotify: props => <div></div>,
@@ -63,6 +62,7 @@ const components = {
   DateUpdated,
   DateDistance,
   Sarcasm,
+  YouTube,
 }
 
 export default function PageWrapper(props) {

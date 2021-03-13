@@ -165,4 +165,10 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
+.twitter-tweet {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem !important;
+}
+
 @tailwind utilities;
