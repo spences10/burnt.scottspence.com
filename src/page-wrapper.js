@@ -77,7 +77,7 @@ export default function PageWrapper(props) {
           type="image/x-icon"
           href="/favicon.ico"
         />
-        <link rel="stylesheet" href="/styles.css" preload />
+        <link rel="stylesheet" href="/styles.css" />
         <script
           src={`${process.env.TOAST_FATHOM_TRACKING_URL_SCOTTSPENCE_COM}/script.js`}
           spa="auto"
