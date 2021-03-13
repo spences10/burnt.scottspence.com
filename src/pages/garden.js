@@ -34,7 +34,7 @@ export default function Garden({ posts }) {
   return (
     <Fragment>
       <SEO title="Garden" />
-      <Fragment>
+      <form>
         <label class="block" htmlFor="search">
           Search:
         </label>
@@ -48,23 +48,25 @@ export default function Garden({ posts }) {
           onChange={onSearch}
           ref={searchRef}
         />
-      </Fragment>
-      {searchResults.map(post => {
-        return (
-          <Fragment>
-            {!post.private ? (
-              <p>
-                <a
-                  class="underline text-lg font-bold text-gray-900"
-                  href={post.slug}
-                >
-                  {post.title}
-                </a>
-              </p>
-            ) : null}
-          </Fragment>
-        )
-      })}
+      </form>
+      <div>
+        {searchResults.map(post => {
+          return (
+            <Fragment>
+              {!post.private ? (
+                <p>
+                  <a
+                    class="underline text-lg font-bold text-gray-900"
+                    href={post.slug}
+                  >
+                    {post.title}
+                  </a>
+                </p>
+              ) : null}
+            </Fragment>
+          )
+        })}
+      </div>
     </Fragment>
   )
 }

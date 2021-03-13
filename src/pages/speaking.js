@@ -1,13 +1,13 @@
 /** @jsx h */
 import { h } from 'preact'
-import FAQ from '../../faq.js'
+import Speaking from '../../speaking.js'
 import SEO from '../components/seo.js'
 
 export default function IndexPage() {
   return (
     <div>
-      <SEO title="FAQ" />
-      <FAQ />
+      <SEO title="Speaking" />
+      <Speaking />
     </div>
   )
 }
