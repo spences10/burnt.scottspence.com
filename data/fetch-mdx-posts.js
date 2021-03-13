@@ -38,6 +38,7 @@ export const sourceData = async ({ setDataForSlug }) => {
                   {
                     baseDir: IMAGE_PATH(filename),
                     uploadFolder: 'scottspence.com',
+                    // transformations: 'q_auto,f_auto',
                   },
                 ]
               : null,
