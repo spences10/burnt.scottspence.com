@@ -5,7 +5,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ['./src/**/*.js'],
+  purge: ['./src/**/*.js', './legacy-commonjs/**/*.js'],
   theme: {},
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
