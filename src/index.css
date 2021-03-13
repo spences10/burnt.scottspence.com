@@ -14,7 +14,8 @@ html {
   /* helps with layout shift for scrollbar */
 
   /* when filtering lists like in search */
-  margin-left: calc(100vw - 100%);
+
+  /* margin-left: calc(100vw - 100%); */
 }
 
 /* stylelint-disable */
