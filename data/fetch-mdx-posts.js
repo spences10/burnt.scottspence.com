@@ -4,7 +4,7 @@ import mdx from '@mdx-js/mdx'
 import { fetchMdxFromDisk } from '@toastdotdev/mdx'
 import frontmatter from 'gray-matter'
 import rehypeLink from 'rehype-autolink-headings'
-// import cloudinaryPlugin from 'rehype-local-image-to-cloudinary'
+import cloudinaryPlugin from 'rehype-local-image-to-cloudinary'
 import rehypeSlug from 'rehype-slug'
 import externalLinks from 'remark-external-links'
 import rehypePrismMdx from '../data/rehype-prism-mdx.js'
@@ -32,13 +32,15 @@ export const sourceData = async ({ setDataForSlug }) => {
         compiledMdx = await mdx(content, {
           rehypePlugins: [
             rehypePrismMdx,
-            // [
-            //   cloudinaryPlugin,
-            //   {
-            //     baseDir: IMAGE_PATH(filename),
-            //     uploadFolder: 'scottspence.com',
-            //   },
-            // ],
+            !process.env.TOAST_DEVELOP
+              ? [
+                  cloudinaryPlugin,
+                  {
+                    baseDir: IMAGE_PATH(filename),
+                    uploadFolder: 'scottspence.com',
+                  },
+                ]
+              : null,
             rehypeSlug,
             [
               rehypeLink,
