@@ -1,7 +1,6 @@
 export const SiteConfig = {
   title: `Scott Spence`,
-  description: `A detailed account of what Scott Spence is about.
-Posts on TypeScript, Unit testing, with React testing library and Jest. End to end testing with Cypress.`,
+  description: `A site made with Toast`,
   lastBuildDate: new Date(Date.now()).toISOString(),
   siteUrl: `https://scottspence.com`,
   authorName: `Scott Spence`,

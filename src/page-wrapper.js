@@ -19,18 +19,7 @@ import SEO from './components/seo/index.js'
 import { Small } from './components/small.js'
 import { TableOfContents } from './components/table-of-contents.js'
 import YouTube from './components/youtube.js'
-import { SiteConfig } from './siteconfig.js'
-
-const {
-  title: seoTitle,
-  description,
-  lastBuildDate,
-  siteUrl,
-  authorName,
-  twitterUsername,
-  siteLanguage,
-  siteLocale,
-} = SiteConfig
+import { SiteConfig } from './site-config.js'
 
 const components = {
   codeblock: props => {
@@ -83,6 +72,17 @@ export default function PageWrapper({
   title,
   ...meta
 }) {
+  const {
+    title: seoTitle,
+    description,
+    lastBuildDate,
+    siteUrl,
+    authorName,
+    twitterUsername,
+    siteLanguage,
+    siteLocale,
+  } = SiteConfig
+
   return (
     <MDXProvider components={components}>
       <Helmet>

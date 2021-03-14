@@ -21,7 +21,7 @@ export const SEO = ({
 }) => {
   const seo = {
     title: title.slice(0, 70),
-    description: description.slice(0, 160),
+    description: description ? description.slice(0, 160) : ``,
     datePublished: datePublished
       ? null
       : new Date(Date.now()).toISOString(),

@@ -2,7 +2,8 @@
 import Fuse from 'fuse.js'
 import { Fragment, h } from 'preact'
 import { useEffect, useRef, useState } from 'preact/hooks'
-// import SEO from './components/seo/index.js'
+import SEO from '../components/seo/index.js'
+import { SiteConfig } from '../site-config.js'
 
 export default function Garden({ posts }) {
   const [query, updateQuery] = useState('')
@@ -31,9 +32,20 @@ export default function Garden({ posts }) {
     searchRef.current.focus()
   }, [])
 
+  const {
+    title,
+    description,
+    lastBuildDate,
+    siteUrl,
+    authorName,
+    twitterUsername,
+    siteLanguage,
+    siteLocale,
+  } = SiteConfig
+
   return (
     <Fragment>
-      {/* <SEO title="Garden" /> */}
+      <SEO title="Garden" titleTemplate={siteUrl} />
       <form>
         <label class="block" htmlFor="search">
           Search:
