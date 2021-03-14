@@ -15,10 +15,22 @@ import { DateUpdated } from './components/date-updated.js'
 import Footer from './components/footer.js'
 import Header from './components/header.js'
 import { Sarcasm } from './components/sarcasm.js'
-import SEO from './components/seo.js'
+import SEO from './components/seo/index.js'
 import { Small } from './components/small.js'
 import { TableOfContents } from './components/table-of-contents.js'
 import YouTube from './components/youtube.js'
+import { SiteConfig } from './siteconfig.js'
+
+const {
+  title: seoTitle,
+  description,
+  lastBuildDate,
+  siteUrl,
+  authorName,
+  twitterUsername,
+  siteLanguage,
+  siteLocale,
+} = SiteConfig
 
 const components = {
   codeblock: props => {
@@ -65,7 +77,12 @@ const components = {
   YouTube,
 }
 
-export default function PageWrapper(props) {
+export default function PageWrapper({
+  children,
+  type,
+  title,
+  ...meta
+}) {
   return (
     <MDXProvider components={components}>
       <Helmet>
@@ -91,23 +108,36 @@ export default function PageWrapper(props) {
         />
       </Helmet>
       <main>
+        <SEO
+          title={seoTitle}
+          titleTemplate={`scottspence.com`}
+          description={description || 'nothin’'}
+          image={`image`}
+          pathname={`https://scottspence.com`}
+          siteLanguage={siteLanguage}
+          siteLocale={siteLocale}
+          twitterUsername={twitterUsername}
+        />
         <Header />
         <article class="m-auto max-w-2xl prose">
-          {props.title ? (
-            <h2 class="font-extrabold text-3xl mt-6">
-              {props.title}
-            </h2>
+          {title ? (
+            <h2 class="font-extrabold text-3xl mt-6">{title}</h2>
           ) : null}
-          {props.title ? (
+          {title ? (
             <SEO
-              title={props.title}
-              description={props.description}
-              ogImage={props.slug}
+              title={title}
+              titleTemplate={`scottspence.com`}
+              description={description || 'nothin’'}
+              image={`image`}
+              pathname={`https://scottspence.com`}
+              siteLanguage={siteLanguage}
+              siteLocale={siteLocale}
+              twitterUsername={twitterUsername}
             />
           ) : null}
-          {props.title ? <TableOfContents /> : null}
-          {props.children}
-          {props.title ? <Butt height="80" width="100" /> : null}
+          {title ? <TableOfContents /> : null}
+          {children}
+          {title ? <Butt height="80" width="100" /> : null}
         </article>
         <Footer />
       </main>
