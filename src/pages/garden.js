@@ -2,7 +2,7 @@
 import Fuse from 'fuse.js'
 import { Fragment, h } from 'preact'
 import { useEffect, useRef, useState } from 'preact/hooks'
-import SEO from '../components/seo.js'
+// import SEO from './components/seo/index.js'
 
 export default function Garden({ posts }) {
   const [query, updateQuery] = useState('')
@@ -33,7 +33,7 @@ export default function Garden({ posts }) {
 
   return (
     <Fragment>
-      <SEO title="Garden" />
+      {/* <SEO title="Garden" /> */}
       <form>
         <label class="block" htmlFor="search">
           Search:

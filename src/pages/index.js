@@ -2,12 +2,12 @@
 import { h } from 'preact'
 import About from '../../about.js'
 import MugFace from '../components/mugface.js'
-import SEO from '../components/seo.js'
+// import SEO from './components/seo/index.js'
 
 export default function IndexPage() {
   return (
     <div>
-      <SEO title="Home" />
+      {/* <SEO title="Home" /> */}
       <h1>Hello World</h1>
       <MugFace />
       <About />
