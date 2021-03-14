@@ -12,13 +12,17 @@
   "scripts": {
     "dev": "npm run build && npm run serve",
     "postinstall": "breadbox --dest public/web_modules",
-    "build": "npm run build:css && npm run build:site && npm run newsletters",
+    "build": "npm run build:css && npm run build:site && npm run postbuild",
     "build:css": "NODE_ENV=production tailwindcss build src/styles/index.css --config legacy-commonjs/tailwind.config.js --output public/styles.css",
     "build:site": "toast incremental .",
     "serve": "serve public",
     "clean": "rm -rf public .tmp",
     "fix:css": "npx stylelint \"**/*.css\" --fix",
-    "newsletters": "cp -r newsletters/ public/"
+    "postbuild": "npm run newsletters && npm run sitemap && npm run wellknown && npm run robots",
+    "newsletters": "cp -r newsletters/ public/",
+    "sitemap": "./scripts/build-sitemap.sh",
+    "wellknown": "cp -r .well-known/ public/",
+    "robots": "cp robots.txt public/"
   },
   "dependencies": {
     "@sector/breadbox": "^0.0.4",

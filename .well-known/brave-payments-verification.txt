@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: scottspence.com
+Token: 9e0adb2007b0ad4ee6bb086bfdca326dc877ec40379a3477e1c5236c614e6755 
