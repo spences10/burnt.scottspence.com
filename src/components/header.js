@@ -1,15 +1,13 @@
 /** @jsx h */
 import { h } from 'preact'
+import MobileNav from './mobile-nav.js'
+import Nav from './nav.js'
 
 export default function Header() {
   return (
     <header>
-      <a href="/" alt="home page">
-        scottspence.com
-      </a>
-      <a href="/garden" alt="garden page">
-        Garden
-      </a>
+      <Nav />
+      <MobileNav />
     </header>
   )
 }
