@@ -1,7 +1,7 @@
 // https://github.com/jlengstorf/jason.af/blob/e4dacad120/src/components/table-of-contents.js
 // Credit Jason Lengstorf
 /** @jsx h */
-import { h } from 'preact'
+import { Fragment, h } from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 
 export function TableOfContents() {
@@ -50,17 +50,24 @@ export function TableOfContents() {
   }, [])
 
   return (
-    <aside class="table-of-contents">
-      <h3 class="font-extrabold text-lg mb-2" id="table-of-contents">
-        Table of Contents
-      </h3>
-      <ul class="overflow-x-hidden overflow-y-auto list-none -ml-4">
-        {headings.map(heading => (
-          <li key={`heading-${heading.href}`}>
-            <a href={heading.href}>{heading.label}</a>
-          </li>
-        ))}
-      </ul>
-    </aside>
+    <Fragment>
+      {headings.length ? (
+        <aside class="table-of-contents">
+          <h3
+            class="font-extrabold text-lg mb-2"
+            id="table-of-contents"
+          >
+            Table of Contents
+          </h3>
+          <ul class="overflow-x-hidden overflow-y-auto list-none -ml-5">
+            {headings.map(heading => (
+              <li key={`heading-${heading.href}`}>
+                <a href={heading.href}>{heading.label}</a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      ) : null}
+    </Fragment>
   )
 }
