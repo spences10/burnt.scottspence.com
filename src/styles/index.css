@@ -171,4 +171,29 @@ a:hover {
   margin-bottom: 2.5rem !important;
 }
 
+.table-of-contents {
+  position: fixed;
+  left: calc(50% + 400px);
+  top: 13rem;
+  max-height: 50vh;
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--box-shadow-xl);
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.table-of-contents ul {
+  overflow: hidden auto;
+}
+
+.table-of-contents li {
+  padding: 0.25rem;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+  margin-right: 1rem;
+}
+
 @tailwind utilities;

@@ -19,7 +19,7 @@ export default function IndexPage() {
   return (
     <div>
       <SEO title="Home" titleTemplate={siteUrl} />
-      <h1>Hello World</h1>
+      <h2 class="font-extrabold text-3xl mt-6">Hello World</h2>
       <MugFace />
       <About />
     </div>

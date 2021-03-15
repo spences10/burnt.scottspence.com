@@ -51,16 +51,16 @@ export function TableOfContents() {
 
   return (
     <aside class="table-of-contents">
-      <div class="toc-sticky-container">
-        <h2 id="table-of-contents">Table of Contents</h2>
-        <ol>
-          {headings.map(heading => (
-            <li key={`heading-${heading.href}`}>
-              <a href={heading.href}>{heading.label}</a>
-            </li>
-          ))}
-        </ol>
-      </div>
+      <h3 class="font-extrabold text-lg mb-2" id="table-of-contents">
+        Table of Contents
+      </h3>
+      <ul class="overflow-x-hidden overflow-y-auto list-none -ml-4">
+        {headings.map(heading => (
+          <li key={`heading-${heading.href}`}>
+            <a href={heading.href}>{heading.label}</a>
+          </li>
+        ))}
+      </ul>
     </aside>
   )
 }
