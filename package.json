@@ -10,9 +10,10 @@
     "url": "https://scottspence.com"
   },
   "scripts": {
-    "dev": "npm run build && npm run serve",
+    "dev": "npm run build:dev && npm run serve",
     "postinstall": "breadbox --dest public/web_modules",
     "build": "npm run build:css && npm run build:site && npm run postbuild",
+    "build:dev": "npm run build:css && npm run build:site",
     "build:css": "NODE_ENV=production tailwindcss build src/styles/index.css --config legacy-commonjs/tailwind.config.js --output public/styles.css",
     "build:site": "toast incremental .",
     "serve": "serve public",
