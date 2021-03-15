@@ -70,11 +70,11 @@ export default function PageWrapper({
   children,
   type,
   title,
+  description,
   ...meta
 }) {
   const {
     title: seoTitle,
-    description,
     lastBuildDate,
     siteUrl,
     authorName,
@@ -107,7 +107,7 @@ export default function PageWrapper({
           content="$ilp.uphold.com/bzPBWkMBzLmN"
         />
       </Helmet>
-      <main>
+      <main class="relative">
         <SEO
           title={seoTitle}
           titleTemplate={`scottspence.com`}
