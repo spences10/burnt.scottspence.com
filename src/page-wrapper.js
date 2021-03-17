@@ -12,6 +12,7 @@ import codeSyntaxHighlightTheme from './code-style.js'
 import Butt from './components/buttbutt.js'
 import { DateUpdated } from './components/date-updated.js'
 import { DateDistance } from './components/embed-components/date-distance.js'
+import { Tweet } from './components/embed-components/tweet.js'
 import Footer from './components/footer.js'
 import Header from './components/header.js'
 import { Sarcasm } from './components/sarcasm.js'
@@ -56,7 +57,7 @@ const components = {
     />
   ),
   Vimeo: props => <div></div>,
-  Tweet: props => <div></div>,
+  Tweet,
   MarkdownParser: props => <div></div>,
   hr: props => <hr class="mb-10" />,
   Small,
