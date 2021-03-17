@@ -17,6 +17,7 @@ import Header from './components/header.js'
 import { Sarcasm } from './components/sarcasm.js'
 import SEO from './components/seo/index.js'
 import { Small } from './components/small.js'
+import { Spotify } from './components/spotify.js'
 import { TableOfContents } from './components/table-of-contents.js'
 import YouTube from './components/youtube.js'
 import { SiteConfig } from './site-config.js'
@@ -56,13 +57,13 @@ const components = {
   ),
   Vimeo: props => <div></div>,
   Tweet: props => <div></div>,
-  Spotify: props => <div></div>,
   MarkdownParser: props => <div></div>,
   hr: props => <hr class="mb-10" />,
   Small,
   DateUpdated,
   DateDistance,
   Sarcasm,
+  Spotify,
   YouTube,
 }
 

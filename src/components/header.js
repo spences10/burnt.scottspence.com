@@ -5,7 +5,7 @@ import Nav from './nav.js'
 
 export default function Header() {
   return (
-    <header>
+    <header class="mb-6">
       <Nav />
       <MobileNav />
     </header>

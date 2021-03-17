@@ -7,6 +7,8 @@ export default function YouTube({
   aspectRatio = '16:9',
   autoPlay = false,
   skipTo = { hour: '0', minute: '0', second: '0' },
+  width = 560,
+  height = 315,
 }) {
   const { hour, minute, second } = skipTo
 
@@ -25,8 +27,9 @@ export default function YouTube({
         }}
       >
         <iframe
-          width="560"
-          height="315"
+          width={width}
+          height={height}
+          class="youtube-mdx-embed"
           title={`youTube-${youTubeId}`}
           src={`https://www.youtube-nocookie.com/embed/${youTubeId}?&autoplay=${autoPlay}&start=${startTime}`}
           frameborder="0"
