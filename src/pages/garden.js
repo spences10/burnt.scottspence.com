@@ -66,14 +66,20 @@ export default function Garden({ posts }) {
           return (
             <Fragment>
               {!post.private ? (
-                <p>
-                  <a
-                    class="underline text-lg font-bold text-gray-900"
-                    href={post.slug}
-                  >
-                    {post.title}
-                  </a>
-                </p>
+                <a
+                  href={post.slug}
+                  alt={post.description}
+                  class="no-underline hover:underline"
+                >
+                  <article class="p-4 mb-6 border rounded-lg shadow-lg">
+                    <p class="text-lg mb-1 font-bold text-gray-900">
+                      {post.title}
+                    </p>
+                    <p class="no-underline mb-1">
+                      {post.description}
+                    </p>
+                  </article>
+                </a>
               ) : null}
             </Fragment>
           )
