@@ -9,16 +9,16 @@ import {
   LiveProvider,
 } from 'react-live'
 import codeSyntaxHighlightTheme from './code-style.js'
-import Butt from './components/buttbutt.js'
+import { ButtButt } from './components/buttbutt.js'
 import { DateDistance } from './components/embed-components/date-distance.js'
 import { DateUpdated } from './components/embed-components/date-updated.js'
 import { Sarcasm } from './components/embed-components/sarcasm.js'
 import { Small } from './components/embed-components/small.js'
 import { Spotify } from './components/embed-components/spotify.js'
 import { Tweet } from './components/embed-components/tweet.js'
-import YouTube from './components/embed-components/youtube.js'
-import Footer from './components/footer.js'
-import Header from './components/header.js'
+import { YouTube } from './components/embed-components/youtube.js'
+import { Footer } from './components/footer.js'
+import { Header } from './components/header.js'
 import SEO from './components/seo/index.js'
 import { TableOfContents } from './components/table-of-contents.js'
 import { SiteConfig } from './site-config.js'
@@ -139,7 +139,7 @@ export default function PageWrapper({
           ) : null}
           {title ? <TableOfContents /> : null}
           {children}
-          {title ? <Butt height="80" width="100" /> : null}
+          {title ? <ButtButt height="80" width="100" /> : null}
         </article>
         <Footer />
       </main>

@@ -2,14 +2,14 @@
 import { h } from 'preact'
 import { GeneralObserver } from './general-observer.js'
 
-export default function YouTube({
+export const YouTube = ({
   youTubeId,
   aspectRatio = '16:9',
   autoPlay = false,
   skipTo = { hour: '0', minute: '0', second: '0' },
   width = 560,
   height = 315,
-}) {
+}) => {
   const { hour, minute, second } = skipTo
 
   const tH = hour * 60
