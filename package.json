@@ -18,7 +18,7 @@
     "build:css": "NODE_ENV=production tailwindcss build src/styles/index.css --config legacy-commonjs/tailwind.config.js --output public/styles.css",
     "build:site": "toast incremental .",
     "serve": "serve public",
-    "clean": "rm -rf public .tmp",
+    "clean": "rm -rf public .tmp && npm run postinstall",
     "fix:css": "npx stylelint \"**/*.css\" --fix",
     "postbuild": "npm run newsletters && npm run sitemap && npm run wellknown && npm run robots",
     "newsletters": "cp -r newsletters/ public/",
