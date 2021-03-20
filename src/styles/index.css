@@ -15,12 +15,6 @@ html.dark body {
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-
-  /* helps with layout shift for scrollbar */
-
-  /* when filtering lists like in search */
-
-  /* margin-left: calc(100vw - 100%); */
 }
 
 /* stylelint-disable */
@@ -131,14 +125,9 @@ p {
 }
 
 /* Text selection */
-
 ::selection {
   color: gold;
   background-color: red;
-}
-
-*:focus {
-  @apply outline-none shadow-outline;
 }
 
 ul {
@@ -154,7 +143,7 @@ ol {
 }
 
 a {
-  @apply rounded-sm;
+  @apply rounded-md;
 
   text-decoration: underline;
 }
@@ -209,8 +198,20 @@ a:hover {
   margin-right: 1rem;
 }
 
-.main-wrapper p {
-  margin: 0 0 1.45rem;
+.markdown p {
+  margin-bottom: 1.45rem;
+}
+
+/* Tables */
+.markdown td,
+.markdown th {
+  @apply px-2 py-1 border border-gray-400;
+}
+
+.markdown table {
+  @apply mb-6;
+
+  width: 100%;
 }
 
 @tailwind utilities;
