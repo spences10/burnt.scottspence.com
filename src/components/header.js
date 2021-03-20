@@ -56,7 +56,7 @@ export const ToggleTheme = ({ theme, setTheme }) => {
 }
 
 export const Header = () => {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('system')
 
   return (
     <header class="mb-6 bg-primary-500">

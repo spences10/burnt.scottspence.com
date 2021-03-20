@@ -107,7 +107,7 @@ export default function PageWrapper({
           content="$ilp.uphold.com/bzPBWkMBzLmN"
         />
       </Helmet>
-      <main class="relative leading-relaxed tracking-wide text-lg px-6">
+      <main class="relative leading-relaxed tracking-wide text-lg">
         <SEO
           title={seoTitle}
           titleTemplate={`scottspence.com`}
@@ -119,7 +119,7 @@ export default function PageWrapper({
           twitterUsername={twitterUsername}
         />
         <Header />
-        <article class="m-auto max-w-2xl prose main-wrapper">
+        <article class="m-auto max-w-2xl prose main-wrapper px-6">
           {title ? (
             <h1 class="font-extrabold text-3xl mt-6">{title}</h1>
           ) : null}
