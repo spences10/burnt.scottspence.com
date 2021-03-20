@@ -4,8 +4,8 @@ import { ToggleTheme } from './header.js'
 
 export default function MobileNav({ theme, setTheme }) {
   return (
-    <div class="lg:hidden fixed top-auto bottom-0 left-0 right-0 flex items-center justify-center ">
-      <div class="max-w-3xl px-10 py-5 mx-5 my-4 text-gray-200 rounded-lg shadow-lg">
+    <div class="lg:hidden fixed top-auto bottom-0 left-0 right-0 flex items-center justify-center z-10">
+      <div class="max-w-3xl px-10 py-5 mx-5 my-4 bg-primary-500 text-gray-200 rounded-lg shadow-lg">
         <nav class="flex justify-evenly py-3 bg-secondary rounded-lg overflow-hidden">
           <div>
             <a href="/" alt="home page">
