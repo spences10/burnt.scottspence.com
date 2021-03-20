@@ -107,7 +107,7 @@ export default function PageWrapper({
           content="$ilp.uphold.com/bzPBWkMBzLmN"
         />
       </Helmet>
-      <main class="relative leading-relaxed tracking-wide text-lg">
+      <main class="relative leading-relaxed tracking-wide text-lg px-6">
         <SEO
           title={seoTitle}
           titleTemplate={`scottspence.com`}
