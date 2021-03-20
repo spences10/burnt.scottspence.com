@@ -9,13 +9,16 @@ CLOUDINARY_API_KEY=<api_key>
 CLOUDINARY_API_SECRET=<api_secret>
 ```
 
+direnv is needed for `TOAST_DEVELOP=true` so as not to process
+`rehype-local-image-to-cloudinary` locally.
+
 Note if deploying on Vercel that the `vercel.json` config needs to
 have `cleanUrls` se to `true`.
 
-## Credit and examples
+## Credits and examples
 
 Thanks to all that have shared their own sites for reference. They are
-credited throughout this codebase.
+credited throughout this codebase. 🙏
 
 - [Prince]
 - [Benjamin]
