@@ -72,9 +72,7 @@ export default function Garden({ posts }) {
                   class="no-underline hover:underline"
                 >
                   <article class="p-4 mb-6 border rounded-lg shadow-lg">
-                    <p class="text-lg mb-1 font-bold text-gray-900">
-                      {post.title}
-                    </p>
+                    <p class="text-lg mb-1 font-bold">{post.title}</p>
                     <p class="no-underline mb-1">
                       {post.description}
                     </p>

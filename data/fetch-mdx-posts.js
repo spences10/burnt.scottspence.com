@@ -48,7 +48,7 @@ export const sourceData = async ({ setDataForSlug }) => {
               {
                 behavior: 'wrap',
                 properties: {
-                  className: 'text-black underline',
+                  className: 'underline',
                 },
               },
             ],

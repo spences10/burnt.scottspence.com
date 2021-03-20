@@ -27,10 +27,7 @@ const components = {
   codeblock: props => {
     if (props[`react-live`]) {
       return (
-        <div
-          class="overflow-hidden rounded"
-          style={{ fontSize: '1em' }}
-        >
+        <div class="overflow-hidden rounded-xl mb-4 text-lg">
           <LiveProvider
             code={props.codestring}
             noInline
@@ -45,7 +42,7 @@ const components = {
     }
     return (
       <div
-        class="mb-5 p-2 bg-gray-900 overflow-auto rounded"
+        class="mb-5 p-2 bg-code-bg overflow-auto rounded-lg"
         dangerouslySetInnerHTML={{ __html: props.children }}
       />
     )
@@ -97,6 +94,7 @@ export default function PageWrapper({
           type="image/x-icon"
           href="/favicon.ico"
         />
+        <script type="text/javascript" src="/theme.js"></script>
         <link rel="stylesheet" href="/styles.css" />
         <script
           src={`${process.env.TOAST_FATHOM_TRACKING_URL_SCOTTSPENCE_COM}/script.js`}
@@ -109,7 +107,7 @@ export default function PageWrapper({
           content="$ilp.uphold.com/bzPBWkMBzLmN"
         />
       </Helmet>
-      <main class="relative">
+      <main class="relative leading-relaxed tracking-wide text-lg">
         <SEO
           title={seoTitle}
           titleTemplate={`scottspence.com`}
@@ -121,7 +119,7 @@ export default function PageWrapper({
           twitterUsername={twitterUsername}
         />
         <Header />
-        <article class="m-auto max-w-2xl prose">
+        <article class="m-auto max-w-2xl prose main-wrapper">
           {title ? (
             <h1 class="font-extrabold text-3xl mt-6">{title}</h1>
           ) : null}
