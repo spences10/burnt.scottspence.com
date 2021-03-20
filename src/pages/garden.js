@@ -51,7 +51,7 @@ export default function Garden({ posts }) {
           Search:
         </label>
         <input
-          class="form-input mt-1 block w-full mb-6"
+          class="mt-1 mb-6 block w-full rounded-lg border shadow-lg bg-transparent"
           name="search"
           id="search"
           type="text"
@@ -75,7 +75,10 @@ export default function Garden({ posts }) {
                     <h2 class="text-xl mb-1 font-bold">
                       {post.title}
                     </h2>
-                    <p class="no-underline mb-1">
+                    <p
+                      class="no-underline"
+                      style={{ marginBottom: 0 }}
+                    >
                       {post.description}
                     </p>
                   </article>
