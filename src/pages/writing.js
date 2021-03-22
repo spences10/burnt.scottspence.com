@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'preact/hooks'
 import SEO from '../components/seo/index.js'
 import { SiteConfig } from '../site-config.js'
 
-export default function Garden({ posts }) {
+export default function Writing({ posts }) {
   const [query, updateQuery] = useState('')
   const searchRef = useRef(null)
 
@@ -33,19 +33,19 @@ export default function Garden({ posts }) {
   }, [])
 
   const {
-    title,
-    description,
-    lastBuildDate,
+    siteTitle,
+    siteDescription,
+    siteLastBuildDate,
     siteUrl,
-    authorName,
-    twitterUsername,
+    siteAuthorName,
+    siteTwitter,
     siteLanguage,
     siteLocale,
   } = SiteConfig
 
   return (
     <Fragment>
-      <SEO title="Garden" titleTemplate={siteUrl} />
+      <SEO title="Writing" titleTemplate={siteTitle} />
       <form>
         <label class="block" htmlFor="search">
           Search:

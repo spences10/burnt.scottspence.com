@@ -9,12 +9,12 @@ export default function MobileNav({ theme, setTheme }) {
         <nav class="flex justify-evenly py-3 bg-secondary rounded-lg overflow-hidden">
           <div>
             <a href="/" alt="home page">
-              <p class="px-4">scottspence.com</p>
+              <p class="px-4">Home</p>
             </a>
           </div>
           <div>
-            <a class="px-4" href="/garden" alt="garden page">
-              Garden
+            <a class="px-4" href="/writing" alt="writing page">
+              Writing
             </a>
             <a class="px-4" href="/speaking" alt="speaking page">
               Speaking
