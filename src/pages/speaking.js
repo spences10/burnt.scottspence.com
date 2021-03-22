@@ -6,18 +6,19 @@ import { SiteConfig } from '../site-config.js'
 
 export default function IndexPage() {
   const {
+    siteTitle,
     description,
     lastBuildDate,
     siteUrl,
     authorName,
-    twitterUsername,
+    siteTwitter,
     siteLanguage,
     siteLocale,
   } = SiteConfig
 
   return (
     <div>
-      <SEO title="Speaking" titleTemplate={siteUrl} />
+      <SEO title="Speaking" titleTemplate={siteTitle} />
       <Speaking />
     </div>
   )

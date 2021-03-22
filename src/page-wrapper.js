@@ -73,11 +73,11 @@ export default function PageWrapper({
   ...meta
 }) {
   const {
-    title: seoTitle,
-    lastBuildDate,
+    siteTitle,
+    siteLastBuildDate,
     siteUrl,
-    authorName,
-    twitterUsername,
+    siteAuthorName,
+    siteTwitter,
     siteLanguage,
     siteLocale,
   } = SiteConfig
@@ -95,6 +95,10 @@ export default function PageWrapper({
           href="/favicon.ico"
         />
         <script type="text/javascript" src="/theme.js"></script>
+        <link
+          rel="stylesheet"
+          href="https://rsms.me/inter/inter.css"
+        />
         <link rel="stylesheet" href="/styles.css" />
         <script
           src={`${process.env.TOAST_FATHOM_TRACKING_URL_SCOTTSPENCE_COM}/script.js`}
@@ -109,14 +113,14 @@ export default function PageWrapper({
       </Helmet>
       <main class="relative leading-relaxed tracking-wide text-lg">
         <SEO
-          title={seoTitle}
+          title={siteTitle}
           titleTemplate={`scottspence.com`}
           description={description || 'nothin’'}
           image={`image`}
-          pathname={`https://scottspence.com`}
+          pathname={siteUrl}
           siteLanguage={siteLanguage}
           siteLocale={siteLocale}
-          twitterUsername={twitterUsername}
+          twitterUsername={siteTwitter}
         />
         <Header />
         <article class="m-auto max-w-2xl prose px-6">
@@ -126,13 +130,13 @@ export default function PageWrapper({
           {title ? (
             <SEO
               title={title}
-              titleTemplate={`scottspence.com`}
+              titleTemplate={siteTitle}
               description={description || 'nothin’'}
               image={`image`}
-              pathname={`https://scottspence.com`}
+              pathname={siteUrl}
               siteLanguage={siteLanguage}
               siteLocale={siteLocale}
-              twitterUsername={twitterUsername}
+              twitterUsername={siteTwitter}
             />
           ) : null}
           {title ? <TableOfContents /> : null}

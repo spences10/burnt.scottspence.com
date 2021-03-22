@@ -8,18 +8,19 @@ import { SiteConfig } from '../site-config.js'
 
 export default function IndexPage() {
   const {
-    description,
-    lastBuildDate,
+    siteTitle,
+    siteDescription,
+    siteLastBuildDate,
     siteUrl,
-    authorName,
-    twitterUsername,
+    siteAuthorName,
+    siteTwitter,
     siteLanguage,
     siteLocale,
   } = SiteConfig
 
   return (
     <div>
-      <SEO title="Home" titleTemplate={siteUrl} />
+      <SEO title="Home" titleTemplate={siteTitle} />
       <h2 class="font-extrabold text-3xl mt-6">Hello World</h2>
       <Newsletter />
       <MugFace />
