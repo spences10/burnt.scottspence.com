@@ -1,7 +1,7 @@
-// const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  // theme: { defaultTheme },
+  theme: { defaultTheme },
   darkMode: 'class',
 
   future: {
@@ -11,6 +11,9 @@ module.exports = {
   purge: ['./src/**/*.js', './legacy-commonjs/**/*.js'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         primary: {
           100: '#aa7fd4',
