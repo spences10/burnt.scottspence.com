@@ -19,6 +19,7 @@ import { Tweet } from './components/embed-components/tweet.js'
 import { YouTube } from './components/embed-components/youtube.js'
 import { Footer } from './components/footer.js'
 import { Header } from './components/header.js'
+import { Newsletter } from './components/newsletter-form.js'
 import SEO from './components/seo/index.js'
 import { TableOfContents } from './components/table-of-contents.js'
 import { SiteConfig } from './site-config.js'
@@ -143,6 +144,7 @@ export default function PageWrapper({
           <div class="markdown">{children}</div>
           {title ? <ButtButt height="80" width="100" /> : null}
         </article>
+        <Newsletter />
         <Footer />
       </main>
     </MDXProvider>
