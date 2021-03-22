@@ -10,7 +10,7 @@ export default function IndexPage() {
     lastBuildDate,
     siteUrl,
     authorName,
-    twitterUsername,
+    siteTwitter,
     siteLanguage,
     siteLocale,
   } = SiteConfig

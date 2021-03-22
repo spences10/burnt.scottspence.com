@@ -5,11 +5,11 @@ import { SiteConfig } from '../site-config.js'
 
 export default function Page404() {
   const {
-    description,
-    lastBuildDate,
+    siteDescription,
+    siteLastBuildDate,
     siteUrl,
-    authorName,
-    twitterUsername,
+    siteAuthorName,
+    siteTwitter,
     siteLanguage,
     siteLocale,
   } = SiteConfig
@@ -26,7 +26,7 @@ export default function Page404() {
       <h2>It looks like that page doesn't exist</h2>
       <p>
         There's plenty more content on the rest of the site, take a
-        stroll through my <a href="/garden">garden</a>.
+        look at the <a href="/writing">writing</a> page.
       </p>
     </Fragment>
   )

@@ -12,7 +12,7 @@ export const sourceData = async ({ setDataForSlug }) => {
     if (da > db) return 1
   })
 
-  await setDataForSlug('/garden', { data: { posts: postsData } })
+  await setDataForSlug('/writing', { data: { posts: postsData } })
 
   await sourceMdx({
     setDataForSlug,
