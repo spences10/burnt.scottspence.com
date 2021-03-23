@@ -44,6 +44,7 @@ export const ToggleTheme = ({ theme, setTheme }) => {
 
   return (
     <button
+      aria-label="theme switch"
       onClick={() => {
         theme === 'dark' ? setTheme('light') : setTheme('dark')
       }}
