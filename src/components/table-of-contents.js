@@ -59,7 +59,7 @@ export function TableOfContents() {
           >
             Table of Contents
           </h3>
-          <ul class="overflow-x-hidden overflow-y-auto list-none -ml-5">
+          <ul class="overflow-x-hidden overflow-y-auto list-none">
             {headings.map(heading => (
               <li key={`heading-${heading.href}`}>
                 <a href={heading.href}>{heading.label}</a>
