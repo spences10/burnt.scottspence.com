@@ -98,7 +98,7 @@ export default function PageWrapper({
         <script type="text/javascript" src="/theme.js"></script>
         <link
           rel="stylesheet"
-          href="https://rsms.me/inter/inter.css"
+          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
         />
         <link rel="stylesheet" href="/styles.css" />
         <script
