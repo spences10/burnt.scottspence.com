@@ -72,7 +72,11 @@ export const Footer = () => {
               dev since 2018 tho!
             </p>
             <div class="flex space-x-6">
-              <a href="https://ss10.dev/twitter">
+              <a
+                href="https://ss10.dev/twitter"
+                target="_blank"
+                rel="noopener"
+              >
                 <span class="sr-only">Twitter</span>
                 <svg
                   role="img"
@@ -86,7 +90,11 @@ export const Footer = () => {
                 </svg>
               </a>
 
-              <a href="https://ss10.dev/twitter">
+              <a
+                href="https://ss10.dev/github"
+                target="_blank"
+                rel="noopener"
+              >
                 <span class="sr-only">GitHub</span>
                 <svg
                   role="img"
@@ -100,7 +108,11 @@ export const Footer = () => {
                 </svg>
               </a>
 
-              <a href="https://ss10.dev/spotify">
+              <a
+                href="https://ss10.dev/spotify"
+                target="_blank"
+                rel="noopener"
+              >
                 <span class="sr-only">Spotify</span>
                 <svg
                   role="img"
@@ -114,7 +126,11 @@ export const Footer = () => {
                 </svg>
               </a>
 
-              <a href="https://ss10.dev/yt">
+              <a
+                href="https://ss10.dev/yt"
+                target="_blank"
+                rel="noopener"
+              >
                 <span class="sr-only">YouTube</span>
                 <svg
                   role="img"
@@ -128,7 +144,11 @@ export const Footer = () => {
                 </svg>
               </a>
 
-              <a href="https://ss10.dev/twitch">
+              <a
+                href="https://ss10.dev/twitch"
+                target="_blank"
+                rel="noopener"
+              >
                 <span class="sr-only">Twitch</span>
                 <svg
                   role="img"
