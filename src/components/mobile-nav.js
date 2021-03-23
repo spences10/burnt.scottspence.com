@@ -2,7 +2,7 @@
 import { h } from 'preact'
 import { ToggleTheme } from './toggle-theme.js'
 
-export default function MobileNav({ theme, setTheme }) {
+export default function MobileNav({ theme, setTheme, mobile }) {
   return (
     <div class="lg:hidden fixed top-auto bottom-0 left-0 right-0 flex items-center justify-center z-10">
       <div class="max-w-3xl px-4 py-5 mx-5 my-4 bg-primary-500 text-gray-200 rounded-lg shadow-lg">
@@ -11,7 +11,8 @@ export default function MobileNav({ theme, setTheme }) {
             <a
               href="/"
               alt="home page"
-              class="px-2 sm:px-4 md:px-6 no-underline"
+              // px-2 sm:px-4 md-px-6 when ToC added
+              class="px-4 sm:px-6 md:px-8 no-underline"
             >
               <div class="flex justify-center flex-col items-center">
                 <svg
@@ -35,7 +36,7 @@ export default function MobileNav({ theme, setTheme }) {
             <a
               href="/writing"
               alt="writing page"
-              class="px-2 sm:px-4 md:px-6 no-underline"
+              class="px-4 sm:px-6 md:px-8 no-underline"
             >
               <div class="flex justify-center flex-col items-center">
                 <svg
@@ -59,7 +60,7 @@ export default function MobileNav({ theme, setTheme }) {
             <a
               href="/speaking"
               alt="speaking page"
-              class="px-2 sm:px-4 md:px-6 no-underline"
+              class="px-4 sm:px-6 md:px-8 no-underline"
             >
               <div class="flex justify-center flex-col items-center">
                 <svg
@@ -80,13 +81,15 @@ export default function MobileNav({ theme, setTheme }) {
                 <p class="text-xs">Speaking</p>
               </div>
             </a>
-            <div class="px-2 sm:px-4 md:px-6 no-underline">
-              <div class="flex justify-center flex-col items-center">
-                <ToggleTheme theme={theme} setTheme={setTheme} />
-                <p class="text-xs">Theme</p>
-              </div>
+            <div class="px-4 sm:px-6 md:px-8 no-underline">
+              {/* Styles in Theme Toggle */}
+              <ToggleTheme
+                theme={theme}
+                setTheme={setTheme}
+                mobile={mobile}
+              />
             </div>
-            {/* <button class="px-2 sm:px-4 md:px-6 no-underline">
+            {/* <button class="px-4 sm:px-6 md:px-8 no-underline">
               <div class="flex justify-center flex-col items-center">
                 <svg
                   height="20"

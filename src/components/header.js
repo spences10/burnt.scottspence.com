@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <header class="mb-6 bg-primary-500">
       <Nav theme={theme} setTheme={setTheme} />
-      <MobileNav theme={theme} setTheme={setTheme} />
+      <MobileNav theme={theme} setTheme={setTheme} mobile={true} />
     </header>
   )
 }
