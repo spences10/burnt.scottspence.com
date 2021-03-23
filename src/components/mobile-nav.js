@@ -5,7 +5,7 @@ import { ToggleTheme } from './toggle-theme.js'
 export default function MobileNav({ theme, setTheme, mobile }) {
   return (
     <div class="lg:hidden fixed top-auto bottom-0 left-0 right-0 flex items-center justify-center z-10">
-      <div class="max-w-3xl px-4 py-5 mx-5 my-1 bg-primary-500 text-gray-200 rounded-lg shadow-lg">
+      <div class="max-w-3xl px-1 py-5 mx-5 my-1 bg-primary-500 text-gray-200 rounded-lg shadow-lg">
         <nav class="flex justify-evenly bg-secondary rounded-lg overflow-hidden">
           <div class="flex flex-row">
             <a
