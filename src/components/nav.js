@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from 'preact'
-import { ToggleTheme } from './header.js'
+import { ToggleTheme } from './toggle-theme.js'
 
 export default function Nav({ theme, setTheme }) {
   return (
