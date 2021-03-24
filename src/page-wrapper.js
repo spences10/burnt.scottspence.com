@@ -1,6 +1,6 @@
 /** @jsx h */
 import { MDXProvider } from '@mdx-js/preact'
-import { h } from 'preact'
+import { Fragment, h } from 'preact'
 import { Helmet } from 'react-helmet'
 import {
   LiveEditor,
@@ -71,6 +71,7 @@ export default function PageWrapper({
   type,
   title,
   description,
+  tags,
   ...meta
 }) {
   const {
@@ -126,7 +127,18 @@ export default function PageWrapper({
         <Header />
         <article class="m-auto max-w-2xl prose px-6">
           {title ? (
-            <h1 class="font-extrabold text-3xl mt-6">{title}</h1>
+            <Fragment>
+              <h1 class="font-extrabold text-3xl mb-1">{title}</h1>
+              <div class="mb-10">
+                {tags
+                  ? tags.map(tag => (
+                      <span class="inline-flex mr-2 items-center px-3 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-gray-900">
+                        {tag}
+                      </span>
+                    ))
+                  : null}
+              </div>
+            </Fragment>
           ) : null}
           {title ? (
             <SEO
