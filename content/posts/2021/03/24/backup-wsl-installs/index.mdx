@@ -1,0 +1,17 @@
+---
+date: 2021-03-24
+title: How to Backup Windows Subsystem for Linux distros
+tags: ['wsl', 'fedora', 'linux']
+private: true
+---
+
+I have always liked using Windows Subsystem for Linux, I'd routinely
+trash installs then reinstall them from the Microsoft store
+
+```bash
+wsl --export Fedora-33 Fedora-33.tar
+```
+
+```bash
+wsl --import Fedord-33-ms Fedora-33-ms Fedora-33.tar
+```
