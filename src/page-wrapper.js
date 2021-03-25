@@ -72,6 +72,7 @@ export default function PageWrapper({
   description,
   slug,
   tags,
+  timeToRead,
   title,
   type,
   ...meta
@@ -121,6 +122,9 @@ export default function PageWrapper({
           {title ? (
             <Fragment>
               <h1 class="font-extrabold text-3xl mb-1">{title}</h1>
+              <div class="text-xs font-semibold uppercase">
+                {timeToRead} minutes to read
+              </div>
               <div class="mb-10">
                 {tags
                   ? tags.map(tag => (

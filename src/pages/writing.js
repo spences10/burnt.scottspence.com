@@ -81,9 +81,12 @@ export default function Writing({ posts }) {
                   class="no-underline hover:underline"
                 >
                   <article class="p-4 mb-6 border rounded-lg shadow-lg">
-                    <h2 class="text-xl mb-1 font-bold">
+                    <h2 class="text-2xl mb-1 font-bold">
                       {post.title}
                     </h2>
+                    <div class="text-xs font-semibold uppercase mb-4">
+                      {post.timeToRead} minutes to read
+                    </div>
                     <p
                       class="no-underline"
                       style={{ marginBottom: 0 }}
