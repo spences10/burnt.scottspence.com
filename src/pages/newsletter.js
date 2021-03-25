@@ -1,10 +1,10 @@
 /** @jsx h */
 import { h } from 'preact'
-import Speaking from '../../speaking.js'
+import { NewsletterForm } from '../components/newsletter-form.js'
 import SEO from '../components/seo/index.js'
 import { SiteConfig } from '../site-config.js'
 
-export default function SpeakingPage() {
+export default function Newsletter() {
   const {
     siteTitle,
     siteDescription,
@@ -19,16 +19,16 @@ export default function SpeakingPage() {
   return (
     <div>
       <SEO
-        title={siteTitle}
-        titleTemplate={`scottspence.com`}
+        title={`Newsletter`}
+        titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
         image={`image`}
-        pathname={`${siteUrl}/speaking/`}
+        pathname={`${siteUrl}/newsletter/`}
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}
         twitterUsername={siteTwitter}
       />
-      <Speaking />
+      <NewsletterForm />
     </div>
   )
 }
