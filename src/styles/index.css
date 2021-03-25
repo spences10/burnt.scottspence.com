@@ -209,16 +209,17 @@ a:hover {
   width: 100%;
 }
 
+.markdown :is(ul, ol) {
+  padding-left: 1.2rem;
+  margin-bottom: 2rem;
+}
+
 .markdown ul {
   @apply list-disc;
-  @apply pl-4;
 }
 
 .markdown ol {
   @apply list-decimal;
-  @apply pl-6;
-
-  margin: 0 0 1.45rem;
 }
 
 @tailwind utilities;
