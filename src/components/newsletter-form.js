@@ -66,9 +66,9 @@ export const Newsletter = () => {
           </div>
           <div class="relative">
             <div class="sm:text-center">
-              <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
+              <h3 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
                 Want to keep up to date with what I'm working on?
-              </h2>
+              </h3>
               <p class="mt-6 mx-auto max-w-2xl text-lg text-indigo-200">
                 Important dev related content, directly to your inbox
                 (for free).
