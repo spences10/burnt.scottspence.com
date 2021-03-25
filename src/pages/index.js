@@ -19,7 +19,16 @@ export default function IndexPage() {
 
   return (
     <div>
-      <SEO title="Home" titleTemplate={siteTitle} />
+      <SEO
+        title={siteTitle}
+        titleTemplate={`scottspence.com`}
+        description={siteDescription || 'nothin’'}
+        image={`image`}
+        pathname={siteUrl}
+        siteLanguage={siteLanguage}
+        siteLocale={siteLocale}
+        twitterUsername={siteTwitter}
+      />
       <h2 class="font-extrabold text-3xl mt-6">Hello World</h2>
       <MugFace />
       <About />

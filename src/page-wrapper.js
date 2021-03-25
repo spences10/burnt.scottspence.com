@@ -68,10 +68,12 @@ const components = {
 
 export default function PageWrapper({
   children,
-  type,
-  title,
+  date,
   description,
+  slug,
   tags,
+  title,
+  type,
   ...meta
 }) {
   const {
@@ -114,16 +116,6 @@ export default function PageWrapper({
         />
       </Helmet>
       <main class="relative leading-relaxed tracking-wide text-lg">
-        <SEO
-          title={siteTitle}
-          titleTemplate={`scottspence.com`}
-          description={description || 'nothin’'}
-          image={`image`}
-          pathname={siteUrl}
-          siteLanguage={siteLanguage}
-          siteLocale={siteLocale}
-          twitterUsername={siteTwitter}
-        />
         <Header />
         <article class="m-auto max-w-2xl prose px-6">
           {title ? (
@@ -146,10 +138,14 @@ export default function PageWrapper({
               titleTemplate={siteTitle}
               description={description || 'nothin’'}
               image={`image`}
-              pathname={siteUrl}
+              pathname={`${siteUrl}/${slug}`}
               siteLanguage={siteLanguage}
               siteLocale={siteLocale}
               twitterUsername={siteTwitter}
+              author={siteAuthorName}
+              article={true}
+              publishedDate={date}
+              modifiedDate={new Date(Date.now()).toISOString()}
             />
           ) : null}
           {title ? <TableOfContents /> : null}

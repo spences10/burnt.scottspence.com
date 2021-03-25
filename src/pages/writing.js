@@ -45,7 +45,16 @@ export default function Writing({ posts }) {
 
   return (
     <Fragment>
-      <SEO title="Writing" titleTemplate={siteTitle} />
+      <SEO
+        title={siteTitle}
+        titleTemplate={`Writing`}
+        description={siteDescription || 'nothin’'}
+        image={`image`}
+        pathname={`${siteUrl}/writing/`}
+        siteLanguage={siteLanguage}
+        siteLocale={siteLocale}
+        twitterUsername={siteTwitter}
+      />
       <form>
         <label class="block" htmlFor="search">
           Search:

@@ -27,6 +27,7 @@ export const sourceData = async ({ setDataForSlug }) => {
         .join(`/`)
         .slice(0, -`index.mdx`.length)
       const { data, content } = frontmatter(file)
+      data['slug'] = slug
       let compiledMdx = null
       try {
         compiledMdx = await mdx(content, {
