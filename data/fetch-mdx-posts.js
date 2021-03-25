@@ -7,6 +7,7 @@ import rehypeLink from 'rehype-autolink-headings'
 import cloudinaryPlugin from 'rehype-local-image-to-cloudinary'
 import rehypeSlug from 'rehype-slug'
 import externalLinks from 'remark-external-links'
+import wordcount from 'wordcount'
 import rehypePrismMdx from '../data/rehype-prism-mdx.js'
 
 const IMAGE_PATH = filename => {
@@ -58,6 +59,10 @@ export const sourceData = async ({ setDataForSlug }) => {
             [externalLinks, { target: '_blank', rel: 'noopener' }],
           ],
         })
+        // time to read
+        const avgWPM = 265
+        const timeToRead = Math.round(wordcount(content) / avgWPM)
+        data['timeToRead'] = timeToRead
       } catch (e) {
         // Gotta catchem all
         console.log(e)

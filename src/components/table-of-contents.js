@@ -52,7 +52,7 @@ export function TableOfContents() {
   return (
     <Fragment>
       {headings.length ? (
-        <aside class="sm:hidden lg:flex fixed table-of-contents">
+        <aside class="table-of-contents sm:hidden lg:flex fixed">
           <h3
             class="font-extrabold text-lg mb-2"
             id="table-of-contents"

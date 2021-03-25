@@ -46,7 +46,8 @@
     "remark-external-links": "^8.0.0",
     "tailwindcss": "^1.9.6",
     "toast": "^0.3.30",
-    "unist-util-visit": "^2.0.3"
+    "unist-util-visit": "^2.0.3",
+    "wordcount": "^1.1.1"
   },
   "devDependencies": {
     "serve": "^11.3.2",
@@ -68,7 +69,8 @@
       "@mdx-js/preact",
       "fuse.js",
       "preact",
-      "preact/hooks"
+      "preact/hooks",
+      "wordcount"
     ]
   },
   "stylelint": {
