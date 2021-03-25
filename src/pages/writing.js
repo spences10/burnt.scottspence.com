@@ -3,7 +3,7 @@ import Fuse from 'fuse.js'
 import { Fragment, h } from 'preact'
 import { useEffect, useRef, useState } from 'preact/hooks'
 import SEO from '../components/seo/index.js'
-import { SiteConfig } from '../site-config.js'
+import { SiteMetadata } from '../site-config.js'
 
 export default function Writing({ posts }) {
   const [query, updateQuery] = useState('')
@@ -41,7 +41,7 @@ export default function Writing({ posts }) {
     siteTwitter,
     siteLanguage,
     siteLocale,
-  } = SiteConfig
+  } = SiteMetadata
 
   return (
     <Fragment>

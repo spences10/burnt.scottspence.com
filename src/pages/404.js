@@ -1,7 +1,7 @@
 /** @jsx h */
 import { Fragment, h } from 'preact'
 import SEO from '../components/seo/index.js'
-import { SiteConfig } from '../site-config.js'
+import { SiteMetadata } from '../site-config.js'
 
 export default function Page404() {
   const {
@@ -12,7 +12,7 @@ export default function Page404() {
     siteTwitter,
     siteLanguage,
     siteLocale,
-  } = SiteConfig
+  } = SiteMetadata
 
   return (
     <Fragment>

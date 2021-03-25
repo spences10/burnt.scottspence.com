@@ -1,53 +1,15 @@
 /** @jsx h */
 import { h } from 'preact'
-
-const POPULAR_POSTS = [
-  {
-    title: `Add a Table of Contents using Gatsby and MDX`,
-    slug: `2020/02/13/smooth-scroll-toc-gatsby/`,
-  },
-  {
-    title: `Chakra UI and Gatsby - Getting Started`,
-    slug: `2020/11/21/getting-started-chakra-ui-gatsby/`,
-  },
-  {
-    title: `Use Chrome in Ubuntu on Windows Subsystem Linux`,
-    slug: `2021/01/05/use-chrome-in-ubuntu-wsl/`,
-  },
-  {
-    title: `Enable GUIs on Windows Subsystem Linux (WSL)`,
-    slug: `2020/12/09/gui-with-wsl/`,
-  },
-]
-
-const SITE_LINKS = [
-  {
-    title: `About`,
-    slug: `about/`,
-  },
-  {
-    title: `FAQ`,
-    slug: `faq/`,
-  },
-  {
-    title: `Now`,
-    slug: `now/`,
-  },
-  {
-    title: `Portfolio`,
-    slug: `portfolio/`,
-  },
-  {
-    title: `Speaking`,
-    slug: `speaking/`,
-  },
-  {
-    title: `Uses`,
-    slug: `uses/`,
-  },
-]
+import { useEffect, useState } from 'preact/hooks'
+import { POPULAR_POSTS, SITE_LINKS } from '../site-config.js'
 
 export const Footer = () => {
+  const [id, setId] = useState(``)
+
+  useEffect(() => {
+    window.fathom.trackGoal(id, 0)
+  }, [id])
+
   return (
     <footer
       class="bg-primary-400 relative text-gray-300"
@@ -59,7 +21,11 @@ export const Footer = () => {
       <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div class="xl:grid xl:grid-cols-2 xl:gap-8">
           <div class="space-y-8 xl:col-span-1">
-            <img class="h-10" src="mug-face.png" alt="Company name" />
+            <img
+              class="h-10"
+              src="/mug-face.png"
+              alt="scott profile picture"
+            />
             <p class="text-base text-left">
               Built with Toast, MDX and Tailwind
             </p>
@@ -189,6 +155,7 @@ export const Footer = () => {
                     <li>
                       <a
                         href={`/${link.slug}`}
+                        onClick={() => setId(link.id)}
                         alt={link.title}
                         key={link.slug}
                         class="text-base hover:opacity-50"

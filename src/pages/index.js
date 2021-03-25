@@ -3,7 +3,7 @@ import { h } from 'preact'
 import About from '../../about.js'
 import MugFace from '../components/mugface.js'
 import SEO from '../components/seo/index.js'
-import { SiteConfig } from '../site-config.js'
+import { SiteMetadata } from '../site-config.js'
 
 export default function IndexPage() {
   const {
@@ -15,7 +15,7 @@ export default function IndexPage() {
     siteTwitter,
     siteLanguage,
     siteLocale,
-  } = SiteConfig
+  } = SiteMetadata
 
   return (
     <div>

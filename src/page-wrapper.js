@@ -22,7 +22,7 @@ import { Header } from './components/header.js'
 import { NewsletterForm } from './components/newsletter-form.js'
 import SEO from './components/seo/index.js'
 import { TableOfContents } from './components/table-of-contents.js'
-import { SiteConfig } from './site-config.js'
+import { SiteMetadata } from './site-config.js'
 
 const components = {
   codeblock: props => {
@@ -85,7 +85,7 @@ export default function PageWrapper({
     siteTwitter,
     siteLanguage,
     siteLocale,
-  } = SiteConfig
+  } = SiteMetadata
 
   return (
     <MDXProvider components={components}>
