@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from 'preact'
 
-export const Newsletter = () => {
+export const NewsletterForm = () => {
   return (
     <div class="relative sm:py-16">
       <div aria-hidden="true" class="hidden sm:block">
