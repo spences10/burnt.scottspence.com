@@ -23,7 +23,7 @@ const POPULAR_POSTS = [
 const SITE_LINKS = [
   {
     title: `About`,
-    slug: `/`,
+    slug: `about/`,
   },
   {
     title: `FAQ`,
@@ -59,11 +59,7 @@ export const Footer = () => {
       <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div class="xl:grid xl:grid-cols-2 xl:gap-8">
           <div class="space-y-8 xl:col-span-1">
-            <img
-              class="h-10"
-              src="https://tailwindui.com/img/logos/workflow-mark-gray-300.svg"
-              alt="Company name"
-            />
+            <img class="h-10" src="mug-face.png" alt="Company name" />
             <p class="text-base text-left">
               Built with Toast, MDX and Tailwind
             </p>
