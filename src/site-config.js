@@ -13,22 +13,31 @@ export const POPULAR_POSTS = [
   {
     title: `Add a Table of Contents using Gatsby and MDX`,
     slug: `2020/02/13/smooth-scroll-toc-gatsby/`,
+    views: `7.9k`,
   },
   {
     title: `Chakra UI and Gatsby - Getting Started`,
     slug: `2020/11/21/getting-started-chakra-ui-gatsby/`,
+    views: `2k`,
   },
   {
     title: `Use Chrome in Ubuntu on Windows Subsystem Linux`,
     slug: `2021/01/05/use-chrome-in-ubuntu-wsl/`,
+    views: `1.2k`,
   },
   {
     title: `Enable GUIs on Windows Subsystem Linux (WSL)`,
     slug: `2020/12/09/gui-with-wsl/`,
+    views: `6.1k`,
   },
 ]
 
 export const SITE_LINKS = [
+  {
+    title: `Writing`,
+    slug: `writing/`,
+    id: `FJDJRF2N`,
+  },
   {
     title: `About`,
     slug: `about/`,
