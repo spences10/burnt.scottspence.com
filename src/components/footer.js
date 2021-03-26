@@ -18,7 +18,7 @@ export const Footer = () => {
       <h3 id="footerHeading" class="sr-only">
         Footer
       </h3>
-      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      <div class="max-w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div class="xl:grid xl:grid-cols-2 xl:gap-8">
           <div class="space-y-8 xl:col-span-1">
             <img
@@ -30,8 +30,8 @@ export const Footer = () => {
               Built with Toast, MDX and Tailwind
             </p>
             <p class="text-base text-left">
-              Coding code since Cody McCoderson said code! Naw, web
-              dev since 2018 tho!
+              Coding code since Cody McCoderson said code! Check the{' '}
+              <a href="/about">about</a> section for more.
             </p>
             <div class="flex space-x-6">
               <a
