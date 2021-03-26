@@ -5,11 +5,15 @@
 :root {
   --scrollbar-bg: #aa7fd4;
   --thumb-bg: #639;
+  --box-shadow-lg: rgb(0, 0, 0, 0.25) 0 2px 8px 0;
+  --box-shadow-xl: rgb(0, 0, 0, 0.2) 0 2px 16px 0;
 }
 
 html.dark body {
   --colour-background: #1a202c;
   --colour-on-background: #f7fafc;
+  --box-shadow-lg: rgb(0, 0, 0, 5) 0 2px 8px 0;
+  --box-shadow-xl: rgb(0, 0, 0, 4) 0 2px 16px 0;
 }
 
 html {
@@ -194,10 +198,6 @@ a:hover {
   margin-bottom: 1.45rem;
 }
 
-.markdown p:last-child {
-  margin-bottom: 5rem;
-}
-
 /* Tables */
 .markdown :is(td, th) {
   @apply px-2 py-1 border border-gray-400;
@@ -209,6 +209,7 @@ a:hover {
   width: 100%;
 }
 
+/* Lists */
 .markdown :is(ul, ol) {
   padding-left: 1.2rem;
   margin-bottom: 2rem;

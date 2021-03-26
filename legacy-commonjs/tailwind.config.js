@@ -28,6 +28,10 @@ module.exports = {
         },
         'code-bg': '#011627',
       },
+      boxShadow: {
+        'theme-lg': 'var(--box-shadow-lg)',
+        'theme-xl': 'var(--box-shadow-xl)',
+      },
     },
   },
   variants: {

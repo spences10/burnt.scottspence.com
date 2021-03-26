@@ -60,7 +60,7 @@ export default function Writing({ posts }) {
           Search:
         </label>
         <input
-          class="mt-1 mb-6 block w-full rounded-lg border shadow-lg bg-transparent"
+          class="mt-1 mb-6 p-2 block w-full rounded-lg shadow-theme-xl bg-transparent"
           name="search"
           id="search"
           type="text"
@@ -80,7 +80,7 @@ export default function Writing({ posts }) {
                   alt={post.description}
                   class="no-underline hover:underline"
                 >
-                  <article class="p-4 mb-6 border rounded-lg shadow-lg">
+                  <article class="p-4 mb-6 rounded-lg shadow-theme-xl">
                     <h2 class="text-2xl mb-1 font-bold">
                       {post.title}
                     </h2>
