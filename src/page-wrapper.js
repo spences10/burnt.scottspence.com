@@ -154,6 +154,7 @@ export default function PageWrapper({
           ) : null}
           {title ? <TableOfContents /> : null}
           <div class="markdown">{children}</div>
+          <div class="mb-20 flex" />
           {title ? <ButtButt height="80" width="100" /> : null}
         </article>
         <NewsletterForm />
