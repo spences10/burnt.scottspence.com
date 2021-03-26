@@ -15,18 +15,26 @@ const IMAGE_PATH = filename => {
   return directoryRoot
 }
 
-export const sourceData = async ({ setDataForSlug }) => {
+export const sourceData = async (contentPath, { setDataForSlug }) => {
   const mdxObjects = await fetchMdxFromDisk({
-    directory: './content/posts/',
+    directory: contentPath,
   })
 
   return await Promise.all(
     mdxObjects.map(async ({ file, filename }) => {
-      const split = filename.split(`/`)
-      const slug = split
-        .splice(2, split.length, -3)
-        .join(`/`)
-        .slice(0, -`index.mdx`.length)
+      const pathSplit = filename.split(`/`)
+      const splitShit = () => {
+        // copy > content/copy
+        if (pathSplit.length === 3) {
+          return pathSplit.slice(-1)[0]
+        }
+        // else writing > content/posts
+        return pathSplit
+          .splice(2, pathSplit.length, -3)
+          .join(`/`)
+          .slice(0, -`index.mdx`.length)
+      }
+      const slug = splitShit()
       const { data, content } = frontmatter(file)
       data['slug'] = slug
       let compiledMdx = null

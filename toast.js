@@ -1,8 +1,9 @@
-import { sourceMdx } from '@toastdotdev/mdx'
 import * as PostSource from './data/fetch-mdx-posts.js'
 
 export const sourceData = async ({ setDataForSlug }) => {
-  const postsData = await PostSource.sourceData({ setDataForSlug })
+  const postsData = await PostSource.sourceData('./content/posts/', {
+    setDataForSlug,
+  })
 
   postsData.sort((b, a) => {
     const da = new Date(a.date).getTime()
@@ -14,11 +15,11 @@ export const sourceData = async ({ setDataForSlug }) => {
 
   await setDataForSlug('/writing', { data: { posts: postsData } })
 
-  await sourceMdx({
+  const copyData = await PostSource.sourceData('./content/copy/', {
     setDataForSlug,
-    directory: './content/copy',
-    slugPrefix: '/',
   })
+
+  await setDataForSlug('/', { data: { posts: copyData } })
 
   return
 }
