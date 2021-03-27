@@ -71,6 +71,9 @@ export const sourceData = async (contentPath, { setDataForSlug }) => {
         const avgWPM = 265
         const timeToRead = Math.round(wordcount(content) / avgWPM)
         data['timeToRead'] = timeToRead
+        // description
+        const description = `${content.slice(0, 100)}...`
+        data['description'] = description
       } catch (e) {
         // Gotta catchem all
         console.log(e)
