@@ -7,6 +7,7 @@
   --thumb-bg: #639;
   --box-shadow-lg: rgb(0, 0, 0, 0.25) 0 2px 8px 0;
   --box-shadow-xl: rgb(0, 0, 0, 0.2) 0 2px 16px 0;
+  --colour-on-secondary: #9ca3af;
 }
 
 html.dark body {
@@ -14,6 +15,7 @@ html.dark body {
   --colour-on-background: #f7fafc;
   --box-shadow-lg: rgb(0, 0, 0, 5) 0 2px 8px 0;
   --box-shadow-xl: rgb(0, 0, 0, 4) 0 2px 16px 0;
+  --colour-on-secondary: #374151;
 }
 
 html {

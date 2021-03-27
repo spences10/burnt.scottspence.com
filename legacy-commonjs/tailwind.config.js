@@ -27,6 +27,7 @@ module.exports = {
           900: '#221133',
         },
         'code-bg': '#011627',
+        'inline-code': 'var(--colour-on-secondary)',
       },
       boxShadow: {
         'theme-lg': 'var(--box-shadow-lg)',

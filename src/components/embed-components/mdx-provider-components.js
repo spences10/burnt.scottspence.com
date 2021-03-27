@@ -40,6 +40,9 @@ export const components = {
       />
     )
   },
+  'p.inlineCode': props => (
+    <code {...props} class="bg-inline-code rounded px-1" />
+  ),
   pre: props => (
     <div
       class="bg-gray-100 overflow-auto"
