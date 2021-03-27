@@ -2,69 +2,14 @@
 import { MDXProvider } from '@mdx-js/preact'
 import { Fragment, h } from 'preact'
 import { Helmet } from 'react-helmet'
-import {
-  LiveEditor,
-  LiveError,
-  LivePreview,
-  LiveProvider,
-} from 'react-live'
-import codeSyntaxHighlightTheme from './code-style.js'
 import { ButtButt } from './components/buttbutt.js'
-import { DateDistance } from './components/embed-components/date-distance.js'
-import { DateUpdated } from './components/embed-components/date-updated.js'
-import { Sarcasm } from './components/embed-components/sarcasm.js'
-import { Small } from './components/embed-components/small.js'
-import { Spotify } from './components/embed-components/spotify.js'
-import { Tweet } from './components/embed-components/tweet.js'
-import { YouTube } from './components/embed-components/youtube.js'
+import { components } from './components/embed-components/mdx-provider-components.js'
 import { Footer } from './components/footer.js'
 import { Header } from './components/header.js'
-import { NewsletterForm } from './components/newsletter-form.js'
+// import { NewsletterForm } from './components/newsletter-form.js'
 import SEO from './components/seo/index.js'
 import { TableOfContents } from './components/table-of-contents.js'
 import { SiteMetadata } from './site-config.js'
-
-const components = {
-  codeblock: props => {
-    if (props[`react-live`]) {
-      return (
-        <div class="overflow-hidden rounded-xl mb-4 text-lg">
-          <LiveProvider
-            code={props.codestring}
-            noInline
-            theme={codeSyntaxHighlightTheme}
-          >
-            <LiveEditor data-name="live-editor" />
-            <LiveError />
-            <LivePreview data-name="live-preview" />
-          </LiveProvider>
-        </div>
-      )
-    }
-    return (
-      <div
-        class="mb-5 p-2 bg-code-bg overflow-auto rounded-lg"
-        dangerouslySetInnerHTML={{ __html: props.children }}
-      />
-    )
-  },
-  pre: props => (
-    <div
-      class="bg-gray-100 overflow-auto"
-      dangerouslySetInnerHTML={{ __html: props.children }}
-    />
-  ),
-  Vimeo: props => <div></div>,
-  Tweet,
-  MarkdownParser: props => <div></div>,
-  hr: props => <hr class="mb-10" />,
-  Small,
-  DateUpdated,
-  DateDistance,
-  Sarcasm,
-  Spotify,
-  YouTube,
-}
 
 export default function PageWrapper({
   children,
@@ -157,7 +102,7 @@ export default function PageWrapper({
           <div class="mb-20 flex" />
           {title ? <ButtButt height="80" width="100" /> : null}
         </article>
-        <NewsletterForm />
+        {/* <NewsletterForm /> */}
         <Footer />
       </main>
     </MDXProvider>
