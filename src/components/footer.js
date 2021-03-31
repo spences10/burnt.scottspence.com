@@ -7,6 +7,13 @@ export const Footer = () => {
   const [id, setId] = useState(``)
 
   useEffect(() => {
+    if (
+      typeof window === 'undefined' ||
+      typeof window.fathom === 'undefined' ||
+      id === ``
+    ) {
+      return
+    }
     window.fathom.trackGoal(id, 0)
   }, [id])
 
