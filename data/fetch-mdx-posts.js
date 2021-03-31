@@ -68,7 +68,7 @@ export const sourceData = async (contentPath, { setDataForSlug }) => {
           ],
         })
         // time to read
-        const avgWPM = 265
+        const avgWPM = 180
         const timeToRead = Math.round(wordcount(content) / avgWPM)
         data['timeToRead'] = timeToRead
         // description
