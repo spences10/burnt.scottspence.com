@@ -15,13 +15,14 @@ import { h } from 'preact'
 
 export const ButtButt = ({ height = 533, width = 849 }) => {
   const puns = [
-    `Ok, well, now that's behind you maybe you'd like to share this`,
-    `Is it two cheeky for you`,
-    `I know, what a half-arsed attempt at humour`,
-    `I've got some cheek making that crack`,
-    `You can leave that in the Rear-view`,
+    `Ok, well, now that's behind you maybe you'd like to share this?`,
+    `Is that two cheeky for you?!`,
+    `I know, what a half-arsed attempt at humour!`,
+    `I've got some cheek making that crack!`,
+    `Cool! You can leave that in the Rear-view now!`,
     `Like it? You can always take another crack at it?`,
-    `Butt wait, there more!`,
+    `Butt wait, there's more!`,
+    `I'll understand if you think it didn't Butt the mustard!`,
   ]
   const rando = puns[Math.floor(Math.random() * puns.length)]
 
