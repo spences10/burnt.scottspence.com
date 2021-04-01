@@ -3,5 +3,6 @@ module.exports = {
     require('@tailwindcss/jit')(
       './legacy-commonjs/tailwind.config.js'
     ),
+    require('autoprefixer'),
   ],
 }
