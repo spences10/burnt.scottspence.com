@@ -9,6 +9,7 @@ import {
 import codeSyntaxHighlightTheme from '../../code-style.js'
 import { DateDistance } from './date-distance.js'
 import { DateUpdated } from './date-updated.js'
+import { Details } from './details.js'
 import { Sarcasm } from './sarcasm.js'
 import { Small } from './small.js'
 import { Spotify } from './spotify.js'
@@ -56,6 +57,7 @@ export const components = {
   Small,
   DateUpdated,
   DateDistance,
+  Details,
   Sarcasm,
   Spotify,
   YouTube,
