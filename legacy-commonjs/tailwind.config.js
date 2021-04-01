@@ -35,9 +35,6 @@ module.exports = {
       },
     },
   },
-  variants: {
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-  },
   plugins: [
     // require("@tailwindcss/ui")
     require('@tailwindcss/forms'),
