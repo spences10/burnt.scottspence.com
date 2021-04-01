@@ -8,7 +8,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ['./src/**/*.js', './legacy-commonjs/**/*.js'],
+  purge: ['./src/**/*.js'],
   theme: {
     extend: {
       fontFamily: {
@@ -34,9 +34,6 @@ module.exports = {
         'theme-xl': 'var(--box-shadow-xl)',
       },
     },
-  },
-  variants: {
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
   },
   plugins: [
     // require("@tailwindcss/ui")
