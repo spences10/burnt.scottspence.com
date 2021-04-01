@@ -17,6 +17,7 @@
     "build:css": "NODE_ENV=production npm run css",
     "build:site": "toast incremental .",
     "css": "postcss --config legacy-commonjs src/styles/index.css -o public/styles.css --verbose",
+    "watch:css": "npm run css -- --watch",
     "serve": "serve public",
     "clean": "rm -rf public .tmp && npm run postinstall",
     "fix:css": "npx stylelint \"**/*.css\" --fix",
