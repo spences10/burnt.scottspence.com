@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from 'preact'
-import { NewsletterForm } from '../components/newsletter-form.js'
+import { NewsLetterForm } from '../components/newsletter-form.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
 
@@ -28,7 +28,7 @@ export default function Newsletter() {
         siteLocale={siteLocale}
         twitterUsername={siteTwitter}
       />
-      <NewsletterForm />
+      <NewsLetterForm />
     </div>
   )
 }

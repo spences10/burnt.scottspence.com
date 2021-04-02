@@ -6,7 +6,7 @@ import { ButtButt } from './components/buttbutt.js'
 import { components } from './components/embed-components/mdx-provider-components.js'
 import { Footer } from './components/footer.js'
 import { Header } from './components/header.js'
-// import { NewsletterForm } from './components/newsletter-form.js'
+import { NewsLetterForm } from './components/newsletter-form.js'
 import SEO from './components/seo/index.js'
 import { TableOfContents } from './components/table-of-contents.js'
 import { SiteMetadata } from './site-config.js'
@@ -102,7 +102,7 @@ export default function PageWrapper({
           <div class="mb-20 flex" />
           {title ? <ButtButt height="80" width="100" /> : null}
         </article>
-        {/* <NewsletterForm /> */}
+        <NewsLetterForm />
         <Footer />
       </main>
     </MDXProvider>
