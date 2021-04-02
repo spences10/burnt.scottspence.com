@@ -30,7 +30,7 @@ export const NewsLetterForm = () => {
     <div>
       {!submitted ? (
         <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
-          <div class="py-10 px-6 bg-indigo-700 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
+          <div class="py-10 px-6 bg-primary-700 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
             <div class="lg:w-0 lg:flex-1">
               <h2 class="text-3xl font-extrabold tracking-tight text-white">
                 Sign up for my newsletter
@@ -68,7 +68,7 @@ export const NewsLetterForm = () => {
                   onChange={e => emailSet(e.target.value)}
                 ></input>
                 <button
-                  class="mt-3 w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
+                  class="mt-3 w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-500 hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
                   type="submit"
                 >
                   Submit
