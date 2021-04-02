@@ -1,5 +1,5 @@
 /** @jsx h */
-import { Fragment, h } from 'preact'
+import { h } from 'preact'
 import { useState } from 'preact/hooks'
 
 export const NewsLetterForm = () => {
@@ -27,36 +27,71 @@ export const NewsLetterForm = () => {
   }
 
   return (
-    <Fragment>
+    <div>
       {!submitted ? (
-        <form
-          action="#"
-          onSubmit={e => {
-            e.preventDefault()
-            SubmitEmail()
-          }}
-        >
-          <label htmlFor="email" className="visuallyhidden">
-            Your Email:
-          </label>
-          <input
-            id="email"
-            aria-label="email"
-            type="email"
-            name="email"
-            placeholder="anders@hejlsberg.com"
-            required
-            value={email}
-            onChange={e => emailSet(e.target.value)}
-          ></input>
-          <button type="submit">Submit</button>
-        </form>
+        <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
+          <div class="py-10 px-6 bg-indigo-700 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
+            <div class="lg:w-0 lg:flex-1">
+              <h2 class="text-3xl font-extrabold tracking-tight text-white">
+                Sign up for my newsletter
+              </h2>
+              <p class="mt-4 max-w-3xl text-lg text-indigo-100">
+                Want to keep up to date with what I'm working on?
+                <p class="mt-4 max-w-3xl text-lg text-indigo-100">
+                  Important dev related content, directly to your
+                  inbox (for free).
+                </p>
+              </p>
+            </div>
+            <div class="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 lg:flex-1">
+              <form
+                class="sm:flex"
+                action="#"
+                onSubmit={e => {
+                  e.preventDefault()
+                  SubmitEmail()
+                }}
+              >
+                <label htmlFor="email" className="sr-only">
+                  Your Email:
+                </label>
+                <input
+                  class="w-full border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white rounded-md"
+                  id="email"
+                  aria-label="email"
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="anders@hejlsberg.com"
+                  required
+                  value={email}
+                  onChange={e => emailSet(e.target.value)}
+                ></input>
+                <button
+                  class="mt-3 w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+              <p class="mt-3 text-sm text-indigo-100">
+                I care about the protection of your data. Read my{' '}
+                <a
+                  href="/privacy-policy"
+                  class="text-white font-medium underline"
+                >
+                  Privacy Policy.
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
       ) : (
         <div>
           <h2>Awesome, you're all signed up!</h2>
           <p>Thanks for showing interest in my content.</p>
         </div>
       )}
-    </Fragment>
+    </div>
   )
 }
