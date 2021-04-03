@@ -62,7 +62,7 @@ export const NewsLetterForm = () => {
                   type="email"
                   name="email"
                   autocomplete="email"
-                  placeholder="anders@hejlsberg.com"
+                  placeholder="ada@lovelace.com"
                   required
                   value={email}
                   onChange={e => emailSet(e.target.value)}
