@@ -9,7 +9,6 @@ export default function MugFace({ height = 300, width = 300 }) {
         alt="cartoonified scott face"
         height={height}
         width={width}
-        borderRadius="50%"
         class="rounded-full"
       />
     </div>
