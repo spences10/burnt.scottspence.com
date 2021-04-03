@@ -177,7 +177,7 @@ export const Footer = () => {
           </div>
         </div>
         <div class="mt-12 border-t border-gray-200 pt-8">
-          <p class="text-base xl:text-center">
+          <p class="mb-12 lg:mb-0 text-base xl:text-center">
             &copy; {`${new Date().getFullYear()}`} Scott Spence. All
             rights reserved, whatever that means. 🤷‍♀️
           </p>
