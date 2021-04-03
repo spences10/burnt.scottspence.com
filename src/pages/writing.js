@@ -13,7 +13,7 @@ export default function Writing({ posts }) {
 
   const options = {
     includeScore: true,
-    keys: ['title', 'tags'],
+    keys: ['title', 'tags', 'description'],
     includeMatches: true,
     threshold: 0.5,
   }
