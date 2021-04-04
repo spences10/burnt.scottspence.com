@@ -66,14 +66,14 @@ export default function PageWrapper({
         <article class="m-auto max-w-2xl prose px-6">
           {title ? (
             <Fragment>
-              <h1 class="font-extrabold text-3xl mb-1">{title}</h1>
-              <div class="text-xs font-semibold uppercase">
+              <h1 class="font-extrabold text-3xl mb-2">{title}</h1>
+              <div class="text-xs font-semibold uppercase mb-2">
                 {timeToRead} minutes to read
               </div>
               <div class="mb-10">
                 {tags
                   ? tags.map(tag => (
-                      <span class="inline-flex mr-2 items-center px-3 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-gray-900">
+                      <span class="inline-flex leading-6 mr-3 items-center px-3 sp rounded-full text-xs lowercase font-medium bg-primary-400 text-gray-100">
                         {tag}
                       </span>
                     ))

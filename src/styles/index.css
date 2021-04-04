@@ -169,7 +169,7 @@ a:hover {
 }
 
 .table-of-contents {
-  z-index: -1;
+  z-index: 1;
   position: fixed;
   left: calc(50% + 400px);
   top: 13rem;
@@ -178,6 +178,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   box-shadow: var(--box-shadow-xl);
+  background-color: var(--colour-background);
   border-radius: 0.25rem;
   padding: 0.75rem;
   margin: 0.75rem 0;

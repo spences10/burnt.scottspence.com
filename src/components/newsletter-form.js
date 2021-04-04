@@ -32,9 +32,9 @@ export const NewsLetterForm = () => {
         <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
           <div class="py-10 px-6 bg-primary-700 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
             <div class="lg:w-0 lg:flex-1">
-              <h2 class="text-3xl font-extrabold tracking-tight text-white">
+              <h3 class="text-3xl font-extrabold tracking-tight text-white">
                 Sign up for my newsletter
-              </h2>
+              </h3>
               <p class="mt-4 max-w-3xl text-lg text-indigo-100">
                 Want to keep up to date with what I'm working on?
                 <p class="mt-4 max-w-3xl text-lg text-indigo-100">
