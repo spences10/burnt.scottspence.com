@@ -33,7 +33,7 @@ export const NewsLetterForm = () => {
           <div class="py-10 px-6 bg-primary-700 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
             <div class="lg:w-0 lg:flex-1">
               <h3 class="text-3xl font-extrabold tracking-tight text-white">
-                Sign up for my newsletter
+                Sign up for the newsletter
               </h3>
               <p class="mt-4 max-w-3xl text-lg text-indigo-100">
                 Want to keep up to date with what I'm working on?
@@ -56,7 +56,7 @@ export const NewsLetterForm = () => {
                   Your Email:
                 </label>
                 <input
-                  class="w-full border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white rounded-md"
+                  class="w-full border-white px-5 py-3 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white rounded-md"
                   id="email"
                   aria-label="email"
                   type="email"
@@ -87,9 +87,17 @@ export const NewsLetterForm = () => {
           </div>
         </div>
       ) : (
-        <div>
-          <h2>Awesome, you're all signed up!</h2>
-          <p>Thanks for showing interest in my content.</p>
+        <div class="text-center max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
+          <div class="py-10 px-6 bg-primary-700 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
+            <div class="lg:w-0 lg:flex-1">
+              <h3 class="text-3xl font-extrabold tracking-tight text-white">
+                Awesome, you're all signed up!
+              </h3>
+              <p class="mt-4 text-lg text-indigo-100">
+                Thanks for showing interest in my content.
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </div>
