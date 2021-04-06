@@ -81,7 +81,8 @@ export default function MobileNav({ theme, setTheme, mobile }) {
                 <p class="text-xs">Speaking</p>
               </div>
             </a>
-            <div class="px-4 sm:px-6 md:px-8 no-underline">
+            {/* remove class hidden when FOUC fixed */}
+            <div class="hidden px-4 sm:px-6 md:px-8 no-underline">
               {/* Styles in Theme Toggle */}
               <ToggleTheme
                 theme={theme}
