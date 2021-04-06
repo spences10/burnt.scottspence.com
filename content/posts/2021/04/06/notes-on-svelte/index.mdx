@@ -1,0 +1,65 @@
+---
+date: 2021-04-06
+title: Notes on Svelte
+tags: ['notes', 'svelte']
+private: true
+---
+
+I had a play around with Svelte the other day and wanted to make a few
+notes and comparisons to React, React being a point of reference for
+me and hopefully others,
+
+A simple Svelte app could look something like this:
+
+```html
+<!-- Simple component -->
+<!-- Circle.svelte -->
+<style>
+  div {
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    font-size: 2rem;
+    background-color: #663399;
+    color: #fff;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+<script>
+  export let text = 'hello world'
+</script>
+
+<div>{text}</div>
+```
+
+Then that can be used by `App.svelte` say:
+
+```html
+<!-- App.svelte -->
+<script>
+  import Circle from './Circle.svelte'
+</script>
+
+<main>
+  <Circle />
+</main>
+```
+
+In the component I defined the prop with `export let text` which is
+defaulted to `hello world` but I can pass in my own prop to the
+`Circle` component to replace it!
+
+```html
+<!-- App.svelte -->
+<script>
+  import Circle from './Circle.svelte'
+</script>
+
+<main>
+  <Circle text="wheeeeee" />
+</main>
+```
