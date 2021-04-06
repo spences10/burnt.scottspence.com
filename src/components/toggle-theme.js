@@ -1,5 +1,5 @@
 /** @jsx h */
-import { Fragment, h } from 'preact'
+import { h } from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 
 export const ToggleTheme = ({ theme, setTheme, mobile }) => {
@@ -62,8 +62,9 @@ export const ToggleTheme = ({ theme, setTheme, mobile }) => {
     )
   }
 
+  // remove class='hidden' once FOUC fixed
   return (
-    <Fragment>
+    <div class="hidden">
       {mobile ? (
         <button
           class="flex justify-center flex-col items-center"
@@ -87,6 +88,6 @@ export const ToggleTheme = ({ theme, setTheme, mobile }) => {
           <Icon />
         </button>
       )}
-    </Fragment>
+    </div>
   )
 }
