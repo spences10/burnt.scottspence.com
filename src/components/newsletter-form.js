@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from 'preact'
-import { useState } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 
 export const NewsLetterForm = () => {
   const [email, emailSet] = useState(``)
@@ -25,9 +25,30 @@ export const NewsLetterForm = () => {
       submittedSet(true)
     })
   }
+  const ref = useRef(null)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const show = document.querySelector(`.table-of-contents`)
+        if (entry.intersectionRatio > 0) {
+          show.style.display = 'none'
+        } else {
+          show.style.display = 'flex'
+        }
+      },
+      {
+        root: null,
+        rootMargin: '100px',
+        threshold: 0,
+      }
+    )
+    if (ref && ref.current) {
+      observer.observe(ref.current)
+    }
+  }, [ref])
 
   return (
-    <div>
+    <div ref={ref}>
       {!submitted ? (
         <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
           <div class="py-10 px-6 bg-primary-700 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
