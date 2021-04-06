@@ -30,6 +30,7 @@ export const NewsLetterForm = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         const show = document.querySelector(`.table-of-contents`)
+        if (show === null) return
         if (entry.intersectionRatio > 0) {
           show.style.display = 'none'
         } else {
