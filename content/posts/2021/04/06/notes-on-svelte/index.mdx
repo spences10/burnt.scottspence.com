@@ -7,13 +7,30 @@ private: true
 
 I had a play around with Svelte the other day and wanted to make a few
 notes and comparisons to React, React being a point of reference for
-me and hopefully others,
+me and hopefully others.
 
-A simple Svelte app could look something like this:
+I've found a lot of the examples here on
+
+There's also the Svelte docs with [interactive tutorials] which I'm
+going through.
+
+As Svelte looks really similar to html styling is done pretty much the
+same way.
+
+Want to add functionality add `script` tags want to add style add
+`style` tags.
+
+A simple Svelte component could look something like this:
 
 ```html
 <!-- Simple component -->
 <!-- Circle.svelte -->
+<script>
+  export let text = 'hello world'
+</script>
+
+<div>{text}</div>
+
 <style>
   div {
     height: 200px;
@@ -28,15 +45,9 @@ A simple Svelte app could look something like this:
     justify-content: center;
   }
 </style>
-
-<script>
-  export let text = 'hello world'
-</script>
-
-<div>{text}</div>
 ```
 
-Then that can be used by `App.svelte` say:
+Then that can be used by `App.svelte` like this:
 
 ```html
 <!-- App.svelte -->
@@ -63,3 +74,215 @@ defaulted to `hello world` but I can pass in my own prop to the
   <Circle text="wheeeeee" />
 </main>
 ```
+
+## Styling
+
+Each components styles are scoped so if I want to import a goat image
+as a component:
+
+```html
+<!-- App.svelte -->
+<script>
+  import Goat from './Goat.svelte'
+</script>
+
+<main>
+  <Goat />
+</main>
+```
+
+The `Goat` component is an image tag with some styles scoped to it:
+
+```html
+<!-- Goat.svelte -->
+<img
+  alt="adorable goat"
+  src="https://images.unsplash.com/photo-1533318087102-b3ad366ed041"
+/>
+
+<style>
+  img {
+    height: 200px;
+  }
+</style>
+```
+
+The styles in the component are scoped so if there's any styles that
+need to be applied in the parent (`App.svelte`) then then all that can
+be affected is the wrapping element for it:
+
+```html
+<script>
+  import Goat from './Goat.svelte'
+</script>
+
+<!-- This only affects the wrapping div -->
+<main>
+  <div class="goat-wrapper">
+    <Goat />
+  </div>
+</main>
+
+<style>
+  .goat-wrapper {
+    height: 400px;
+    background-color: cornflowerblue;
+  }
+</style>
+```
+
+There is a `global` directive that you can use this will target
+anything in the class matching that element:
+
+```html {17-19}
+<script>
+  import Goat from './Goat.svelte'
+</script>
+
+<!-- This only affects the wrapping div -->
+<main>
+  <div class="goat-wrapper">
+    <Goat />
+  </div>
+</main>
+
+<style>
+  .goat-wrapper {
+    height: 400px;
+    background-color: cornflowerblue;
+  }
+  .goat-wrapper :global(img) {
+    height: 400px;
+  }
+</style>
+```
+
+## Slots
+
+You can nest other elements in a component with a `slot` a slot is
+much like the `children` prop in React.
+
+If I take the `Circle` component and add a `slot` to it:
+
+```html {1}
+<div><slot /></div>
+
+<style>
+  div {
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    font-size: 2rem;
+    background-color: #663399;
+    color: #fff;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+```
+
+Then I can nest other components in it:
+
+```html {10}
+<script>
+  import Circle from './Circle.svelte'
+  import Goat from './Goat.svelte'
+</script>
+
+<main>
+  <div class="goat-wrapper">
+    <Goat />
+    <Circle>
+      <Goat />
+    </Circle>
+  </div>
+</main>
+
+<style>
+  .goat-wrapper {
+    height: 400px;
+    background-color: cornflowerblue;
+  }
+  .goat-wrapper :global(img) {
+    height: 400px;
+  }
+</style>
+```
+
+## Event handlers
+
+The `on:click` is used pretty much the same as with React. Here I'm
+cycling through some goat pics on click:
+
+```html
+<script>
+  const goats = [
+    `https://images.unsplash.com/photo-1533318087102-b3ad366ed041`,
+    `https://images.unsplash.com/photo-1585082868368-58be13852617`,
+    `https://images.unsplash.com/photo-1540392015439-4cc83fc3c1cf`,
+  ]
+  export let goatsIndex = 0
+  export function nextGoat() {
+    if (goatsIndex + 1 === goats.length) goatsIndex = 0
+    goatsIndex += 1
+  }
+</script>
+
+<img alt="adorable goat" src="{goats[goatsIndex]}" />
+<button on:click="{nextGoat}">Next Goat</button>
+<!-- Alternatively to pass the event to the function -->
+<!-- <button on:click={(e) => nextGoat(e)}>Next Goat</button> -->
+<style>
+  img {
+    height: 200px;
+  }
+</style>
+```
+
+## Conditional render (if blocks)
+
+Conditional rendering in Svelte is a bit different to React whereas in
+React I'd break out into JavaScript in Svelte there's a special
+notation used.
+
+```html
+<script>
+  import Goat from './Goat.svelte'
+  import Sloth from './Sloth.svelte'
+
+  let animal = 'sloth'
+</script>
+
+<main>
+  {#if animal === "sloth"}
+  <Sloth />
+  {:else if animal === "goat"}
+  <Goat />
+  {:else} Nothing animal {/if}
+</main>
+```
+
+https://www.youtube.com/watch?v=avtzLAcgg0U
+https://www.youtube.com/watch?v=9FSoSkEYvcg
+https://www.youtube.com/watch?v=Yz5LiDcIaFw
+https://www.youtube.com/watch?v=rXmDZ7jj2P0
+https://www.youtube.com/watch?v=oqD6XjFMPGs
+https://www.youtube.com/watch?v=TLt33QgQKXw
+https://www.youtube.com/watch?v=evE7sj1Ptcg
+https://www.youtube.com/watch?v=OJ7TMB0DNZE
+https://www.youtube.com/watch?v=_KrY84rvpyw
+https://www.youtube.com/watch?v=0iQuX_7bo5w
+https://www.youtube.com/watch?v=s7rk2b1ioVE
+https://www.youtube.com/watch?v=kL6RsO34tqc&t=1s
+https://www.youtube.com/watch?v=fo_E_6NYLGg
+https://www.youtube.com/watch?v=Aj9xUkPGZsQ
+https://www.youtube.com/watch?v=P1hxkpf8kCA
+https://www.youtube.com/watch?v=Q4wXySS8axc
+https://www.youtube.com/watch?v=rMBusx68ujY
+https://www.youtube.com/watch?v=fxuPd8_TQsQ
+https://www.youtube.com/watch?v=i3gtbw4qsIQ
+
+[interactive tutorials]: https://svelte.dev/tutorial/basics
