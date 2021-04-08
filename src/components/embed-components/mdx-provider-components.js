@@ -10,9 +10,12 @@ import codeSyntaxHighlightTheme from '../../code-style.js'
 import { DateDistance } from './date-distance.js'
 import { DateUpdated } from './date-updated.js'
 import { Details } from './details.js'
+import { GitHubContributions } from './github-contributions.js'
+import { Projects } from './projects.js'
 import { Sarcasm } from './sarcasm.js'
 import { Small } from './small.js'
 import { Spotify } from './spotify.js'
+import { TopLanguages } from './top-languages.js'
 import { Tweet } from './tweet.js'
 import { Vimeo } from './vimeo.js'
 import { YouTube } from './youtube.js'
@@ -61,4 +64,7 @@ export const components = {
   Sarcasm,
   Spotify,
   YouTube,
+  GitHubContributions,
+  Projects,
+  TopLanguages,
 }
