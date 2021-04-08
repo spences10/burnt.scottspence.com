@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from 'preact'
 import About from '../../about.js'
-import MugFace from '../components/mugface.js'
+import { LandingHero } from '../components/landing-hero.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
 
@@ -29,8 +29,7 @@ export default function IndexPage() {
         siteLocale={siteLocale}
         twitterUsername={siteTwitter}
       />
-      <h2 class="font-extrabold text-3xl mt-6">Hello World</h2>
-      <MugFace />
+      <LandingHero />
       <About />
     </div>
   )

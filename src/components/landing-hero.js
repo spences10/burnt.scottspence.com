@@ -3,7 +3,7 @@ import { h } from 'preact'
 
 export const LandingHero = ({ height = 533, width = 849 }) => {
   return (
-    <div class="relative overflow-hidden">
+    <div class="relative lg:-mx-48">
       <div class="pt-10 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
         <div class="mx-auto max-w-7xl lg:px-8">
           <div class="lg:grid lg:grid-cols-2 lg:gap-8">
@@ -47,8 +47,8 @@ export const LandingHero = ({ height = 533, width = 849 }) => {
                 </p>
               </div>
             </div>
-            <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
-              <div class="overflow-hidden mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
+            <div class="mt-12 lg:m-0 lg:relative">
+              <div class="overflow-hidden mx-auto max-w-md px-4 sm:max-w-xl sm:px-6 lg:max-w-none lg:px-0">
                 <img
                   class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none rounded-full"
                   src="https://res.cloudinary.com/defkmsrpw/image/upload/q_auto,f_auto,w_800/v1614936697/scottspence.com/mugFace.png"
