@@ -38,6 +38,7 @@ export const sourceData = async (contentPath, { setDataForSlug }) => {
       const { data, content } = frontmatter(file)
       data['slug'] = slug
       let compiledMdx = null
+      // don't pass nulls in the plugins array
       try {
         compiledMdx = await mdx(content, {
           rehypePlugins: [
