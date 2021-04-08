@@ -3,7 +3,7 @@ import { h } from 'preact'
 
 export const LandingHero = ({ height = 533, width = 849 }) => {
   return (
-    <div class="relative lg:-mx-48">
+    <div class="relative lg:-mx-52 xl:-mx-64 2xl:-mx-96 mb-24">
       <div class="pt-10 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
         <div class="mx-auto max-w-7xl lg:px-8">
           <div class="lg:grid lg:grid-cols-2 lg:gap-8">
@@ -33,13 +33,13 @@ export const LandingHero = ({ height = 533, width = 849 }) => {
                     />
                   </svg>
                 </a>
-                <h1 class="mt-4 text-4xl tracking-tight font-extrabold sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                <h1 class="mt-4 text-6xl tracking-tight font-extrabold sm:mt-5 sm:text-6xl lg:mt-6">
                   <span class="block">Scott Spence</span>
                   <span class="block text-primary-400">
                     Hello World!
                   </span>
                 </h1>
-                <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg">
                   This is my blog where I write about many things,
                   including, but not limited to JavaScript, React,
                   Gatsby, Toast, Tailwind, Svelte and many more web
