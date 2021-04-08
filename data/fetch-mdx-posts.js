@@ -43,16 +43,14 @@ export const sourceData = async (contentPath, { setDataForSlug }) => {
         compiledMdx = await mdx(content, {
           rehypePlugins: [
             rehypePrismMdx,
-            !process.env.TOAST_DEVELOP
-              ? [
-                  cloudinaryPlugin,
-                  {
-                    baseDir: IMAGE_PATH(filename),
-                    uploadFolder: 'scottspence.com',
-                    // transformations: 'q_auto,f_auto',
-                  },
-                ]
-              : null,
+            [
+              cloudinaryPlugin,
+              {
+                baseDir: IMAGE_PATH(filename),
+                uploadFolder: 'scottspence.com',
+                // transformations: 'q_auto,f_auto',
+              },
+            ],
             rehypeSlug,
             [
               rehypeLink,
