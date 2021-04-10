@@ -324,6 +324,34 @@ function from `App.svelte`:
 </style>
 ```
 
+## Reactivity
+
+This is where a lot of people get their knickers in a twist with
+Svelte and to be honest I'm fine with it.
+
+Svelte uses the JavaScript label statement for when you want to change
+a components state when it's created from the state of another
+component.
+
+Here's the example take from the [Svelte.dev titorial site]:
+
+```html
+<script>
+  let count = 0
+  $: doubled = count * 2
+
+  function handleClick() {
+    count += 1
+  }
+</script>
+
+<button on:click="{handleClick}">
+  Clicked {count} {count === 1 ? 'time' : 'times'}
+</button>
+
+<p>{count} doubled is {doubled}</p>
+```
+
 ## Resources
 
 Check out [Svelte Mastery] for all these examples and more
@@ -347,3 +375,5 @@ https://www.youtube.com/watch?v=i3gtbw4qsIQ
 [interactive tutorials]: https://svelte.dev/tutorial/basics
 [svelte mastery]:
   https://www.youtube.com/channel/UCg6SQd5jnWo5Y70rZD9SQFA
+[svelte.dev titorial site]:
+  https://svelte.dev/tutorial/reactive-declarations
