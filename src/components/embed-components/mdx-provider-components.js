@@ -7,6 +7,7 @@ import {
   LiveProvider,
 } from 'react-live'
 import codeSyntaxHighlightTheme from '../../code-style.js'
+import { Blockquote } from './blockquote.js'
 import { DateDistance } from './date-distance.js'
 import { DateUpdated } from './date-updated.js'
 import { Details } from './details.js'
@@ -21,6 +22,7 @@ import { Vimeo } from './vimeo.js'
 import { YouTube } from './youtube.js'
 
 export const components = {
+  blockquote: props => <Blockquote {...props} />,
   codeblock: props => {
     if (props[`react-live`]) {
       return (

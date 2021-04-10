@@ -198,6 +198,22 @@ a:hover {
 
 /* Markdown Styles */
 
+.blockquote {
+  margin: 4rem 1.25rem;
+}
+
+.blockquote p {
+  margin-top: 0;
+  padding: 1.25rem;
+  border-left: 5px solid #374151;
+  background-color: var(--colour-background);
+  padding-left: 1rem;
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--colour-on-background);
+  word-break: break-word;
+}
+
 .markdown p {
   margin-bottom: 1.45rem;
 }
