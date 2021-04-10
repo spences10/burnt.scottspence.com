@@ -266,6 +266,23 @@ notation used.
 </main>
 ```
 
+## HTML for loop
+
+Looping over arrays is done with the `#each` directive with similar
+format to the `#if` directive.
+
+```html
+<script>
+  const cats = [{ name: `Boris` }, { name: `Leo` }, { name: `Darcy` }]
+</script>
+
+<main>
+  {#each cats as cat}
+  <div>{cat.name}</div>
+  {/each}
+</main>
+```
+
 ## Context
 
 Context in Svelte is simpler than with React, in React to define some
