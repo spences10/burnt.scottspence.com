@@ -9,6 +9,37 @@ export const SiteMetadata = {
   siteLocale: `en_gb`,
 }
 
+export const PORTFOLIO_PROJECTS = [
+  {
+    title: 'MDX Embed',
+    repo: 'https://github.com/PaulieScanlon/mdx-embed/',
+    demo: 'https://www.mdx-embed.com/',
+    tags: ['gatsby', 'mdx', 'typescript'],
+    image: '/mdx-embed.png',
+    copy: ['Embed popular 3rd party media content into your .mdx'],
+  },
+  {
+    title: 'React SEO Component',
+    repo: 'https://github.com/spences10/react-seo-component/',
+    demo: 'https://www.npmjs.com/package/react-seo-component',
+    tags: ['typescript', 'react'],
+    image: '/react-seo-component.jpg',
+    copy: [
+      'Add Open Graph and SEO meta tags to your React projects.',
+    ],
+  },
+  {
+    title: 'City 2 Sea',
+    repo: '',
+    demo: 'https://beagoodasshole.com/',
+    tags: ['gatsby', 'styled-components'],
+    image: '/city-to-sea.png',
+    copy: [
+      'A playful landing page featuring the voice of Andy Serkis',
+    ],
+  },
+]
+
 export const POPULAR_POSTS = [
   {
     title: `Add a Table of Contents using Gatsby and MDX`,
