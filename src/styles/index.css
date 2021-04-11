@@ -243,4 +243,8 @@ a:hover {
   @apply list-decimal;
 }
 
+.project-list-none {
+  list-style: none !important;
+}
+
 @tailwind utilities;

@@ -7,7 +7,7 @@ export const Projects = () => {
     <div class="relative lg:-mx-52 xl:-mx-64 2xl:-mx-96 mb-24">
       <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
         <div class="space-y-12">
-          <ul class="sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8 list-none">
+          <ul class="sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8 project-list-none">
             {PORTFOLIO_PROJECTS.map(project => (
               <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left pb-4">
                 <div class="space-y-6 xl:space-y-10">
@@ -28,7 +28,7 @@ export const Projects = () => {
                       <p class="text-primary-400">{project.copy}</p>
                     </div>
                   </div>
-                  <ul class="flex justify-center space-x-5 list-none">
+                  <ul class="flex justify-center space-x-5 project-list-none">
                     <li>
                       <a
                         href={project.demo}
