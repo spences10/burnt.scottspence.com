@@ -6,7 +6,7 @@ import { SiteMetadata } from '../site-config.js'
 
 export default function IndexPage() {
   const {
-    description,
+    siteDescription,
     lastBuildDate,
     siteUrl,
     authorName,
@@ -17,7 +17,17 @@ export default function IndexPage() {
 
   return (
     <div>
-      <SEO title="FAQ" titleTemplate={siteUrl} />
+      <SEO
+        title="FAQ"
+        titleTemplate={siteUrl}
+        titleTemplate={`scottspence.com/faq`}
+        description={siteDescription || 'nothin’'}
+        image={`image`}
+        pathname={siteUrl}
+        siteLanguage={siteLanguage}
+        siteLocale={siteLocale}
+        twitterUsername={siteTwitter}
+      />
       <FAQ />
     </div>
   )
