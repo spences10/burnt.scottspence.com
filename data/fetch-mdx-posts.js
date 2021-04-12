@@ -1,6 +1,7 @@
 // Credits to Chris Biscardi, Prince Wilson and Benjamin Lannon
 // What diamonds 💎
 import mdx from '@mdx-js/mdx'
+import smartypants from '@silvenon/remark-smartypants'
 import { fetchMdxFromDisk } from '@toastdotdev/mdx'
 import frontmatter from 'gray-matter'
 import rehypeLink from 'rehype-autolink-headings'
@@ -64,6 +65,7 @@ export const sourceData = async (contentPath, { setDataForSlug }) => {
           ],
           remarkPlugins: [
             [externalLinks, { target: '_blank', rel: 'noopener' }],
+            smartypants,
           ],
         })
         // time to read
