@@ -75,6 +75,17 @@ export const sourceData = async (contentPath, { setDataForSlug }) => {
         // description
         const description = `${content.slice(0, 150)}...`
         data['description'] = description
+        // // tags
+        // const postTags = []
+        // if (data.tags) {
+        //   data.tags.forEach(tag => {
+        //     if (!postTags[tag]) {
+        //       postTags[tag] = []
+        //     }
+        //     postTags[tag].push(slug)
+        //   })
+        // }
+        // const groupedTags = Object.keys(postTags)
       } catch (e) {
         // Gotta catchem all
         console.log(e)
@@ -83,9 +94,10 @@ export const sourceData = async (contentPath, { setDataForSlug }) => {
       await setDataForSlug(slug, {
         component: {
           mode: 'source',
-          value: `/** @jsx mdx */
-                  import {mdx} from '@mdx-js/preact';
-                  ${compiledMdx}
+          value: `
+            /** @jsx mdx */
+            import {mdx} from '@mdx-js/preact';
+            ${compiledMdx}
           `,
         },
         data,
