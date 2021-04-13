@@ -19,7 +19,7 @@ export const PORTFOLIO_PROJECTS = [
     copy: ['Embed popular 3rd party media content into your .mdx'],
   },
   {
-    title: 'React SEO Component',
+    title: 'SEO Component',
     repo: 'https://github.com/spences10/react-seo-component/',
     demo: 'https://www.npmjs.com/package/react-seo-component',
     tags: ['typescript', 'react'],
@@ -37,6 +37,14 @@ export const PORTFOLIO_PROJECTS = [
     copy: [
       'A playful landing page featuring the voice of Andy Serkis',
     ],
+  },
+  {
+    title: 'Cheat Sheets',
+    repo: 'https://github.com/spences10/cheat-sheets/',
+    demo: 'https://cheatsheets.xyz/',
+    tags: ['gatsby', 'chakra'],
+    image: '/cheat-sheets.jpg',
+    copy: ['A collection of hints and tips for web development'],
   },
 ]
 
