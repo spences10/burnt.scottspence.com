@@ -6,7 +6,7 @@ export const Projects = () => {
   return (
     <div class="relative lg:-mx-52 xl:-mx-64 2xl:-mx-96 mb-24">
       <div class="">
-        <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
             {PORTFOLIO_PROJECTS.map(project => (
               <div class="bg-gray-800 rounded-lg shadow-sm divide-y divide-gray-200">
@@ -14,7 +14,7 @@ export const Projects = () => {
                   <h2 class="text-2xl leading-6 font-normal ">
                     {project.title}
                   </h2>
-                  <p class="mt-4 text-sm text-gray-500">
+                  <p class="mt-4 text-sm text-gray-500 min-h-[5rem]">
                     {project.copy}
                   </p>
                   <div class="flex">
