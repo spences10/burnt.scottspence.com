@@ -42,7 +42,7 @@ export const PORTFOLIO_PROJECTS = [
     title: 'Cheat Sheets',
     repo: 'https://github.com/spences10/cheat-sheets/',
     demo: 'https://cheatsheets.xyz/',
-    tags: ['gatsby', 'chakra'],
+    tags: ['gatsby', 'chakra', 'mdx'],
     image: '/cheat-sheets.jpg',
     copy: ['A collection of hints and tips for web development'],
   },
