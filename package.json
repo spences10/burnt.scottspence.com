@@ -28,6 +28,7 @@
     "robots": "cp robots.txt public/"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.1",
     "@sector/breadbox": "^0.0.4",
     "@silvenon/remark-smartypants": "^1.0.0",
     "@tailwindcss/forms": "^0.3.2",
@@ -70,6 +71,7 @@
       }
     },
     "knownEntrypoints": [
+      "@heroicons/react/outline",
       "@mdx-js/preact",
       "fuse.js",
       "preact",

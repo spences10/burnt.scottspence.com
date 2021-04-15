@@ -1,4 +1,5 @@
 /** @jsx h */
+import { ChevronRightIcon } from '@heroicons/react/outline/index.js'
 import { h } from 'preact'
 
 export const LandingHero = ({ height = 533, width = 849 }) => {
@@ -19,19 +20,7 @@ export const LandingHero = ({ height = 533, width = 849 }) => {
                   <span class="ml-4 text-sm">
                     Visit the writing page
                   </span>
-                  <svg
-                    class="ml-2 w-5 h-5 text-gray-500"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
+                  <ChevronRightIcon class="ml-2 w-4 h-4 text-gray-500" />
                 </a>
                 <h1 class="mt-4 text-6xl tracking-tight font-extrabold sm:mt-5 sm:text-6xl lg:mt-6">
                   <span class="block">Scott Spence</span>
