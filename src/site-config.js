@@ -32,7 +32,7 @@ export const PORTFOLIO_PROJECTS = [
     title: 'City 2 Sea',
     repo: '',
     demo: 'https://beagoodasshole.com/',
-    tags: ['gatsby', 'styled-components'],
+    tags: ['gatsby', 'styled-components', 'lottie'],
     image: '/city-to-sea.png',
     copy: [
       'A playful landing page featuring the voice of Andy Serkis',
@@ -80,17 +80,17 @@ export const SITE_LINKS = [
   {
     title: `About`,
     slug: `about/`,
-    id: `2DTHC7WB`,
+    id: `2DRIXVSS`,
   },
   {
     title: `Now`,
     slug: `now/`,
-    id: `CMFV80KR`,
+    id: `Z8N5C2XV`,
   },
   {
     title: `Portfolio`,
     slug: `portfolio/`,
-    id: `7W8KS5RH`,
+    id: `NE5JFD1S`,
   },
   {
     title: `Speaking`,
@@ -100,7 +100,7 @@ export const SITE_LINKS = [
   {
     title: `Uses`,
     slug: `uses/`,
-    id: `1EMZ4CDD`,
+    id: `AALDN3U2`,
   },
   {
     title: `Newsletter`,
