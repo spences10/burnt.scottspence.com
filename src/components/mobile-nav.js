@@ -25,7 +25,7 @@ export default function MobileNav({ theme, setTheme, mobile }) {
               </div>
             </a>
             <a
-              href="/writing"
+              href="/garden"
               alt="writing page"
               class="px-4 sm:px-6 md:px-8 no-underline"
             >

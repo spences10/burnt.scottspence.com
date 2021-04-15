@@ -15,7 +15,7 @@ export default function Nav({ theme, setTheme }) {
         </div>
 
         <nav class="hidden md:flex space-x-10">
-          <a class="px-4" href="/writing" alt="writing page">
+          <a class="px-4" href="/garden" alt="writing page">
             Writing
           </a>
           <a class="px-4" href="/speaking" alt="speaking page">

@@ -13,7 +13,7 @@ export const sourceData = async ({ setDataForSlug }) => {
     if (da > db) return 1
   })
 
-  await setDataForSlug('/writing', { data: { posts: postsData } })
+  await setDataForSlug('/garden', { data: { posts: postsData } })
 
   const copyData = await PostSource.sourceData('./content/copy/', {
     setDataForSlug,
