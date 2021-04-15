@@ -9,7 +9,7 @@ import { SiteMetadata } from '../site-config.js'
 export default function Garden({ posts }) {
   const [query, updateQuery] = useState('')
   const searchRef = useRef(null)
-  const [blogName, setBlogName] = useState(`Digital Garden`)
+  const [blogName, setBlogName] = useState(``)
 
   const sillyName = [
     `Thought Pamphlet`,
@@ -77,7 +77,9 @@ export default function Garden({ posts }) {
         siteLocale={siteLocale}
         twitterUsername={siteTwitter}
       />
-      <h1 class="mb-1">{blogName}</h1>
+      <h1 class="mb-1">
+        This is my <span class="text-primary-200">{blogName}</span>
+      </h1>
       <div>
         <a
           href="2020/04/27/a-digital-garden/"
