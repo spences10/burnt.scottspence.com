@@ -7,7 +7,7 @@ import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
 
 export default function Garden({ posts }) {
-  const [query, updateQuery] = useState('')
+  const [query, updateQuery] = useState(``)
   const searchRef = useRef(null)
   const [blogName, setBlogName] = useState(``)
 
