@@ -2,16 +2,18 @@
 import { h } from 'preact'
 
 export const GitHubContributions = () => {
+  const thisYear = new Date().getFullYear()
   return (
-    <div class="flex justify-center lg:-mx-52 xl:-mx-64 2xl:-mx-96 -mt-24 -mb-24 md:-my-40">
+    <div class="flex justify-center lg:-mx-52 xl:-mx-64 2xl:-mx-96">
       <a
-        href="https://ghui.vercel.app/heat.png?username=spences10&year=2021&interactive=true"
+        href={`https://ghui.vercel.app/heat.png?username=spences10&year=${thisYear}&interactive=true`}
         target="_blank"
-        rel="noopener"
-        class="hover:opacity-100"
+        rel="noopener noreferrer"
+        class="hover:opacity-100 h-[260]"
       >
         <img
-          src="https://ghui.vercel.app/heat.png?username=spences10&year=2021"
+          src={`https://ghui.vercel.app/heat.png?username=spences10&year=${thisYear}`}
+          alt="GitHub contributions heatmap"
           loading="eager"
         />
       </a>
