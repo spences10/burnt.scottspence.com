@@ -1,3 +1,26 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/#uses", "destination": "/uses" },
+    {
+      "source": "/giveaway",
+      "destination": "/newsletter",
+      "permanent": false
+    },
+    {
+      "source": "/tags",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/daily-checklist",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/contact",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
 }
