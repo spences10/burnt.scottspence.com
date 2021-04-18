@@ -57,9 +57,7 @@ export default function Garden({ posts }) {
   const {
     siteTitle,
     siteDescription,
-    siteLastBuildDate,
     siteUrl,
-    siteAuthorName,
     siteTwitter,
     siteLanguage,
     siteLocale,
@@ -68,8 +66,8 @@ export default function Garden({ posts }) {
   return (
     <Fragment>
       <SEO
-        title={siteTitle}
-        titleTemplate={`Writing`}
+        title="Writing"
+        titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
         image={`image`}
         pathname={`${siteUrl}/garden/`}

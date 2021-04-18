@@ -4,19 +4,11 @@ import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
 
 export default function Page404() {
-  const {
-    siteDescription,
-    siteLastBuildDate,
-    siteUrl,
-    siteAuthorName,
-    siteTwitter,
-    siteLanguage,
-    siteLocale,
-  } = SiteMetadata
+  const { siteTitle } = SiteMetadata
 
   return (
     <Fragment>
-      <SEO title="404" titleTemplate={siteUrl} />
+      <SEO title="404" titleTemplate={siteTitle} />
       <h1>
         That's a nop!
         <span role="img" aria-label="crying face">

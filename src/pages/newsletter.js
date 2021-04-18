@@ -1,5 +1,6 @@
 /** @jsx h */
-import { h } from 'preact'
+import { Fragment, h } from 'preact'
+import NewsletterCopy from '../../newsletter-copy.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
 
@@ -16,9 +17,9 @@ export default function Newsletter() {
   } = SiteMetadata
 
   return (
-    <div>
+    <Fragment>
       <SEO
-        title={`Newsletter`}
+        title="Newsletter"
         titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
         image={`image`}
@@ -27,6 +28,7 @@ export default function Newsletter() {
         siteLocale={siteLocale}
         twitterUsername={siteTwitter}
       />
-    </div>
+      <NewsletterCopy />
+    </Fragment>
   )
 }

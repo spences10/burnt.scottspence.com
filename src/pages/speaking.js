@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from 'preact'
-import Speaking from '../../speaking.js'
+import SpeakingCopy from '../../speaking-copy.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
 
@@ -8,9 +8,7 @@ export default function SpeakingPage() {
   const {
     siteTitle,
     siteDescription,
-    siteLastBuildDate,
     siteUrl,
-    siteAuthorName,
     siteTwitter,
     siteLanguage,
     siteLocale,
@@ -19,8 +17,8 @@ export default function SpeakingPage() {
   return (
     <div>
       <SEO
-        title={siteTitle}
-        titleTemplate={`scottspence.com`}
+        title="Speaking"
+        titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
         image={`image`}
         pathname={`${siteUrl}/speaking/`}
@@ -28,7 +26,7 @@ export default function SpeakingPage() {
         siteLocale={siteLocale}
         twitterUsername={siteTwitter}
       />
-      <Speaking />
+      <SpeakingCopy />
     </div>
   )
 }

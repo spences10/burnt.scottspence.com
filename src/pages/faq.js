@@ -1,11 +1,12 @@
 /** @jsx h */
 import { h } from 'preact'
-import FAQ from '../../faq.js'
+import FAQCopy from '../../faq-copy.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
 
-export default function IndexPage() {
+export default function FAQ() {
   const {
+    siteTitle,
     siteDescription,
     lastBuildDate,
     siteUrl,
@@ -19,16 +20,15 @@ export default function IndexPage() {
     <div>
       <SEO
         title="FAQ"
-        titleTemplate={siteUrl}
-        titleTemplate={`scottspence.com/faq`}
+        titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
         image={`image`}
-        pathname={siteUrl}
+        pathname={`${siteUrl}/faq/`}
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}
         twitterUsername={siteTwitter}
       />
-      <FAQ />
+      <FAQCopy />
     </div>
   )
 }

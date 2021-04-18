@@ -99,7 +99,7 @@ export const NewsLetterForm = () => {
               <p class="mt-3 text-sm text-indigo-100">
                 I care about the protection of your data. Read my{' '}
                 <a
-                  href="/privacy-policy"
+                  href="/privacy-policy/"
                   class="text-white font-medium underline"
                 >
                   Privacy Policy.
