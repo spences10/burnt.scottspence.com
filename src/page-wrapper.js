@@ -7,6 +7,7 @@ import { components } from './components/embed-components/mdx-provider-component
 import { Footer } from './components/footer.js'
 import { Header } from './components/header.js'
 import { NewsLetterForm } from './components/newsletter-form.js'
+import { PrivateBanner } from './components/private-banner.js'
 import SEO from './components/seo/index.js'
 import { TableOfContents } from './components/table-of-contents.js'
 import { SiteMetadata } from './site-config.js'
@@ -19,6 +20,7 @@ export default function PageWrapper({
   tags,
   timeToRead,
   title,
+  private: isPrivate,
   type,
   ...meta
 }) {
@@ -79,6 +81,7 @@ export default function PageWrapper({
                     ))
                   : null}
               </div>
+              {isPrivate ? <PrivateBanner /> : null}
             </Fragment>
           ) : null}
           {title ? (
