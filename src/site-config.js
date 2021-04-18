@@ -19,13 +19,14 @@ export const PORTFOLIO_PROJECTS = [
     copy: ['Embed popular 3rd party media content into your .mdx'],
   },
   {
-    title: 'SEO Component',
-    repo: 'https://github.com/spences10/react-seo-component/',
-    demo: 'https://www.npmjs.com/package/react-seo-component',
-    tags: ['typescript', 'react'],
-    image: '/react-seo-component.jpg',
+    title: 'GitHub Charts',
+    repo: 'https://github.com/spences10/github-user-information/',
+    demo:
+      'https://github-user-information.vercel.app/heat.png?username=spences10&year=2020&interactive=true',
+    tags: ['typescript', 'serverless', 'vercel'],
+    image: '/gh-charts.jpg',
     copy: [
-      'Add Open Graph and SEO meta tags to your React projects.',
+      'Serverless function to display GitHub user information as images',
     ],
   },
   {
@@ -74,7 +75,7 @@ export const POPULAR_POSTS = [
 export const SITE_LINKS = [
   {
     title: `Writing`,
-    slug: `writing/`,
+    slug: `garden/`,
     id: `FJDJRF2N`,
   },
   {
