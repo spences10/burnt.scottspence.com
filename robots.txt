@@ -1,3 +1,10 @@
+# Robots.txt rule     | Example blocked URLs
+# /en-gb/*/reviews    | /en-gb/everything/reviews
+# *?*search=          | /everything?any=parameter&search=word
+# *.pdf$              | /all-pdf-files.pdf
+# *.pdf               | /all-pdf-files?including=parameters
+# /a                  | /all-urls-starting-with-lowercase-a
+
 User-agent: *
 Allow: /
 Sitemap: https://scottspence.com/sitemap.xml
