@@ -7,3 +7,4 @@ Disallow: /garden/
 Disallow: /newsletters/
 Disallow: /tags/
 Disallow: /tags/
+Disallow: /toast.*
