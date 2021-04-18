@@ -7,3 +7,10 @@ Disallow: */garden
 Disallow: */newsletters
 Disallow: */tags
 Disallow: */toast.
+
+Disallow: /2020/10/17/spreading-the-jamstack/Eleventy
+Disallow: /2020/08/26/wsl-bootstrap-2020/chocolatey.org/
+Disallow: /2020/06/18/theming-with-linaria/variables
+Disallow: /2017/05/23/twitter-bot-playground/sheets.google.com
+Disallow: /2019/04/01/update-wsl-from-18.04-18.10/
+Disallow: /convert-gatsby-default-blog-to-use-mdx
