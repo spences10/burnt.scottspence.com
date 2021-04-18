@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 Sitemap: https://scottspence.com/sitemap.xml
 
-Disallow: /*-copy/
+Disallow: */*-copy
 Disallow: */garden
 Disallow: */newsletters
 Disallow: */tags
