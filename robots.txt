@@ -4,5 +4,6 @@ Sitemap: https://scottspence.com/sitemap.xml
 
 Disallow: /*-copy/
 Disallow: /garden/
+Disallow: /newsletters/
 Disallow: /tags/
 Disallow: /tags/
