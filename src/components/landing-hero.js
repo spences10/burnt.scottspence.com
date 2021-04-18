@@ -39,7 +39,7 @@ export const LandingHero = ({ height = 533, width = 849 }) => {
             <div class="mt-12 lg:m-0 lg:relative">
               <div class="overflow-hidden mx-auto max-w-md px-4 sm:max-w-xl sm:px-6 lg:max-w-none lg:px-0 flex justify-center">
                 <img
-                  class="w-full lg:absolute lg:inset-y-0 lg:h-full lg:w-auto lg:max-w-none rounded-full"
+                  class="w-full h-full lg:absolute lg:inset-y-0 lg:h-full lg:w-auto lg:max-w-none rounded-full"
                   src="/mug-face.png"
                   alt=""
                 />
