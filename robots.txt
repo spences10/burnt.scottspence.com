@@ -9,11 +9,11 @@ User-agent: *
 Allow: /
 Sitemap: https://scottspence.com/sitemap.xml
 
-Disallow: */*-copy
-Disallow: */garden
-Disallow: */newsletters
-Disallow: */tags
-Disallow: */toast.
+Disallow: /*-copy
+Disallow: /garden
+Disallow: /newsletters
+Disallow: /tags
+Disallow: /toast.
 
 Disallow: /2020/10/17/spreading-the-jamstack/Eleventy
 Disallow: /2020/08/26/wsl-bootstrap-2020/chocolatey.org/
