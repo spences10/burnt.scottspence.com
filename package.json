@@ -21,11 +21,12 @@
     "serve": "serve public",
     "clean": "rm -rf public .tmp && npm run postinstall",
     "fix:css": "npx stylelint \"**/*.css\" --fix",
-    "postbuild": "npm run newsletters && npm run sitemap && npm run wellknown && npm run robots",
+    "postbuild": "npm run newsletters && npm run sitemap && npm run wellknown && npm run robots && npm run sw",
     "newsletters": "cp -r newsletters/ public/",
     "sitemap": "./scripts/build-sitemap.sh",
     "wellknown": "cp -r .well-known/ public/",
-    "robots": "cp robots.txt public/"
+    "robots": "cp robots.txt public/",
+    "sw": "cp sw.js public/"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.1",
