@@ -33,12 +33,13 @@ export const ButtButt = ({ height = 533, width = 849 }) => {
           Looks like you have reached the bottom of this page!
         </p>
       </aside>
-      <div class="flex justify-center mb-12 w-full h-full">
+      <div class="flex justify-center mb-12">
         <img
           src="https://res.cloudinary.com/defkmsrpw/image/upload/q_auto,f_auto/v1614936696/scottspence.com/buttbutt.png"
           alt="a cheeky butt"
           height={height}
           width={width}
+          class="h-full"
         />
       </div>
       <aside class="text-center mb-20">
