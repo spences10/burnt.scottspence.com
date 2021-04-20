@@ -1,0 +1,32 @@
+---
+date: 2021-04-20
+title: Remove Service Gatsby Worker
+tags: ['gatsby', 'guide', 'resource']
+private: true
+---
+
+The Gatsby offline plugin is really handy right up until you don't
+want it anymore!
+
+How I got round it was taking the `sw.js` file from the
+`gatsby-plugin-remove-service-worker` plugin and added that to the
+build script of my new site.
+
+Then when the new site spins up it will remove the old service worker.
+
+```js
+self.addEventListener('install', function (e) {
+  self.skipWaiting()
+})
+
+self.addEventListener('activate', function (e) {
+  self.registration
+    .unregister()
+    .then(function () {
+      return self.clients.matchAll()
+    })
+    .then(function (clients) {
+      clients.forEach(client => client.navigate(client.url))
+    })
+})
+```
