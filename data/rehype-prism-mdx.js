@@ -4,20 +4,20 @@ import { h } from 'preact'
 import renderToString from 'preact-render-to-string'
 import Highlight from 'prism-react-renderer'
 import Prism from 'prismjs'
-// import prismComponents from 'prismjs/components.js'
-// import loadLanguages from 'prismjs/components/index.js'
-import visit from 'unist-util-visit'
+import prismComponents from 'prismjs/components.js'
+import loadLanguages from 'prismjs/components/index.js'
+import { visit } from 'unist-util-visit'
 import codeSyntaxHighlightTheme from '../src/code-style.js'
 
-// try {
-//   // meta doesn't exist in the prismjs package and thus will *FAIL* because it's a FAILURE
-//   loadLanguages(
-//     Object.keys(prismComponents.languages).filter(v => v !== 'meta')
-//   )
-// } catch (e) {
-//   // this is here in case prismjs ever removes a language, so we can easily debug
-//   console.log(e)
-// }
+try {
+  // meta doesn't exist in the prismjs package and thus will *FAIL* because it's a FAILURE
+  loadLanguages(
+    Object.keys(prismComponents.languages).filter(v => v !== 'meta')
+  )
+} catch (e) {
+  // this is here in case prismjs ever removes a language, so we can easily debug
+  console.log(e)
+}
 
 const RE = /{([\d,-]+)}/
 

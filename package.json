@@ -10,8 +10,8 @@
     "url": "https://scottspence.com"
   },
   "scripts": {
+    "postinstall": "./postinstall.js",
     "dev": "npm run build:dev && npm run serve",
-    "postinstall": "breadbox --dest public/web_modules",
     "build": "npm run build:css && npm run build:site && npm run postbuild",
     "build:dev": "npm run build:css && npm run build:site",
     "build:css": "NODE_ENV=production npm run css",
@@ -30,12 +30,12 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.1",
-    "@sector/breadbox": "^0.0.4",
     "@silvenon/remark-smartypants": "^1.0.0",
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/jit": "^0.1.18",
     "@toastdotdev/mdx": "^0.2.3",
-    "date-fns": "^2.21.0",
+    "date-fns": "^2.21.1",
+    "esinstall": "^1.1.4",
     "fuse.js": "^6.4.6",
     "gray-matter": "^4.0.2",
     "parse-numeric-range": "^1.2.0",
@@ -51,34 +51,15 @@
     "remark-external-links": "^8.0.0",
     "tailwindcss": "^2.1.1",
     "toast": "^0.3.43",
-    "unist-util-visit": "^2.0.3",
+    "unist-util-visit": "^3.0.0",
     "wordcount": "^1.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
+    "pretty-bytes": "^5.6.0",
     "serve": "^11.3.2",
     "stylelint": "^13.12.0",
     "stylelint-config-standard": "^21.0.0"
-  },
-  "snowpack": {
-    "exclude": [
-      "public/**/*",
-      "toast.js",
-      "data/fetch-mdx-posts.js"
-    ],
-    "installOptions": {
-      "alias": {
-        "react": "preact/compat"
-      }
-    },
-    "knownEntrypoints": [
-      "@heroicons/react/outline",
-      "@mdx-js/preact",
-      "fuse.js",
-      "preact",
-      "preact/hooks",
-      "wordcount"
-    ]
   },
   "stylelint": {
     "extends": [
