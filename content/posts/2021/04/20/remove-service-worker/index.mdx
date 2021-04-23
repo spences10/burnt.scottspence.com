@@ -17,6 +17,37 @@ How I got round it was taking the `sw.js` file from the
 `gatsby-plugin-remove-service-worker` plugin and added that to the
 build script of my new site.
 
+A good place to start is if you have the offline plugin installed
+already is to also have the `gatsby-plugin-remove-service-worker`
+ready to go as well.
+
+This is what my `gatsby-config.js` looked like when I'd finished:
+
+```js
+// {
+//   resolve: `gatsby-plugin-offline`,
+//   options: {
+//     precachePages: [`/2020/*`, `/2021/*`],
+//   },
+// },
+`gatsby-plugin-remove-serviceworker`,
+// {
+//   resolve: `gatsby-plugin-manifest`,
+//   options: {
+//     name: siteMetadata.title,
+//     short_name: siteMetadata.title,
+//     start_url: `/`,
+//     background_color: `#336699`,
+//     theme_color: `#663399`,
+//     display: `minimal-ui`,
+//     icon: `static/favicon.png`, // This path is relative to the root of the site.
+//   },
+// },
+```
+
+So remove `gatsby-plugin-offline` and `gatsby-plugin-manifest` and kae
+sure `gatsby-plugin-remove-serviceworker` is enabled.
+
 Then when the new site spins up it will remove the old service worker.
 
 ```js
