@@ -45,23 +45,17 @@ This is what my `gatsby-config.js` looked like when I'd finished:
 // },
 ```
 
-So remove `gatsby-plugin-offline` and `gatsby-plugin-manifest` and kae
-sure `gatsby-plugin-remove-serviceworker` is enabled.
+So remove `gatsby-plugin-offline` and `gatsby-plugin-manifest` and
+make sure `gatsby-plugin-remove-serviceworker` is enabled.
 
 If I go to `https://scottspence.com/sw.js` I can see the script that
 is in the `gatsby-plugin-remove-serviceworker` package. What I need to
-do now is mirror that on my new site. I'll do that with a script I
-have a `postbuild` script I run and in there I'll move a copy of the
-`sw.js` file there so that when existing users visit the site the old
-service worker will be removed:
+do now is mirror that on my new site.
 
-```json
-"sw": "cp sw.js public/"
-```
-
-Then when the new site spins up it will remove the old service worker.
+Here's that script:
 
 ```js
+// sw.js
 self.addEventListener('install', function (e) {
   self.skipWaiting()
 })
@@ -77,3 +71,19 @@ self.addEventListener('activate', function (e) {
     })
 })
 ```
+
+I've taken that `sw.js` script from the
+`gatsby-plugin-remove-serviceworker` package and added it to the root
+of my project.
+
+I have a `postbuild` script I run to create the sitemap and
+`robots.txt` file amongst other things so I'll add it in with that.
+
+In the `npm` script I'll move a copy of the `sw.js` file to the
+`public` folder, that's where the site build output goes:
+
+```json
+"sw": "cp sw.js public/"
+```
+
+Then when the new site spins up it will remove the old service worker.
