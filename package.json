@@ -37,9 +37,9 @@
     "date-fns": "^2.21.1",
     "esinstall": "^1.1.4",
     "fuse.js": "^6.4.6",
-    "gray-matter": "^4.0.2",
+    "gray-matter": "^4.0.3",
     "parse-numeric-range": "^1.2.0",
-    "postcss": "^8.2.10",
+    "postcss": "^8.2.12",
     "postcss-cli": "^8.3.1",
     "preact": "^10.5.13",
     "preact-render-to-string": "^5.1.19",
@@ -49,7 +49,7 @@
     "rehype-local-image-to-cloudinary": "^1.1.0",
     "rehype-slug": "^4.0.1",
     "remark-external-links": "^8.0.0",
-    "tailwindcss": "^2.1.1",
+    "tailwindcss": "^2.1.2",
     "toast": "^0.3.43",
     "unist-util-visit": "^3.0.0",
     "wordcount": "^1.1.1"
@@ -58,8 +58,8 @@
     "autoprefixer": "^10.2.5",
     "pretty-bytes": "^5.6.0",
     "serve": "^11.3.2",
-    "stylelint": "^13.12.0",
-    "stylelint-config-standard": "^21.0.0"
+    "stylelint": "^13.13.0",
+    "stylelint-config-standard": "^22.0.0"
   },
   "stylelint": {
     "extends": [
