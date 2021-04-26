@@ -39,7 +39,7 @@
     "fuse.js": "^6.4.6",
     "gray-matter": "^4.0.3",
     "parse-numeric-range": "^1.2.0",
-    "postcss": "^8.2.12",
+    "postcss": "^8.2.13",
     "postcss-cli": "^8.3.1",
     "preact": "^10.5.13",
     "preact-render-to-string": "^5.1.19",
