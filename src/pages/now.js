@@ -3,6 +3,7 @@ import { Fragment, h } from 'preact'
 import NowCopy from '../../now-copy.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
+import { ogImageUrl } from '../util/og-image.js'
 
 export default function Now() {
   const {
@@ -20,7 +21,7 @@ export default function Now() {
         title="What I'm doing now"
         titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
-        image={`image`}
+        image={ogImageUrl(siteAuthorName, 'scottspence.com', `Now`)}
         pathname={`${siteUrl}/now/`}
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}

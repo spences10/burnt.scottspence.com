@@ -3,6 +3,7 @@ import { h } from 'preact'
 import UsesCopy from '../../uses-copy.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
+import { ogImageUrl } from '../util/og-image.js'
 
 export default function Uses() {
   const {
@@ -20,7 +21,7 @@ export default function Uses() {
         title="Uses"
         titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
-        image={`image`}
+        image={ogImageUrl(siteAuthorName, 'scottspence.com', `Uses`)}
         pathname={`${siteUrl}/uses/`}
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}

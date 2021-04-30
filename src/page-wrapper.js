@@ -11,6 +11,7 @@ import { PrivateBanner } from './components/private-banner.js'
 import SEO from './components/seo/index.js'
 import { TableOfContents } from './components/table-of-contents.js'
 import { SiteMetadata } from './site-config.js'
+import { ogImageUrl } from './util/og-image.js'
 
 export default function PageWrapper({
   children,
@@ -89,7 +90,11 @@ export default function PageWrapper({
               title={title}
               titleTemplate={siteTitle}
               description={description || 'nothin’'}
-              image={`image`}
+              image={ogImageUrl(
+                siteAuthorName,
+                'scottspence.com',
+                title
+              )}
               pathname={`${siteUrl}/${slug}`}
               siteLanguage={siteLanguage}
               siteLocale={siteLocale}

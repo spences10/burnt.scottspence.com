@@ -5,6 +5,7 @@ import { Fragment, h } from 'preact'
 import { useEffect, useRef, useState } from 'preact/hooks'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
+import { ogImageUrl } from '../util/og-image.js'
 
 export default function Garden({ posts }) {
   const [query, updateQuery] = useState(``)
@@ -69,7 +70,7 @@ export default function Garden({ posts }) {
         title="Writing"
         titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
-        image={`image`}
+        image={ogImageUrl(siteAuthorName, 'scottspence.com', `Blog`)}
         pathname={`${siteUrl}/garden/`}
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}

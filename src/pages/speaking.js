@@ -3,6 +3,7 @@ import { h } from 'preact'
 import SpeakingCopy from '../../speaking-copy.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
+import { ogImageUrl } from '../util/og-image.js'
 
 export default function SpeakingPage() {
   const {
@@ -20,7 +21,11 @@ export default function SpeakingPage() {
         title="Speaking"
         titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
-        image={`image`}
+        image={ogImageUrl(
+          siteAuthorName,
+          'scottspence.com',
+          `Speaking`
+        )}
         pathname={`${siteUrl}/speaking/`}
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}

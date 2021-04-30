@@ -4,6 +4,7 @@ import AboutCopy from '../../about-copy.js'
 import { LandingHero } from '../components/landing-hero.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
+import { ogImageUrl } from '../util/og-image.js'
 
 export default function IndexPage() {
   const {
@@ -21,7 +22,11 @@ export default function IndexPage() {
         title="Welcome!"
         titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
-        image={`image`}
+        image={ogImageUrl(
+          siteAuthorName,
+          'scottspence.com',
+          `Hello World!`
+        )}
         pathname={siteUrl}
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}

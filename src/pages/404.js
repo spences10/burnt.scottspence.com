@@ -2,13 +2,18 @@
 import { Fragment, h } from 'preact'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
+import { ogImageUrl } from '../util/og-image.js'
 
 export default function Page404() {
   const { siteTitle } = SiteMetadata
 
   return (
     <Fragment>
-      <SEO title="404" titleTemplate={siteTitle} />
+      <SEO
+        title="404"
+        titleTemplate={siteTitle}
+        image={ogImageUrl(siteAuthorName, 'scottspence.com', `404`)}
+      />
       <h1>
         That's a nop!
         <span role="img" aria-label="crying face">

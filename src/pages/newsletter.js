@@ -3,6 +3,7 @@ import { Fragment, h } from 'preact'
 import NewsletterCopy from '../../newsletter-copy.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
+import { ogImageUrl } from '../util/og-image.js'
 
 export default function Newsletter() {
   const {
@@ -22,7 +23,11 @@ export default function Newsletter() {
         title="Newsletter"
         titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
-        image={`image`}
+        image={ogImageUrl(
+          siteAuthorName,
+          'scottspence.com',
+          `Newsletter`
+        )}
         pathname={`${siteUrl}/newsletter/`}
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}

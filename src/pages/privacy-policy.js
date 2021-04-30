@@ -3,6 +3,7 @@ import { h } from 'preact'
 import PrivacyPolicyCopy from '../../privacy-policy-copy.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
+import { ogImageUrl } from '../util/og-image.js'
 
 export default function PrivacyPolicy() {
   const {
@@ -21,7 +22,11 @@ export default function PrivacyPolicy() {
         titleTemplate={siteUrl}
         titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
-        image={`image`}
+        image={ogImageUrl(
+          siteAuthorName,
+          'scottspence.com',
+          `Privacy Policy`
+        )}
         pathname={`${siteUrl}/privacy-policy/`}
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}

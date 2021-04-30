@@ -3,6 +3,7 @@ import { h } from 'preact'
 import PortfolioCopy from '../../portfolio-copy.js'
 import SEO from '../components/seo/index.js'
 import { SiteMetadata } from '../site-config.js'
+import { ogImageUrl } from '../util/og-image.js'
 
 export default function Portfolio() {
   const {
@@ -20,7 +21,11 @@ export default function Portfolio() {
         title="Portfolio"
         titleTemplate={siteTitle}
         description={siteDescription || 'nothin’'}
-        image={`image`}
+        image={ogImageUrl(
+          siteAuthorName,
+          'scottspence.com',
+          `Portfolio`
+        )}
         pathname={`${siteUrl}/portfolio/`}
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}
