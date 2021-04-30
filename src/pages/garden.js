@@ -57,6 +57,7 @@ export default function Garden({ posts }) {
 
   const {
     siteTitle,
+    siteAuthorName,
     siteDescription,
     siteUrl,
     siteTwitter,

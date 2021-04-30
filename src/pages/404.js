@@ -5,7 +5,7 @@ import { SiteMetadata } from '../site-config.js'
 import { ogImageUrl } from '../util/og-image.js'
 
 export default function Page404() {
-  const { siteTitle } = SiteMetadata
+  const { siteTitle, siteAuthorName } = SiteMetadata
 
   return (
     <Fragment>

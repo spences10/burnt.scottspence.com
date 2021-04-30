@@ -9,7 +9,6 @@ export default function Newsletter() {
   const {
     siteTitle,
     siteDescription,
-    siteLastBuildDate,
     siteUrl,
     siteAuthorName,
     siteTwitter,

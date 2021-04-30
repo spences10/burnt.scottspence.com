@@ -8,6 +8,7 @@ import { ogImageUrl } from '../util/og-image.js'
 export default function SpeakingPage() {
   const {
     siteTitle,
+    siteAuthorName,
     siteDescription,
     siteUrl,
     siteTwitter,

@@ -9,6 +9,7 @@ import { ogImageUrl } from '../util/og-image.js'
 export default function IndexPage() {
   const {
     siteTitle,
+    siteAuthorName,
     siteDescription,
     siteUrl,
     siteTwitter,
