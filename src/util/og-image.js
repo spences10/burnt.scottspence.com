@@ -10,7 +10,7 @@ export const ogImageUrl = (author, website, title) => {
     author,
     website: website || `scottspence.com`,
     title,
-    image: `https://scottspence.com/favicon.png`,
+    image: `https://res.cloudinary.com/defkmsrpw/image/upload/f_auto,q_auto/v1614936697/scottspence.com/mugFace.png`,
   }
   return `https://image-og.now.sh/og.jpg${objectToQueryParams(
     params
