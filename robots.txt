@@ -10,7 +10,7 @@ Allow: /
 Sitemap: https://scottspence.com/sitemap.xml
 
 Disallow: /*-copy
-Disallow: /garden
+Disallow: /garden/*
 Disallow: /newsletters
 Disallow: /tags
 Disallow: /toast.
