@@ -8,9 +8,10 @@
 User-agent: *
 Allow: /
 Sitemap: https://scottspence.com/sitemap.xml
+Allow: /garden/garden.html
 
 Disallow: /*-copy
-Disallow: /garden/*
+Disallow: /garden
 Disallow: /newsletters
 Disallow: /tags
 Disallow: /toast.
