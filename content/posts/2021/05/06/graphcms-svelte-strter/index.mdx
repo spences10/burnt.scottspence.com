@@ -1,0 +1,87 @@
+---
+date: 2021-05-06
+title: GraphCMS starter with SvelteKit
+tags: ['svelte', 'sveltekit', 'vite']
+private: true
+---
+
+I made a starter blog with SvelteKit and GraphCMS
+
+```bash
+npm init svelte@next
+```
+
+I chose the skeleton with no TypeScript support and ESLint and
+Prettier config.
+
+Added Tailwind JIT:
+
+```bash
+npx svelte-add tailwindcss  --jit
+```
+
+Added a `$layout.svelte` file in the `routes` directory:
+
+```html
+<script>
+  import '../app.postcss'
+</script>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+</nav>
+
+<slot />
+```
+
+Amended the `index.svelte` file to fetch posts from GraphCMS endpoint:
+
+```html
+<script context="module">
+  import { GraphQLClient } from 'graphql-request'
+
+  export async function load() {
+    const graphcms = new GraphQLClient(
+      import.meta.env.VITE_GRAPHCMS_URL,
+      {
+        headers: {},
+      }
+    )
+
+    const { posts } = await graphcms.request(
+      `{
+          posts {
+            slug
+            title
+          }
+      }`
+    )
+
+    return {
+      props: {
+        posts,
+      },
+    }
+  }
+</script>
+
+<script>
+  export let posts
+</script>
+
+<h1>GraphCMS blog-starter</h1>
+<ul>
+  {#each posts as post}
+  <li>
+    <a class="text-blue-600 underline" href="/blog/{post.slug}">
+      {post.title}
+    </a>
+  </li>
+  {/each}
+</ul>
+
+<style style lang="postcss">
+  /* your styles go here */
+</style>
+```
