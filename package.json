@@ -34,12 +34,12 @@
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/jit": "^0.1.18",
     "@toastdotdev/mdx": "^0.2.3",
-    "date-fns": "^2.21.1",
+    "date-fns": "^2.21.2",
     "esinstall": "^1.1.4",
     "fuse.js": "^6.4.6",
     "gray-matter": "^4.0.3",
     "parse-numeric-range": "^1.2.0",
-    "postcss": "^8.2.13",
+    "postcss": "^8.2.14",
     "postcss-cli": "^8.3.1",
     "preact": "^10.5.13",
     "preact-render-to-string": "^5.1.19",
@@ -51,14 +51,14 @@
     "remark-external-links": "^8.0.0",
     "tailwindcss": "^2.1.2",
     "toast": "^0.3.43",
-    "unist-util-visit": "^3.0.0",
+    "unist-util-visit": "^3.0.1",
     "wordcount": "^1.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
     "pretty-bytes": "^5.6.0",
     "serve": "^11.3.2",
-    "stylelint": "^13.13.0",
+    "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0"
   },
   "stylelint": {
