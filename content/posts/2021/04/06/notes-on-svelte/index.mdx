@@ -369,6 +369,43 @@ Here's the example take from the [Svelte.dev titorial site]:
 <p>{count} doubled is {doubled}</p>
 ```
 
+## Use state hooks
+
+Take a look at the following example from the React documentation for
+[Introducing Hooks] which is a simple counter component:
+
+```jsx
+import React, { useState } from 'react'
+
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  )
+}
+```
+
+Now take a look at the same example in Svelte:
+
+```html
+<script>
+	let count = 0
+</script>
+
+<p>You clicked {count} times</p>
+<button on:click={() => count++}>
+	Click me
+</button>
+```
+
+They both do exactly the same thing and the Svelte one is a little
+shorter and a lot simpler to grok.
+
 ## Resources
 
 Check out [Svelte Mastery] for all these examples and more
@@ -378,3 +415,4 @@ Check out [Svelte Mastery] for all these examples and more
   https://www.youtube.com/channel/UCg6SQd5jnWo5Y70rZD9SQFA
 [svelte.dev titorial site]:
   https://svelte.dev/tutorial/reactive-declarations
+[introducing hooks]: https://reactjs.org/docs/hooks-intro.html
