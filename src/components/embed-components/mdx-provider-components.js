@@ -42,19 +42,19 @@ export const components = {
     return (
       <div
         class="mb-5 p-2 bg-code-bg overflow-auto rounded-lg"
-        dangerouslySetInnerHTML={{ __html: props.children }}
+        {...props}
       />
     )
   },
   'p.inlineCode': props => (
     <code {...props} class="bg-inline-code rounded px-1" />
   ),
-  pre: props => (
-    <div
-      class="bg-gray-100 overflow-auto"
-      dangerouslySetInnerHTML={{ __html: props.children }}
-    />
-  ),
+  // pre: props => (
+  //   <div
+  //     class="mb-5 p-2 bg-code-bg overflow-auto rounded-lg"
+  //     {...props}
+  //   />
+  // ),
   Vimeo,
   Tweet,
   MarkdownParser: props => <div></div>,

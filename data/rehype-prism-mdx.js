@@ -6,6 +6,8 @@ import Highlight from 'prism-react-renderer'
 import Prism from 'prismjs'
 import prismComponents from 'prismjs/components.js'
 import loadLanguages from 'prismjs/components/index.js'
+import rehypeParse from 'rehype-parse'
+import unified from 'unified'
 import { visit } from 'unist-util-visit'
 import codeSyntaxHighlightTheme from '../src/code-style.js'
 
@@ -76,7 +78,11 @@ export default function rehypePrismMdx(options) {
                   className: className,
                   style: {
                     ...style,
-                    'background-color': 'transparent',
+                    'background-color': '#011627',
+                    'border-radius': '0.5rem',
+                    'margin-bottom': '1.25rem',
+                    padding: '0.5rem',
+                    overflow: 'auto',
                   },
                 },
                 tokens.map((line, i) =>
@@ -105,15 +111,19 @@ export default function rehypePrismMdx(options) {
               )
           )
         )
+        // parse html string to HAST because unified breaks
+        // all the time.
+        const hastRoot = unified()
+          .use(rehypeParse, {
+            emitParseErrors: true,
+            fragment: true,
+          })
+          .parse(highlightedCode)
+        // render code to string
         // render code to string
         parentTree.tagName = 'codeblock'
         parentTree.properties = tree.properties
-        parentTree.children = [
-          {
-            value: highlightedCode,
-            type: 'text',
-          },
-        ]
+        parentTree.children = hastRoot.children
       }
     })
   }
