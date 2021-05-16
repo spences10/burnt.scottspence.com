@@ -1,18 +1,40 @@
 ---
 date: 2021-05-06
-title: GraphCMS starter with SvelteKit
+title: SvelteKit starter blog with GraphCMS
 tags: ['svelte', 'sveltekit', 'vite']
-private: true
+private: false
 ---
 
-I made a starter blog with SvelteKit and GraphCMS
+I made a starter blog with SvelteKit and GraphCMS, I've been doing a
+couple of small projects with it and a _really_ like it!
+
+Here's a small blog starter made with it from the GraphCMS blog
+starter.
+
+Create a directory for the project:
 
 ```bash
+mkdir sveltekit-starter-blog
+cd sveltekit-starter-blog
+# initialise SvelteKit
 npm init svelte@next
 ```
 
-I chose the skeleton with no TypeScript support and ESLint and
-Prettier config.
+I chose the skeleton project option with no TypeScript support and
+ESLint and Prettier config. Now I can install the dependencies with:
+
+```bash
+npm i
+```
+
+Now I can start the dev server and take a look at the project, I'll
+start the dev server with `npm run` and add som additional paramerters
+to the script with `--` then `-o` (or `--open`) to open in the browser
+and `-p 3300` (or `--port 3300`) to specify the port to run on:
+
+```bash
+npm run dev -- -o -p 3300
+```
 
 Added Tailwind JIT:
 
@@ -20,7 +42,7 @@ Added Tailwind JIT:
 npx svelte-add tailwindcss  --jit
 ```
 
-Added a `$layout.svelte` file in the `routes` directory:
+Added a `__layout.svelte` file in the `routes` directory:
 
 ```html
 <script>
