@@ -32,7 +32,10 @@ I'm then prompted to pick the pricing plan for the project, as this is
 only a demo I'll pick the community pricing plan (free) and skip
 inviting team members.
 
-Create a directory for the project:
+## Scaffold out the SvelteKit project
+
+Now I'll create a directory for the project change directory into it
+(`cd`) and use the SvelteKit `npm init` script:
 
 ```bash
 mkdir sveltekit-starter-blog
@@ -48,10 +51,11 @@ ESLint and Prettier config. Now I can install the dependencies with:
 npm i
 ```
 
-Now I can start the dev server and take a look at the project, I'll
-start the dev server with `npm run` and add som additional paramerters
-to the script with `--` then `-o` (or `--open`) to open in the browser
-and `-p 3300` (or `--port 3300`) to specify the port to run on:
+I can now start the dev server and take a look at the project, I'll
+start the dev server with `npm run` and add some additional
+paramerters to the script with `--` then `-o` (or `--open`) to open in
+the browser and `-p 3300` (or `--port 3300`) to specify the port to
+run on:
 
 ```bash
 npm run dev -- -o -p 3300
@@ -60,9 +64,12 @@ npm run dev -- -o -p 3300
 That's the project, pretty bare bones with nothing other than a
 landing page!
 
+## Add TailwindCSS
+
 There's a really useful GitHub project that adds additional
 functionality to your Svelte projects with [Svelte Add] in this case
-I'm going to add Taillwind:
+I'm going to add Tailwind with the Just In Time (JIT) compiler
+enabled:
 
 ```bash
 npx svelte-add tailwindcss  --jit
@@ -84,9 +91,21 @@ Add in the Tailwind directives to the `src/app.css` file:
 ```
 
 I'll come onto the styling later for now I'm going to focus on getting
-the layout
+the posts into the project and using the SvelteKit layout to add some
+elements that are presisted through route changes.
 
-Added a `__layout.svelte` file in the `routes` directory:
+Create a SvelteKit layout in the routes folder:
+
+```bash
+touch src/routes/__layout
+```
+
+The layout will be wrapping the project so the one requirement of a
+`__layout` in SvelteKit is a `<slot/>` see my notes on Svelte [slots]
+for more on that.
+
+In the layout I'll import the global CSS and add in a basic nav for
+now along with the required slot:
 
 ```html
 <script>
@@ -100,6 +119,12 @@ Added a `__layout.svelte` file in the `routes` directory:
 
 <slot />
 ```
+
+## Routes for the blog posts
+
+If you are familiar with [NextJS dynamic routes] then this will be
+familiar, if not then it's a way to determine the routes (URL address)
+in the project programmatically.
 
 I'm using the Svelte `script context="module"` so that that I can get
 the posts from the GraphCMS endpoint ahead of time. That means it's
@@ -141,7 +166,7 @@ Amended the `index.svelte` file to fetch posts from GraphCMS endpoint:
   export let posts
 </script>
 
-<h1>GraphCMS blog-starter</h1>
+<h1>SvelteKit starter blog</h1>
 <ul>
   {#each posts as post}
   <li>
@@ -157,3 +182,6 @@ I'm still early days with Svelte but so far I'm super impressed with
 it.
 
 [svelte add]: https://github.com/svelte-add/svelte-add
+[slots]: https://scottspence.com/2021/04/06/notes-on-svelte/#slots
+[nextjs dynamic routes]:
+  https://nextjs.org/docs/routing/dynamic-routes
