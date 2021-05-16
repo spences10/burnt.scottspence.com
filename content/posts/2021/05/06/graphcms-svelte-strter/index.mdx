@@ -130,14 +130,15 @@ I'll be using `graphql-request` to query the posts so I'll install
 that along with `graphql`:
 
 ```bash
-npm i graphql-request graphql
+npm i -D graphql-request graphql
 ```
 
 Here's what I want `graphql-request` to do for me, this example is
-taken from the [prisma labs example] documentation:
+taken from the [prisma labs example] documentation with the required
+query from my project:
 
 ```js {5}
-import { GraphQLClient } from 'graphql-request'
+import { gql, GraphQLClient } from 'graphql-request'
 
 export async function load() {
   const graphcms = new GraphQLClient(
@@ -147,14 +148,19 @@ export async function load() {
     }
   )
 
-  const { posts } = await graphcms.request(
-    `{
-       posts {
-         slug
-         title
-       }
-    }`
-  )
+  const query = gql`
+    query Posts {
+      posts {
+        id
+        title
+        slug
+        date
+        excerpt
+      }
+    }
+  `
+
+  const { posts } = await graphcms.request(query)
 
   return {
     props: {
@@ -186,20 +192,18 @@ so I'm going to check the 'Content from stage Published' checkbox.
 CLicking on the URL endpoint on the settings screen will copy it to my
 clipboard I can then add that to the `.env` file:
 
-```env
+```text
 VITE_GRAPHCMS_URL=https://api-eu-central-1.graphcms.com/v2/projectid/master
 ```
 
-I'm using the Svelte `script context="module"` so that that I can get
-the posts from the GraphCMS endpoint ahead of time. That means it's
-run when the page is loaded and the posts can be loaded ahead of the
-page being rendered on the screen.
-
-Amended the `index.svelte` file to fetch posts from GraphCMS endpoint:
+I'm using Svelte `script context="module"` so that that I can get the
+posts from the GraphCMS endpoint ahead of time. That means it's run
+when the page is loaded and the posts can be loaded ahead of the page
+being rendered on the screen:
 
 ```html
 <script context="module">
-  import { GraphQLClient } from 'graphql-request'
+  import { gql, GraphQLClient } from 'graphql-request'
 
   export async function load() {
     const graphcms = new GraphQLClient(
@@ -209,14 +213,19 @@ Amended the `index.svelte` file to fetch posts from GraphCMS endpoint:
       }
     )
 
-    const { posts } = await graphcms.request(
-      `{
-          posts {
-            slug
-            title
-          }
-      }`
-    )
+    const query = gql`
+      query Posts {
+        posts {
+          id
+          title
+          slug
+          date
+          excerpt
+        }
+      }
+    `
+
+    const { posts } = await graphcms.request(query)
 
     return {
       props: {
@@ -230,11 +239,15 @@ Amended the `index.svelte` file to fetch posts from GraphCMS endpoint:
   export let posts
 </script>
 
-<h1>SvelteKit starter blog</h1>
+<svelte:head>
+  <title>SvelteKit starter blog</title>
+</svelte:head>
+
+<h1 class="text-3xl">SvelteKit starter blog</h1>
 <ul>
   {#each posts as post}
   <li>
-    <a class="text-blue-600 underline" href="/blog/{post.slug}">
+    <a class="text-blue-600 underline" href="/post/{post.slug}">
       {post.title}
     </a>
   </li>
@@ -242,11 +255,69 @@ Amended the `index.svelte` file to fetch posts from GraphCMS endpoint:
 </ul>
 ```
 
+Breaking this down a bit, the `props: {posts}` (or `props.posts`) that
+are being returned by the `graphql-request` in the Svelte module are
+then accepted as props to the page with:
+
+```html
+<script>
+  export let posts
+</script>
+```
+
+I'm then using Svelte `{#each}` to loop through (over, round,
+whatever) the posts returned from the GraphQL query made in the
+`graphql-request` with some minimal Tailwind classes.
+
+Now I have the projects listed I can click on the links but they don't
+go anywhere and the error message isn't great either, I'll fix that by
+making an error page.
+
+## Adding an error page
+
+I'll create a basic error page to show some information to the user,
+first up create the page in the `routes` folder:
+
+```bash
+touch src/routes/__error.svelte
+```
+
+Then add in the error message and status:
+
+```html
+<script context="module">
+  export function load({ error, status }) {
+    return {
+      props: { error, status },
+    }
+  }
+</script>
+
+<script>
+  export let error, status
+</script>
+
+<svelte:head>
+  <title>{status}</title>
+</svelte:head>
+
+<h1>{status}: {error.message}</h1>
+```
+
+Now clicking one of the home page links will give a nicer looking
+error.
+
 ## Routes for the blog posts
 
 If you are familiar with [NextJS dynamic routes] then this will be
-familiar, if not then it's a way to determine the routes (URL address)
-in the project programmatically.
+familiar with this next part, if not then it's a way to determine the
+routes (URL address) in the project programmatically.
+
+```bash
+mkdir src/routes/post/
+# not the quotes around the path here 👇
+touch 'src/routes/post/[slug].svelte'
+```
 
 I'm still early days with Svelte but so far I'm super impressed with
 it.
