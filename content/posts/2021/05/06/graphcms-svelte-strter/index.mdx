@@ -8,8 +8,29 @@ private: false
 I made a starter blog with SvelteKit and GraphCMS, I've been doing a
 couple of small projects with it and a _really_ like it!
 
-Here's a small blog starter made with it from the GraphCMS blog
-starter.
+Here's a small SvelteKit blog starter made with it from the GraphCMS
+blog starter.
+
+## Creat the backend with GraphCMS
+
+First up I'll create a GraphCMS project for this starter to pull the
+posts from, if you're following along you can crate a GraphCMS account
+either with email or by logging in with your GitHub account.
+
+Once you're signed in you can either create a new project from scratch
+or pick one of the starters that are available.
+
+I'm going to pick the 'Blog Starter' project which will have GraphCMS
+schema already created with some content to use.
+
+Next I'm prompted to give my project a name and a description then
+I'll need to pick the (data center) region where I want the project to
+live, I'm picking Europe as that closest to me then clicking the
+'Create Project' button.
+
+I'm then prompted to pick the pricing plan for the project, as this is
+only a demo I'll pick the community pricing plan (free) and skip
+inviting team members.
 
 Create a directory for the project:
 
@@ -36,17 +57,40 @@ and `-p 3300` (or `--port 3300`) to specify the port to run on:
 npm run dev -- -o -p 3300
 ```
 
-Added Tailwind JIT:
+That's the project, pretty bare bones with nothing other than a
+landing page!
+
+There's a really useful GitHub project that adds additional
+functionality to your Svelte projects with [Svelte Add] in this case
+I'm going to add Taillwind:
 
 ```bash
 npx svelte-add tailwindcss  --jit
 ```
 
+Then I'll need to create the base CSS file and add in the Tailwind
+directives for `base`, `components`, and `utilities`:
+
+```bash
+touch src/app.css
+```
+
+Add in the Tailwind directives to the `src/app.css` file:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+I'll come onto the styling later for now I'm going to focus on getting
+the layout
+
 Added a `__layout.svelte` file in the `routes` directory:
 
 ```html
 <script>
-  import '../app.postcss'
+  import '../app.css'
 </script>
 
 <nav>
@@ -56,6 +100,11 @@ Added a `__layout.svelte` file in the `routes` directory:
 
 <slot />
 ```
+
+I'm using the Svelte `script context="module"` so that that I can get
+the posts from the GraphCMS endpoint ahead of time. That means it's
+run when the page is loaded and the posts can be loaded ahead of the
+page being rendered on the screen.
 
 Amended the `index.svelte` file to fetch posts from GraphCMS endpoint:
 
@@ -102,11 +151,9 @@ Amended the `index.svelte` file to fetch posts from GraphCMS endpoint:
   </li>
   {/each}
 </ul>
-
-<style style lang="postcss">
-  /* your styles go here */
-</style>
 ```
 
 I'm still early days with Svelte but so far I'm super impressed with
 it.
+
+[svelte add]: https://github.com/svelte-add/svelte-add
