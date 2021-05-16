@@ -440,8 +440,20 @@ Svelte doesn't sanitise anyting inside the `{@html ...}` so make sure
 that you trust the source of that data or you risk exposing the users
 to XSS attacks.
 
+## Style it
+
+Now I've covered displaying a list of content and using dynamic routes
+with SvelteKit it's time to make it not look like crap! 😂
+
+I'll be using [Tailblocks] for the styling elements, rather than dump
+out all the HTML here what I have done is made an example repo for
+reference or use as a starter.
+
+## Conclusion
+
 I'm still early days with Svelte but so far I'm super impressed with
-it.
+it. This was an example with GraphCMS for the backend you can use
+Ghost, Sanity or whatever else fits your fancy.
 
 [svelte add]: https://github.com/svelte-add/svelte-add
 [slots]: https://scottspence.com/2021/04/06/notes-on-svelte/#slots
@@ -450,3 +462,4 @@ it.
 [prisma labs example]:
   https://github.com/prisma-labs/graphql-request#authentication-via-http-header
 [sveltekit faq]: https://kit.svelte.dev/faq#env-vars
+[tailblocks]: https://tailblocks.cc/
