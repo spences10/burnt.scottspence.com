@@ -120,11 +120,75 @@ now along with the required slot:
 <slot />
 ```
 
-## Routes for the blog posts
+## Get the posts from GraphCMS
 
-If you are familiar with [NextJS dynamic routes] then this will be
-familiar, if not then it's a way to determine the routes (URL address)
-in the project programmatically.
+First up I'll list out the posts from the GraphCMS GraphQL endpoint
+into the index page (home page) of the project so that there's a list
+of clicable links to take the user to the post.
+
+I'll be using `graphql-request` to query the posts so I'll install
+that along with `graphql`:
+
+```bash
+npm i graphql-request graphql
+```
+
+Here's what I want `graphql-request` to do for me, this example is
+taken from the [prisma labs example] documentation:
+
+```js {5}
+import { GraphQLClient } from 'graphql-request'
+
+export async function load() {
+  const graphcms = new GraphQLClient(
+    import.meta.env.VITE_GRAPHCMS_URL,
+    {
+      headers: {},
+    }
+  )
+
+  const { posts } = await graphcms.request(
+    `{
+       posts {
+         slug
+         title
+       }
+    }`
+  )
+
+  return {
+    props: {
+      posts,
+    },
+  }
+}
+```
+
+Note line 5 where it's requiring the endpoint, I'll need to create an
+`.env` file for that and define the `VITE_GRAPHCMS_URL` note that the
+`env` variable is prefixed with `VITE_` to expose it to the client,
+you can check out the [SvelteKit faq] for more info:
+
+```bash
+touch .env
+```
+
+I'll need to get the GraphQL endpoint from GraphCMS for
+`graphql-request`. So from my GraphCMS dashboard for my project
+there's a navigation bar on the leftand toward the bottom there's a
+settings button. Clicking that for the settings panel then under
+'Access' there's an 'API Access' page that will show the URL endpoint.
+
+One thing I'll need to do before copying the URL endpoint is set the
+API access permissions, I'll only want posts from the published stage
+so I'm going to check the 'Content from stage Published' checkbox.
+
+CLicking on the URL endpoint on the settings screen will copy it to my
+clipboard I can then add that to the `.env` file:
+
+```env
+VITE_GRAPHCMS_URL=https://api-eu-central-1.graphcms.com/v2/projectid/master
+```
 
 I'm using the Svelte `script context="module"` so that that I can get
 the posts from the GraphCMS endpoint ahead of time. That means it's
@@ -178,6 +242,12 @@ Amended the `index.svelte` file to fetch posts from GraphCMS endpoint:
 </ul>
 ```
 
+## Routes for the blog posts
+
+If you are familiar with [NextJS dynamic routes] then this will be
+familiar, if not then it's a way to determine the routes (URL address)
+in the project programmatically.
+
 I'm still early days with Svelte but so far I'm super impressed with
 it.
 
@@ -185,3 +255,6 @@ it.
 [slots]: https://scottspence.com/2021/04/06/notes-on-svelte/#slots
 [nextjs dynamic routes]:
   https://nextjs.org/docs/routing/dynamic-routes
+[prisma labs example]:
+  https://github.com/prisma-labs/graphql-request#authentication-via-http-header
+[sveltekit faq]: https://kit.svelte.dev/faq#env-vars
