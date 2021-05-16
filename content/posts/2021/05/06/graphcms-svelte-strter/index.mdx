@@ -199,7 +199,7 @@ VITE_GRAPHCMS_URL=https://api-eu-central-1.graphcms.com/v2/projectid/master
 I'm using Svelte `script context="module"` so that that I can get the
 posts from the GraphCMS endpoint ahead of time. That means it's run
 when the page is loaded and the posts can be loaded ahead of the page
-being rendered on the screen:
+(component) being rendered on the screen:
 
 ```html
 <script context="module">
@@ -318,6 +318,127 @@ mkdir src/routes/post/
 # not the quotes around the path here 👇
 touch 'src/routes/post/[slug].svelte'
 ```
+
+Now in the `[slug].svelte` file I can do pretty much the same to query
+the GraphQL endpoint on GraphCMS for a single post, I'll specify the
+post `slug` to bring display the post relating to it.
+
+The query looks like this:
+
+```graphql
+query PostPageQuery($slug: String!) {
+  post(where: { slug: $slug }) {
+    title
+    date
+    content {
+      html
+    }
+    tags
+    author {
+      id
+      name
+    }
+  }
+}
+```
+
+This looks a little different to the query on the index page as I'm
+specifying a single post with the `$slug` variable.
+
+To get the `$slug` variable I'll pull that from the `context`
+parameter that is passed to the `load` function:
+
+```html {4}
+<script context="module">
+  import { gql, GraphQLClient } from 'graphql-request'
+
+  export async function load(context) {
+    const graphcms = new GraphQLClient(
+```
+
+That can be used to get the `.page.params.slug` which is what I can
+add to the variables object for the `graphql-request`.
+
+```html
+<script context="module">
+  import { gql, GraphQLClient } from 'graphql-request'
+
+  export async function load(context) {
+    const graphcms = new GraphQLClient(
+      import.meta.env.VITE_GRAPHCMS_URL,
+      {
+        headers: {},
+      }
+    )
+
+    const query = gql`
+      query PostPageQuery($slug: String!) {
+        post(where: { slug: $slug }) {
+          title
+          date
+          content {
+            html
+          }
+          tags
+          author {
+            id
+            name
+          }
+        }
+      }
+    `
+
+    const variables = {
+      slug: context.page.params.slug,
+    }
+
+    const { post } = await graphcms.request(query, variables)
+
+    return {
+      props: {
+        post,
+      },
+    }
+  }
+</script>
+
+<script>
+  export let post
+</script>
+
+<svelte:head>
+  <title>{post.title}</title>
+</svelte:head>
+
+<h1>{post.title}</h1>
+<p>{post.author.name}</p>
+<p>{post.date}</p>
+<p>{post.tags}</p>
+{@html post.content.html}
+```
+
+Take note of the last line here where I'm using the Svelte `@html`
+tag, this renders content with HTML in it.
+
+It will take this:
+
+```html
+<p>This is a blog post paragraph.</p>
+<p></p>
+<p>This is another a blog post paragraph.</p>
+```
+
+And render it to:
+
+```markdown
+This is a blog post paragraph.
+
+This is another a blog post paragraph.
+```
+
+Svelte doesn't sanitise anyting inside the `{@html ...}` so make sure
+that you trust the source of that data or you risk exposing the users
+to XSS attacks.
 
 I'm still early days with Svelte but so far I'm super impressed with
 it.
