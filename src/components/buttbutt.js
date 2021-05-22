@@ -28,7 +28,7 @@ export const ButtButt = ({ height = 533, width = 849 }) => {
 
   return (
     <div>
-      <aside class="text-center mb-12">
+      <aside class="mb-12 text-center">
         <p class="mb-6">
           Looks like you have reached the bottom of this page!
         </p>
@@ -42,7 +42,7 @@ export const ButtButt = ({ height = 533, width = 849 }) => {
           class="h-full"
         />
       </div>
-      <aside class="text-center mb-20">
+      <aside class="mb-20 text-center">
         <p class="mb-6">Bummer!</p>
         <p class="mb-6">{rando}</p>
       </aside>

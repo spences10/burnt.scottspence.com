@@ -51,21 +51,21 @@ export const NewsLetterForm = () => {
   return (
     <div ref={ref}>
       {!submitted ? (
-        <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
-          <div class="py-10 px-6 bg-primary-700 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
-            <div class="lg:w-0 lg:flex-1">
-              <h3 class="text-3xl font-extrabold tracking-tight text-white">
+        <div class="mx-auto px-4 py-12 max-w-7xl sm:px-6 lg:px-8 lg:py-16">
+          <div class="bg-primary-700 px-6 py-10 rounded-3xl sm:px-12 sm:py-16 lg:flex lg:items-center lg:p-20">
+            <div class="lg:flex-1 lg:w-0">
+              <h3 class="text-white text-3xl font-extrabold tracking-tight">
                 Sign up for the newsletter
               </h3>
-              <p class="mt-4 max-w-3xl text-lg text-indigo-100">
+              <p class="mt-4 max-w-3xl text-indigo-100 text-lg">
                 Want to keep up to date with what I'm working on?
-                <p class="mt-4 max-w-3xl text-lg text-indigo-100">
+                <p class="mt-4 max-w-3xl text-indigo-100 text-lg">
                   Important dev related content, directly to your
                   inbox (for free).
                 </p>
               </p>
             </div>
-            <div class="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 lg:flex-1">
+            <div class="mt-12 sm:w-full sm:max-w-md lg:flex-1 lg:ml-8 lg:mt-0">
               <form
                 class="sm:flex"
                 action="#"
@@ -78,7 +78,7 @@ export const NewsLetterForm = () => {
                   Your Email:
                 </label>
                 <input
-                  class="w-full border-white px-5 py-3 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white rounded-md"
+                  class="placeholder-gray-500 px-5 py-3 w-full text-gray-900 border-white rounded-md focus:outline-none focus:ring-white focus:ring-offset-indigo-700 focus:ring-offset-2 focus:ring-2"
                   id="email"
                   aria-label="email"
                   type="email"
@@ -90,17 +90,17 @@ export const NewsLetterForm = () => {
                   onChange={e => emailSet(e.target.value)}
                 ></input>
                 <button
-                  class="mt-3 w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-500 hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
+                  class="bg-primary-500 hover:bg-primary-400 flex items-center justify-center mt-3 px-5 py-3 w-full text-white text-base font-medium border border-transparent rounded-md focus:outline-none focus:ring-white focus:ring-offset-indigo-700 focus:ring-offset-2 focus:ring-2 sm:flex-shrink-0 sm:ml-3 sm:mt-0 sm:w-auto"
                   type="submit"
                 >
                   Submit
                 </button>
               </form>
-              <p class="mt-3 text-sm text-indigo-100">
+              <p class="mt-3 text-indigo-100 text-sm">
                 I care about the protection of your data. Read my{' '}
                 <a
                   href="/privacy-policy/"
-                  class="text-white font-medium underline"
+                  class="text-white underline font-medium"
                 >
                   Privacy Policy.
                 </a>
@@ -109,13 +109,13 @@ export const NewsLetterForm = () => {
           </div>
         </div>
       ) : (
-        <div class="text-center max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
-          <div class="py-10 px-6 bg-primary-700 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
-            <div class="lg:w-0 lg:flex-1">
-              <h3 class="text-3xl font-extrabold tracking-tight text-white">
+        <div class="mx-auto px-4 py-12 max-w-7xl text-center sm:px-6 lg:px-8 lg:py-16">
+          <div class="bg-primary-700 px-6 py-10 rounded-3xl sm:px-12 sm:py-16 lg:flex lg:items-center lg:p-20">
+            <div class="lg:flex-1 lg:w-0">
+              <h3 class="text-white text-3xl font-extrabold tracking-tight">
                 Awesome, you're all signed up!
               </h3>
-              <p class="mt-4 text-lg text-indigo-100">
+              <p class="mt-4 text-indigo-100 text-lg">
                 Thanks for showing interest in my content.
               </p>
             </div>

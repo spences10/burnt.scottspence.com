@@ -52,14 +52,14 @@ export function TableOfContents() {
   return (
     <Fragment>
       {headings.length ? (
-        <aside class="table-of-contents sm:hidden lg:flex fixed">
+        <aside class="table-of-contents fixed sm:hidden lg:flex">
           <h3
-            class="font-extrabold text-lg mb-2"
+            class="mb-2 text-lg font-extrabold"
             id="table-of-contents"
           >
             Table of Contents
           </h3>
-          <ul class="overflow-x-hidden overflow-y-auto list-none">
+          <ul class="list-none overflow-x-hidden overflow-y-auto">
             {headings.map(heading => (
               <li key={`heading-${heading.href}`}>
                 <a href={heading.href}>{heading.label}</a>

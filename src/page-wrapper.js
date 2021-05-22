@@ -64,19 +64,19 @@ export default function PageWrapper({
           content="$ilp.uphold.com/bzPBWkMBzLmN"
         />
       </Helmet>
-      <main class="relative leading-relaxed tracking-wide text-lg transition delay-100 duration-100 ease-in-out">
+      <main class="relative text-lg tracking-wide leading-relaxed transition duration-100 delay-100 ease-in-out">
         <Header />
-        <article class="m-auto max-w-2xl prose px-6">
+        <article class="prose m-auto px-6 max-w-2xl">
           {title ? (
             <Fragment>
-              <h1 class="font-extrabold text-3xl mb-2">{title}</h1>
-              <div class="text-xs font-semibold uppercase mb-2">
+              <h1 class="mb-2 text-3xl font-extrabold">{title}</h1>
+              <div class="mb-2 text-xs font-semibold uppercase">
                 {timeToRead} minutes to read
               </div>
               <div class="mb-10">
                 {tags
                   ? tags.map(tag => (
-                      <span class="inline-flex leading-6 mr-3 items-center px-3 sp rounded-full text-xs lowercase font-medium bg-primary-400 text-gray-100">
+                      <span class="sp bg-primary-400 inline-flex items-center mr-3 px-3 text-gray-100 text-xs font-medium leading-6 rounded-full lowercase">
                         {tag}
                       </span>
                     ))
@@ -107,7 +107,7 @@ export default function PageWrapper({
           ) : null}
           {title ? <TableOfContents /> : null}
           <div class="markdown">{children}</div>
-          <div class="mb-20 flex" />
+          <div class="flex mb-20" />
           {title ? <ButtButt height="80" width="100" /> : null}
         </article>
         <NewsLetterForm />

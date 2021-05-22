@@ -83,13 +83,13 @@ export default function Garden({ posts }) {
       <div>
         <a
           href="2020/04/27/a-digital-garden/"
-          class="text-primary-200 tracking-wider font-bold mb-8 inline-block"
+          class="text-primary-200 inline-block mb-8 font-bold tracking-wider"
         >
           What's this?
         </a>
         <span class="inline-block">
           <button onClick={changeBlogName} class="ml-3">
-            <RefreshIcon class="h-3 w-3" />
+            <RefreshIcon class="w-3 h-3" />
           </button>
         </span>
       </div>
@@ -99,7 +99,7 @@ export default function Garden({ posts }) {
           Search:
         </label>
         <input
-          class="mt-1 mb-6 p-2 block w-full rounded-lg shadow-theme-xl bg-transparent"
+          class="shadow-theme-xl block mb-6 mt-1 p-2 w-full bg-transparent rounded-lg"
           name="search"
           id="search"
           type="text"
@@ -119,11 +119,11 @@ export default function Garden({ posts }) {
                   alt={post.description}
                   class="no-underline hover:underline"
                 >
-                  <article class="p-4 mb-6 rounded-lg shadow-theme-xl">
-                    <h2 class="text-2xl mb-1 font-bold">
+                  <article class="shadow-theme-xl mb-6 p-4 rounded-lg">
+                    <h2 class="mb-1 text-2xl font-bold">
                       {post.title}
                     </h2>
-                    <div class="text-xs font-semibold uppercase mb-4">
+                    <div class="mb-4 text-xs font-semibold uppercase">
                       {post.timeToRead} minutes to read
                     </div>
                     <p

@@ -44,7 +44,7 @@ export const ToggleTheme = ({ theme, setTheme, mobile }) => {
   }, [theme])
 
   const Icon = () => {
-    return <ColorSwatchIcon class="h-5 w-5" />
+    return <ColorSwatchIcon class="w-5 h-5" />
   }
 
   // remove class='hidden' once FOUC fixed
@@ -52,7 +52,7 @@ export const ToggleTheme = ({ theme, setTheme, mobile }) => {
     <div class="hidden">
       {mobile ? (
         <button
-          class="flex justify-center flex-col items-center"
+          class="flex flex-col items-center justify-center"
           aria-label="theme switch"
           onClick={() => {
             theme === 'dark' ? setTheme('light') : setTheme('dark')

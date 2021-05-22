@@ -9,7 +9,7 @@ export const Header = () => {
   const [theme, setTheme] = useState('dark')
 
   return (
-    <header class="mb-6 bg-primary-500">
+    <header class="bg-primary-500 mb-6">
       <Nav theme={theme} setTheme={setTheme} />
       <MobileNav theme={theme} setTheme={setTheme} mobile={true} />
     </header>

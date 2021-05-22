@@ -9,43 +9,43 @@ import { ToggleTheme } from './toggle-theme.js'
 
 export default function MobileNav({ theme, setTheme, mobile }) {
   return (
-    <div class="lg:hidden fixed top-auto bottom-0 left-0 right-0 flex items-center justify-center z-10">
-      <div class="max-w-3xl px-1 py-5 mx-5 my-1 bg-primary-500 text-gray-200 rounded-lg shadow-lg">
-        <nav class="flex justify-evenly bg-secondary rounded-lg overflow-hidden">
+    <div class="fixed z-10 bottom-0 left-0 right-0 top-auto flex items-center justify-center lg:hidden">
+      <div class="bg-primary-500 mx-5 my-1 px-1 py-5 max-w-3xl text-gray-200 rounded-lg shadow-lg">
+        <nav class="bg-secondary flex justify-evenly rounded-lg overflow-hidden">
           <div class="flex flex-row">
             <a
               href="/"
               alt="home page"
               // px-2 sm:px-4 md-px-6 when ToC added
-              class="px-4 sm:px-6 md:px-8 no-underline"
+              class="px-4 no-underline sm:px-6 md:px-8"
             >
-              <div class="flex justify-center flex-col items-center">
-                <HomeIcon class="h-5 w-5" />
+              <div class="flex flex-col items-center justify-center">
+                <HomeIcon class="w-5 h-5" />
                 <p class="text-xs">Home</p>
               </div>
             </a>
             <a
               href="/garden"
               alt="writing page"
-              class="px-4 sm:px-6 md:px-8 no-underline"
+              class="px-4 no-underline sm:px-6 md:px-8"
             >
-              <div class="flex justify-center flex-col items-center">
-                <PencilIcon class="h-5 w-5" />
+              <div class="flex flex-col items-center justify-center">
+                <PencilIcon class="w-5 h-5" />
                 <p class="text-xs">Writing</p>
               </div>
             </a>
             <a
               href="/speaking"
               alt="speaking page"
-              class="px-4 sm:px-6 md:px-8 no-underline"
+              class="px-4 no-underline sm:px-6 md:px-8"
             >
-              <div class="flex justify-center flex-col items-center">
-                <ChatIcon class="h-5 w-5" />
+              <div class="flex flex-col items-center justify-center">
+                <ChatIcon class="w-5 h-5" />
                 <p class="text-xs">Speaking</p>
               </div>
             </a>
             {/* remove class hidden when FOUC fixed */}
-            <div class="hidden px-4 sm:px-6 md:px-8 no-underline">
+            <div class="hidden px-4 no-underline sm:px-6 md:px-8">
               {/* Styles in Theme Toggle */}
               <ToggleTheme
                 theme={theme}
