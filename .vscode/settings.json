@@ -12,5 +12,7 @@
     "rehype",
     "spences",
     "unist"
-  ]
+  ],
+  "git.enableSmartCommit": true,
+  "git.postCommitCommand": "sync"
 }
