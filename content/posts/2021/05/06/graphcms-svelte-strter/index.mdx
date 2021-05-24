@@ -98,12 +98,12 @@ elements that are presisted through route changes.
 Create a SvelteKit layout in the routes folder:
 
 ```bash
-touch src/routes/__layout
+touch src/routes/__layout.svelte
 ```
 
 The layout will be wrapping the project so the one requirement of a
-`__layout` in SvelteKit is a `<slot/>` see my notes on Svelte [slots]
-for more on that.
+`__layout.svelte` in SvelteKit is a `<slot/>` see my notes on Svelte 
+[slots] for more on that.
 
 In the layout I'll import the global CSS and add in a basic nav for
 now along with the required slot:
