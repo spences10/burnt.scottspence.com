@@ -6,7 +6,7 @@ private: false
 ---
 
 I made a starter blog with SvelteKit and GraphCMS, I've been doing a
-couple of small projects with it and a _really_ like it!
+couple of small projects with it and I _really_ like it!
 
 This will focus mainly on the Svelte and SvelteKit side with not too
 much emphasis on the GraphCMS side. GraphCMS has a blog starter that
@@ -102,7 +102,7 @@ touch src/routes/__layout.svelte
 ```
 
 The layout will be wrapping the project so the one requirement of a
-`__layout.svelte` in SvelteKit is a `<slot/>` see my notes on Svelte 
+`__layout.svelte` in SvelteKit is a `<slot/>` see my notes on Svelte
 [slots] for more on that.
 
 In the layout I'll import the global CSS and add in a basic nav for
@@ -125,7 +125,7 @@ now along with the required slot:
 
 First up I'll list out the posts from the GraphCMS GraphQL endpoint
 into the index page (home page) of the project so that there's a list
-of clicable links to take the user to the post.
+of clickable links to take the user to the post.
 
 I'll be using `graphql-request` to query the posts so I'll install
 that along with `graphql`:
@@ -316,7 +316,7 @@ address) in the project programmatically.
 
 ```bash
 mkdir src/routes/post/
-# not the quotes around the path here 👇
+# note the quotes around the path here 👇
 touch 'src/routes/post/[slug].svelte'
 ```
 
